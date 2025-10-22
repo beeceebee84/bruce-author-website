@@ -1,0 +1,130 @@
+/* =======================================
+   BRUCE C. BEE — OBSIDIAN EMBER THEME
+   ======================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---------- Root Color Variables ---------- */
+:root {
+  --bg: #0C0C0C;            /* page background */
+  --surface: #181414;       /* section/nav background */
+  --text: #F2EFEC;          /* main text */
+  --muted: #B7ADA8;         /* secondary text */
+  --primary: #D9822B;       /* accent / button / link */
+  --primary-600: #E89E4D;   /* hover accent */
+  --border: #262121;        /* thin lines */
+  --radius: 12px;           /* border radius */
+}
+
+/* ---------- Base Typography & Layout ---------- */
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* ---------- Sections / Cards ---------- */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 16px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+nav a:hover { color: var(--primary); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: var(--primary-600);
+  transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { color: var(--primary-600); }
+
+/* =======================================
+   ANIMATIONS
+   ======================================= */
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Float (gentle vertical motion) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Apply Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Optional Delays for staggered elements */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+
+/* =======================================
+   SCROLLBAR (Dark Mode Friendly)
+   ======================================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-600);
+}
+

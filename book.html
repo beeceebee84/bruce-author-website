@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispers of the Forgotten | InkScribe Chronicles</title>
+    <meta name="description" content="Details about Whispers of the Forgotten by [Author Name] - read the description, reviews, and purchase options">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <custom-navbar></custom-navbar>
+    
+    <!-- Book Hero Section -->
+    <section class="bg-gradient-to-r from-primary-500 to-secondary-500 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 flex justify-center">
+                    <img src="http://static.photos/books/640x360/1" alt="Whispers of the Forgotten" class="w-64 h-auto rounded-lg shadow-2xl border-4 border-white dark:border-gray-800">
+                </div>
+                <div class="md:col-span-2 text-white">
+                    <h1 class="text-4xl font-bold">Whispers of the Forgotten</h1>
+                    <div class="flex items-center mt-4">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <span class="ml-2">4.9 (124 reviews)</span>
+                    </div>
+                    <p class="mt-4 text-primary-100">Published: June 12, 2023 | ISBN: 978-3-16-148410-0 | 342 pages</p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <button onclick="addToCart('whispers', 'Whispers of the Forgotten', 14.99)" class="px-6 py-3 bg-white hover:bg-gray-100 text-primary-600 rounded-lg font-medium flex items-center shadow-lg hover:shadow-xl transition-all">
+                            <i data-feather="shopping-cart" class="mr-2"></i>
+                            Add to Cart - $14.99
+                        </button>
+                        <button onclick="showBookPreview('whispers')" class="px-6 py-3 border border-white hover:bg-white hover:bg-opacity-10 rounded-lg font-medium flex items-center transition-colors">
+                            <i data-feather="book-open" class="mr-2"></i>
+                            Read Sample
+                        </button>
+                        <button class="px-6 py-3 border border-white hover:bg-white hover:bg-opacity-10 rounded-lg font-medium flex items-center transition-colors">
+                            <i data-feather="heart" class="mr-2"></i>
+                            Add to Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Book Details -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Book <span class="text-primary-500">Description</span></h2>
+                    <div class="prose dark:prose-invert max-w-none mt-6">
+                        <p>In the quiet town of Eldermere, where the past lingers like morning fog, archivist Eleanor Voss discovers a collection of letters hidden in the walls of an abandoned house. The letters tell of a forgotten tragedy and a secret that the town has buried for generations.</p>
+                        
+                        <p class="mt-4">As Eleanor pieces together the fragments of this decades-old mystery, she uncovers connections to her own family's history—connections that someone in Eldermere would rather keep hidden. When disturbing events begin to mirror those described in the letters, Eleanor realizes that some secrets aren't meant to stay buried.</p>
+                        
+                        <p class="mt-4">"Whispers of the Forgotten" is a haunting tale of memory, redemption, and the echoes of the past that shape our present. With lyrical prose and masterful suspense, this novel will keep readers enthralled until its breathtaking conclusion.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8">Praise for Whispers of the Forgotten</h3>
+                        <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">
+                            "A mesmerizing blend of historical mystery and contemporary suspense. The author weaves a tale so vivid you'll forget you're reading fiction." — The Literary Review
+                        </blockquote>
+                        <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">
+                            "The characters linger long after the final page, their voices whispering in your memory. A triumph of storytelling." — BookPage
+                        </blockquote>
+                        
+                        <h3 class="text-xl font-bold mt-8">About the Author</h3>
+                        <p>[Author Name] is the award-winning author of seven novels, including the bestselling "The Silent Witness." With a background in archival studies and a passion for uncovering hidden histories, they bring authenticity and depth to their storytelling. They currently divide their time between writing and teaching creative writing at the university level.</p>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg sticky top-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Purchase Options</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium text-gray-900 dark:text-white">Hardcover</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
+                                <p class="text-primary-500 font-bold mt-1">$24.99</p>
+                                <button onclick="addToCart('whispers-hc', 'Whispers of the Forgotten (Hardcover)', 24.99)" class="mt-2 w-full px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <h4 class="font-medium text-gray-900 dark:text-white">Paperback</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
+                                <p class="text-primary-500 font-bold mt-1">$14.99</p>
+                                <button onclick="addToCart('whispers-pb', 'Whispers of the Forgotten (Paperback)', 14.99)" class="mt-2 w-full px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">
+                                    Add to Cart
+                                </button>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <h4 class="font-medium text-gray-900 dark:text-white">eBook</h4>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Available in multiple formats</p>
+                                <p class="text-primary-500 font-bold mt-1">$9.99</p>
+                                <div class="grid grid-cols-2 gap-2 mt-2">
+                                    <button onclick="addToCart('whispers-epub', 'Whispers of the Forgotten (EPUB)', 9.99)" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
+                                        EPUB
+                                    </button>
+                                    <button onclick="addToCart('whispers-kindle', 'Whispers of the Forgotten (Kindle)', 9.99)" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
+                                        Kindle
+                                    </button>
+                                    <button onclick="addToCart('whispers-pdf', 'Whispers of the Forgotten (PDF)', 9.99)" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
+                                        PDF
+                                    </button>
+                                    <button onclick="addToCart('whispers-audio', 'Whispers of the Forgotten (Audio)', 14.99)" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
+                                        Audio
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <h4 class="font-medium text-gray-900 dark:text-white">Also Available At</h4>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                                        <i data-feather="book" class="w-3 h-3 mr-1"></i>
+                                        Amazon
+                                    </a>
+                                    <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                                        <i data-feather="book" class="w-3 h-3 mr-1"></i>
+                                        Barnes & Noble
+                                    </a>
+                                    <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                                        <i data-feather="book" class="w-3 h-3 mr-1"></i>
+                                        Bookshop.org
+                                    </a>
+                                    <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                                        <i data-feather="book" class="w-3 h-3 mr-1"></i>
+                                        IndieBound
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reviews Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Reader <span class="text-primary-500">Reviews</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">What readers are saying about this book</p>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on June 18, 2023</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Couldn't Put It Down</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">"I stayed up all night reading this book! The characters felt so real and the mystery kept me guessing until the very end. The writing is beautiful and atmospheric—I felt like I was right there in Eldermere with Eleanor."</p>
+                    <div class="mt-4 flex items-center">
+                        <img src="http://static.photos/people/200x200/4" alt="Reviewer" class="w-10 h-10 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="text-sm font-medium text-gray-900 dark:text-white">Jessica M.</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Verified Purchase</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on June 25, 2023</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Beautifully Written Mystery</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">"The prose in this novel is absolutely stunning. The mystery is compelling, but what really stands out is the way the author captures the atmosphere of the town and the emotional depth of the characters. I only wish the ending had been a bit more developed."</p>
+                    <div class="mt-4 flex items-center">
+                        <img src="http://static.photos/people/200x200/5" alt="Reviewer" class="w-10 h-10 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="text-sm font-medium text-gray-900 dark:text-white">Thomas R.</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Book Club Member</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on July 2, 2023</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">A New Favorite</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">"This book has everything I love—a small town with secrets, a determined protagonist, and a mystery that connects past and present. The way the author weaves historical details into the story is masterful. I've already recommended it to all my friends!"</p>
+                    <div class="mt-4 flex items-center">
+                        <img src="http://static.photos/people/200x200/6" alt="Reviewer" class="w-10 h-10 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="text-sm font-medium text-gray-900 dark:text-white">Samantha K.</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Verified Purchase</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on July 8, 2023</span>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Hauntingly Beautiful</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">"The title says it all—this story truly does whisper to you long after you've finished reading. The characters are so well-developed and the sense of place is incredible. I can't wait to read more from this author!"</p>
+                    <div class="mt-4 flex items-center">
+                        <img src="http://static.photos/people/200x200/7" alt="Reviewer" class="w-10 h-10 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="text-sm font-medium text-gray-900 dark:text-white">Daniel L.</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Literary Critic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="px-6 py-3 border border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white rounded-lg font-medium transition-colors">
+                    Load More Reviews
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Books -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">You Might Also <span class="text-primary-500">Like</span></h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">Other books by [Author Name]</p>
+            
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <a href="book-echoes.html" class="block">
+                        <img src="http://static.photos/books/640x360/2" alt="Echoes in the Mist" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Echoes in the Mist</h3>
+                        <div class="flex items-center mt-2">
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4"></i>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(89 reviews)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary-500">$12.99</span>
+                            <a href="book-echoes.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <a href="book-silent.html" class="block">
+                        <img src="http://static.photos/books/640x360/3" alt="The Silent Witness" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">The Silent Witness</h3>
+                        <div class="flex items-center mt-2">
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(156 reviews)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary-500">$16.99</span>
+                            <a href="book-silent.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <a href="book-harbinger.html" class="block">
+                        <img src="http://static.photos/books/640x360/6" alt="The Harbinger's Song" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">The Harbinger's Song</h3>
+                        <div class="flex items-center mt-2">
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(112 reviews)</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary-500">$13.99</span>
+                            <a href="book-harbinger.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <custom-footer></custom-footer>
+    
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

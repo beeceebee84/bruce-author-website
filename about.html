@@ -1,327 +1,122 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | InkScribe Chronicles</title>
-    <meta name="description" content="Learn more about [Author Name] - biography, writing journey, and personal story">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-    
-<!-- Tailwind (utility classes) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Tailwind tokens aligned to your Obsidian Ember palette
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#ec4899', 600: '#db2777' } // optional accent
-          },
-          borderRadius: { brand: '12px' },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in',
-            'float': 'float 6s ease-in-out infinite'
-          },
-          keyframes: {
-            fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-          }
-        }
-      }
-    }
-  </script>
-
-      <!-- Your custom theme (Obsidian Ember) -->
-  <link rel="stylesheet" href="css/style.css?v=4" />
-
-  <!-- Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></scrip
-    
-</head>
-<body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
-    <custom-navbar></custom-navbar>
-    
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-primary-500 to-secondary-500 py-24 text-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-white">About <span class="text-secondary-300">Me</span></h1>
-            <p class="mt-4 text-xl text-primary-100">My journey as a writer and storyteller</p>
-        </div>
+<!-- ===================== ABOUT (Bruce C. Bee) — Drop-in Section ===================== -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Hero -->
+    <header class="max-w-3xl">
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        Bruce C. Bee: <span class="text-primary-500">The Storyteller Living in the Gray</span>
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        I’m a storyteller from Richmond, Virginia, now based in Atlanta. After years of chasing a life I thought I was supposed to want—the corporate ladder, the safety of a plan—I realized I was performing someone else’s script. I built a life in CPG supply chain (PepsiCo), but the burnout was real. I walked away without a blueprint, but with the undeniable knowing that I was meant for something more.
+      </p>
     </header>
-    
-    <!-- Author Bio -->
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-12 items-start">
-                <div class="md:col-span-2 space-y-8">
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">My <span class="text-primary-500">Story</span></h2>
-                    
-                    <div class="prose dark:prose-invert max-w-none">
-                        <p>I've been captivated by stories for as long as I can remember. As a child, I would spend hours in the local library, devouring books faster than my parents could check them out. By the time I was ten, I had filled numerous notebooks with my own stories—some barely a page long, others spanning entire "novels" (by elementary school standards).</p>
-                        
-                        <p class="mt-4">My formal journey into writing began during my undergraduate years, where I studied literature and creative writing. After graduation, I worked various jobs—bookseller, editorial assistant, high school teacher—all while writing in the early mornings and late nights. My first novel was rejected by every publisher I sent it to, but that experience taught me perseverance and the importance of continually honing my craft.</p>
-                        
-                        <p class="mt-4">My breakthrough came with the publication of my third novel, which became a surprise bestseller. Since then, I've had the privilege of writing full-time, sharing stories that (I hope) resonate with readers as deeply as my favorite books have resonated with me.</p>
-                        
-                        <h3 class="text-xl font-bold mt-8">Writing Process</h3>
-                        <p>Each book begins differently—sometimes with a character who won't leave my thoughts, sometimes with a historical event that fascinates me, sometimes with a "what if" question that demands exploration. I spend months researching before I begin writing, immersing myself in the world of the story.</p>
-                        
-                        <p class="mt-4">My writing routine is sacred. I write every morning, usually from 5:30 AM until noon, in a small studio behind my house. The first draft is always messy—I give myself permission to write badly, knowing I can fix it later. Revision is where the real magic happens, sometimes taking twice as long as the initial draft.</p>
-                        
-                        <h3 class="text-xl font-bold mt-8">Beyond Writing</h3>
-                        <p>When I'm not writing, you'll find me hiking in the mountains near my home, baking bread (badly but enthusiastically), or adding to my collection of vintage typewriters. I'm passionate about literacy initiatives and volunteer regularly with organizations that promote reading and writing education.</p>
-                        
-                        <p class="mt-4">I live in the Pacific Northwest with my partner and two extremely spoiled rescue dogs, who often make appearances on my social media accounts.</p>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-1 sticky top-6">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                        <img src="http://static.photos/people/640x360/2" alt="Author Photo" class="w-full rounded-lg mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Quick Facts</h3>
-                        <ul class="mt-4 space-y-3">
-                            <li class="flex items-start">
-                                <i data-feather="book" class="w-5 h-5 mt-0.5 text-primary-500 mr-2"></i>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Published Works:</strong> 7 novels, 2 short story collections</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="award" class="w-5 h-5 mt-0.5 text-primary-500 mr-2"></i>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Awards:</strong> National Book Award Finalist, PEN/Faulkner Nominee</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="map-pin" class="w-5 h-5 mt-0.5 text-primary-500 mr-2"></i>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Location:</strong> Pacific Northwest, USA</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="heart" class="w-5 h-5 mt-0.5 text-primary-500 mr-2"></i>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Interests:</strong> Hiking, bookbinding, historical research</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="coffee" class="w-5 h-5 mt-0.5 text-primary-500 mr-2"></i>
-                                <span class="text-gray-600 dark:text-gray-300"><strong>Must Have:</strong> Strong black tea (with honey) while writing</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="mt-6">
-                            <h4 class="font-medium text-gray-900 dark:text-white mb-2">Connect With Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" aria-label="Twitter">
-                                    <i data-feather="twitter"></i>
-                                </a>
-                                <a href="#" class="text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" aria-label="Instagram">
-                                    <i data-feather="instagram"></i>
-                                </a>
-                                <a href="#" class="text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" aria-label="Facebook">
-                                    <i data-feather="facebook"></i>
-                                </a>
-                                <a href="#" class="text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" aria-label="Goodreads">
-                                    <i data-feather="book"></i>
-                                </a>
-                                <a href="#" class="text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" aria-label="Email">
-                                    <i data-feather="mail"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Author Timeline -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">My Writing <span class="text-primary-500">Journey</span></h2>
-            <p class="mt-2 text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto">Key moments in my career as an author</p>
-            
-            <div class="mt-12 relative">
-                <!-- Timeline line -->
-                <div class="hidden md:block absolute left-1/2 h-full w-0.5 bg-gray-300 dark:bg-gray-600 transform -translate-x-1/2"></div>
-                
-                <!-- Timeline items -->
-                <div class="space-y-8 md:space-y-16">
-                    <!-- Item 1 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 flex justify-start md:justify-end order-1 md:order-1">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md w-full max-w-md">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">First Publication</h3>
-                                <p class="text-primary-500 font-medium mt-1">2008</p>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">My short story "Whispered Words" was published in a literary magazine after numerous rejections. This small victory kept me going during the years of unpublished work that followed.</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white absolute left-1/2 transform -translate-x-1/2 order-2">
-                            <i data-feather="book-open"></i>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 mt-4 md:mt-0"></div>
-                    </div>
-                    
-                    <!-- Item 2 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 order-3 md:order-1 mt-4 md:mt-0"></div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white absolute left-1/2 transform -translate-x-1/2 order-2">
-                            <i data-feather="award"></i>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 flex justify-start order-1 md:order-3">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md w-full max-w-md">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Literary Award</h3>
-                                <p class="text-primary-500 font-medium mt-1">2012</p>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">Received the Emerging Writer Award from the National Book Foundation for my debut novel manuscript. Though the novel itself wasn't published, this recognition opened doors to my first literary agent.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 flex justify-start md:justify-end order-1 md:order-1">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md w-full max-w-md">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Debut Novel</h3>
-                                <p class="text-primary-500 font-medium mt-1">2015</p>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">After seven years of writing and revising, my first novel "The Silent Witness" was published. It received critical acclaim and established my reputation as a serious literary voice.</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white absolute left-1/2 transform -translate-x-1/2 order-2">
-                            <i data-feather="pen-tool"></i>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 mt-4 md:mt-0"></div>
-                    </div>
-                    
-                    <!-- Item 4 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 order-3 md:order-1 mt-4 md:mt-0"></div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white absolute left-1/2 transform -translate-x-1/2 order-2">
-                            <i data-feather="trending-up"></i>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 flex justify-start order-1 md:order-3">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md w-full max-w-md">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bestseller Status</h3>
-                                <p class="text-primary-500 font-medium mt-1">2018</p>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">"Echoes in the Mist" spent 12 weeks on the New York Times Bestseller list. This commercial success allowed me to transition to writing full-time and establish my current writing routine.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 5 -->
-                    <div class="relative flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-12 flex justify-start md:justify-end order-1 md:order-1">
-                            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md w-full max-w-md">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Teaching Position</h3>
-                                <p class="text-primary-500 font-medium mt-1">2021</p>
-                                <p class="mt-2 text-gray-600 dark:text-gray-300">Began teaching creative writing at the university level, combining my love of writing with my passion for mentoring emerging authors. This experience has profoundly influenced my own work.</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 text-white absolute left-1/2 transform -translate-x-1/2 order-2">
-                            <i data-feather="users"></i>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 order-3 md:order-3 mt-4 md:mt-0"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Q&A Section -->
-    <section class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">Frequently Asked <span class="text-primary-500">Questions</span></h2>
-            
-            <div class="mt-12 space-y-6">
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">What inspires your writing?</h3>
-                        <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600 dark:text-gray-300">Inspiration comes from everywhere—historical events, overheard conversations, landscapes that evoke strong emotions. I keep a notebook (actually several) where I jot down anything that sparks my imagination: a newspaper article, an unusual name, an interesting location. These fragments often combine in unexpected ways to form the seeds of stories.</p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Do you have any writing advice for aspiring authors?</h3>
-                        <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600 dark:text-gray-300">Three pieces of advice: First, read voraciously—both within and outside your preferred genre. Second, write regularly, even when you don't feel inspired. Discipline is more important than talent. Third, don't rush to publish—take time to hone your craft and develop your unique voice. The publishing world will still be there when you're ready.</p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Which of your books is your favorite?</h3>
-                        <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600 dark:text-gray-300">This is like asking a parent to choose a favorite child! Each book holds special meaning for different reasons. "The Silent Witness" will always be precious as my debut, while "Echoes in the Mist" represents a breakthrough in my writing. That said, I have a soft spot for "Whispers of the Forgotten" because it allowed me to explore themes of memory and history that fascinate me.</p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Will any of your books be adapted for film or television?</h3>
-                        <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600 dark:text-gray-300">There have been discussions and options over the years, but nothing concrete yet. While I'd be thrilled to see my stories adapted, I'm also cautious—I want any adaptation to honor the spirit of the original work. If and when it happens, I'll be sure to share the news with my readers first!</p>
-                    </div>
-                </div>
-                
-                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
-                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Can I send you my manuscript for feedback?</h3>
-                        <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
-                    </button>
-                    <div class="px-6 pb-6 hidden">
-                        <p class="text-gray-600 dark:text-gray-300">While I'm flattered by the request, I'm unable to review unsolicited manuscripts due to time constraints and legal considerations. Instead, I recommend joining a local writing group or workshop where you can get feedback from peers. I also occasionally offer manuscript critiques through literary conferences and organizations—check my events page for opportunities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Newsletter -->
-    <section class="py-16 bg-primary-500">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white">Join My <span class="text-secondary-300">Reader's Circle</span></h2>
-            <p class="mt-4 text-primary-100 max-w-2xl mx-auto">Get exclusive content, writing updates, and behind-the-scenes insights directly to your inbox.</p>
-            
-            <form class="mt-8 max-w-md mx-auto">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
-                    <button type="submit" class="px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">Subscribe</button>
-                </div>
-                <p class="mt-3 text-sm text-primary-200">No spam, ever. Unsubscribe anytime.</p>
-            </form>
-        </div>
-    </section>
-    
-    <custom-footer></custom-footer>
-    
-    <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="script.js"></script>
-    <script>
-        feather.replace();
-        
-        // FAQ accordion functionality
-        document.querySelectorAll('.border button').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                content.classList.toggle('hidden');
-                icon.classList.toggle('rotate-180');
-            });
-        });
-    </script>
-</body>
 
-</html>
+    <!-- Intro: two-column (mirrors index) -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mt-12">
+      <!-- Image (swap src for your photo) -->
+      <div class="order-last md:order-first">
+        <img src="https://picsum.photos/800/600?random=23" alt="Bruce C. Bee"
+             class="w-full rounded-xl shadow-lg">
+      </div>
 
+      <!-- Opening story -->
+      <div>
+        <p class="text-gray-600 dark:text-gray-300">
+          That leap launched a journey of deliberate unhinging. I embraced the gray areas of life, the uncomfortable truths, and the freedom to explore. The cubicle silence was replaced by the vibrant chaos of the world. From back-alley conversations in cities often misunderstood to shared meals with people who didn't grow up like me—I found perspective, clarity, and truth in places we’re taught to avoid.
+        </p>
 
+        <div class="mt-6 flex gap-4">
+          <a href="books.html"
+             class="px-6 py-3 inline-flex items-center text-white bg-primary-500 hover:bg-primary-600 rounded-lg font-medium transition-colors">
+            Browse My Books
+            <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+          </a>
+          <a href="contact.html"
+             class="px-6 py-3 inline-flex items-center border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors">
+            Say Hello
+            <i data-feather="mail" class="ml-2 w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body copy (full-width, readable measure) -->
+    <div class="mt-16 prose prose-lg dark:prose-invert max-w-none">
+      <h2>My Story: From Corporate Purgatory to a Hollywood Strip</h2>
+      <p>
+        My pivot wasn't clean or linear. I tried consulting, but it wasn't it. After getting laid off from a supply chain software role, I decided to stop running back to "jobs" and bet entirely on myself. For years, I had been investing my energy in other people's ideas; this time, I poured it all into my own.
+      </p>
+      <p>
+        I invested fully in the book I had been secretly writing, a story inspired by my own journey. I spent the summer in Cali, Colombia, drinking viche, listening to salsa, while I put all my energy into releasing it. In July 2024, I self-published it 100% on my own. This was the first time I had ever fully invested in my own vision.
+      </p>
+      <p>
+        The catalyst for this entire writing career came one night in December 2023 in Los Angeles.
+      </p>
+      <p>
+        I was at Deja Vu on the Hollywood Strip. I stepped outside for some air, and a guy asked me for a light. We started chatting, and I shared a few of the stories I had accumulated over the years by simply being a free spirit and, frankly, unhinged. We talked for almost twenty minutes, and before he left, he looked me dead in the eye and told me, “You definitely need to be writing these stories.”
+      </p>
+      <p>
+        My friends had been telling me the same thing for a decade—usually late at night, a little drunk, so I never took it seriously. But coming from a stranger, in that place, at that moment, it hit differently. The very next day, I started writing the short story, <em>The Night She Owned</em>, which would ultimately become the base for my debut novel, <em>Burn Me Whole</em>.
+      </p>
+
+      <h2>The Fuel</h2>
+      <p>
+        My writing is a direct result of my unapologetic curiosity and freedom. My personal motto is to <strong>Live Freely and Explore Boldly</strong>, and I believe the best stories live off the beaten path. Whether it’s stumbling down a random dark alley in Puerto Rico that leads to the barrio of La Perla, or following a taxi driver in Havana that takes you to an underground casino where I played Baccarat like Chris Tucker in <em>Rush Hour 3</em> and they make the world's best mojitos—these are the moments that truly inspire me. I write about what it means to feel, to fumble, to confront what we instinctively try to tuck away.
+      </p>
+
+      <h2>My Writing Process: Raw and Unfiltered</h2>
+      <p>
+        My stories are raw and unfiltered, cinematic in rhythm, and layered with the quiet weight of things unsaid. They are grounded in cultural immersion and emotional honesty.
+      </p>
+      <p>
+        Each project begins with a deep, deliberate immersion. I spend time exploring the world of the story, allowing the setting and the characters' backstories to become as rich as the places I’ve visited.
+      </p>
+      <p>
+        The first draft is where I give myself permission to let it all hang out—it’s messy, it's a brain-dump, and it's essential. The magic happens in the revision. That is the stage where the rhythm and the truth of the story emerge. I write for the ones still figuring it out—and the ones who thought they already had.
+      </p>
+
+      <h2>Beyond the Page</h2>
+      <p>
+        When I’m not writing, you’ll find me seeking out the next authentic experience. My life outside of writing is all about exploration: whether that’s getting lost in a new city or just digging into a great meal. I'm proud of the path I’ve carved, and I'm always looking for the next corner to turn.
+      </p>
+    </div>
+
+    <!-- Optional callouts / quick facts card -->
+    <div class="mt-16 grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Read the Work</h3>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">
+          Start with <em>Burn Me Whole</em>—fiction written like a confession. If you’ve ever been lost on purpose, you’ll recognize the map.
+        </p>
+        <div class="mt-4 flex gap-3">
+          <a href="books.html"
+             class="px-5 py-2.5 inline-flex items-center text-white bg-primary-500 hover:bg-primary-600 rounded-lg font-medium transition-colors">
+            Explore Books
+            <i data-feather="book-open" class="ml-2 w-5 h-5"></i>
+          </a>
+          <a href="contact.html"
+             class="px-5 py-2.5 inline-flex items-center border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg font-medium transition-colors">
+            Invite Me to Speak
+            <i data-feather="mic" class="ml-2 w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+
+      <aside class="md:col-span-1 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Quick Facts</h3>
+        <ul class="mt-3 space-y-2 text-gray-600 dark:text-gray-300">
+          <li><strong>Base:</strong> Atlanta</li>
+          <li><strong>Roots:</strong> Richmond, VA</li>
+          <li><strong>Motto:</strong> Live Freely • Explore Boldly</li>
+          <li><strong>Latest:</strong> <em>Burn Me Whole</em></li>
+        </ul>
+        <div class="mt-4 flex gap-4">
+          <a href="#" aria-label="Instagram" class="text-gray-500 hover:text-primary-500"><i data-feather="instagram"></i></a>
+          <a href="#" aria-label="Twitter/X" class="text-gray-500 hover:text-primary-500"><i data-feather="twitter"></i></a>
+          <a href="contact.html" aria-label="Email" class="text-gray-500 hover:text-primary-500"><i data-feather="mail"></i></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- ===================== /ABOUT ===================== -->

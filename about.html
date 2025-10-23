@@ -37,21 +37,27 @@
   <custom-navbar></custom-navbar>
 
   <!-- Hero Section -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-800 to-ink-900"></div>
-    <!-- faint sweep of ember across the middle third -->
-    <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent,theme(colors.ember.500/0.12),transparent)]"></div>
-    <div class="relative py-16 md:py-20 text-center">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
-          About <span class="text-ember-500">Me</span>
-        </h1>
-        <p class="mt-4 text-base md:text-lg text-white/70">
-          Bruce C. Bee — the storyteller living in the gray
-        </p>
-      </div>
+  <!-- Hero Section: Fire to Smoke -->
+<header class="relative overflow-hidden">
+  <!-- Layer 1: Fire-to-Smoke gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+
+  <!-- Layer 2: Subtle glowing ember center -->
+  <div class="absolute inset-0 bg-[radial-gradient(700px_300px_at_50%_45%,theme(colors.ember.500/0.25),transparent_80%)]"></div>
+
+  <!-- Content -->
+  <div class="relative py-20 md:py-24 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
+        About <span class="text-ember-500">Me</span>
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-white/80">
+        Bruce C. Bee — the storyteller living in the gray
+      </p>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Author Bio -->
   <section class="py-16">
@@ -250,3 +256,4 @@
   </script>
 </body>
 </html>
+

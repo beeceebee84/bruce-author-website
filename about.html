@@ -6,31 +6,43 @@
   <title>About | Bruce C Bee </title>
   <meta name="description" content="About Bruce C. Bee — the storyteller living in the gray. Biography, writing journey, process, and what fuels the work.">
 
-  <!-- Tailwind (utility classes) -->
+    <!-- Tailwind (utility classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind tokens aligned to your palette
+    // Tailwind tokens aligned to your Obsidian Ember palette
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
             primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#ec4899', 600: '#db2777', 300: '#f9a8d4' }
+            secondary: { 500: '#ec4899', 600: '#db2777' } // optional accent
           },
-          borderRadius: { brand: '12px' }
+          borderRadius: { brand: '12px' },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in',
+            'float': 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+          }
         }
       }
     }
   </script>
 
-  <!-- Feather icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <!-- Your custom theme (Obsidian Ember) -->
+  <link rel="stylesheet" href="css/style.css?v=4" />
 
-  <!-- Your site stylesheet (after Tailwind so your tweaks win) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+<!-- IMPORTANT: use your brand variables for background + text -->
+<body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
+
+  <!-- Navbar web component -->
   <custom-navbar></custom-navbar>
 
   <!-- Hero Section -->
@@ -177,6 +189,7 @@
   </script>
 </body>
 </html>
+
 
 
 

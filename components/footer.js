@@ -61,6 +61,7 @@ class CustomFooter extends HTMLElement {
                 <li><a href="books.html" class="text-bone-50/80 hover:text-ember-400 transition">Books</a></li>
                 <li><a href="about.html" class="text-bone-50/80 hover:text-ember-400 transition">About</a></li>
                 <li><a href="blog.html" class="text-bone-50/80 hover:text-ember-400 transition">Blog</a></li>
+                <li><a href="contact.html" class="text-bone-50/80 hover:text-ember-400 transition">Publishing</a></li>
                 <li><a href="contact.html" class="text-bone-50/80 hover:text-ember-400 transition">Contact</a></li>
               </ul>
             </div>
@@ -100,4 +101,5 @@ class CustomFooter extends HTMLElement {
   }
 }
 customElements.define('custom-footer', CustomFooter);
+
 

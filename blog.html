@@ -6,22 +6,33 @@
     <title>Blog | Bruce C Bee </title>
     <meta name="description" content="Explore the latest blog posts, writing updates, and literary insights from [Author Name]">
 
-    <!-- Tailwind (utility classes) -->
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<!-- Head -->
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#ec4899', 600: '#db2777', 300: '#f9a8d4' }
-          },
-          borderRadius: { brand: '12px' }
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
+          secondary: { 500: '#ec4899', 600: '#db2777' }
+        },
+        borderRadius: { brand: '12px' },
+        animation: {
+          'fade-in': 'fadeIn 0.5s ease-in',
+          'float': 'float 6s ease-in-out infinite'
+        },
+        keyframes: {
+          fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
+          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
         }
       }
     }
-  </script>
+  }
+</script>
+<link rel="stylesheet" href="css/style.css?v=4">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -276,5 +287,6 @@
 </body>
 
 </html>
+
 
 

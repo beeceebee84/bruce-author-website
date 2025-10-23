@@ -11,7 +11,6 @@ class CustomFooter extends HTMLElement {
 
             <!-- Brand / About -->
             <div>
-              <!-- Brand with soft ember glow -->
               <div class="flex items-center space-x-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-ember-500"></span>
                 <h3
@@ -29,7 +28,6 @@ class CustomFooter extends HTMLElement {
               </p>
 
               <div class="mt-5 flex items-center gap-3">
-                <!-- Social placeholders -->
                 <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
                                    text-bone-50/70 hover:text-ember-400 hover:border-ember-500 transition"
                    aria-label="Instagram">

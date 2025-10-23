@@ -13,14 +13,16 @@ class CustomFooter extends HTMLElement {
             <div>
               <div class="flex items-center space-x-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-ember-500"></span>
-                <h3
-                  class="text-2xl font-semibold tracking-tight
-                         filter drop-shadow-[0_0_6px_rgba(217,130,43,0.35)]
-                         transition">
-                  <span class="hover:drop-shadow-[0_0_12px_rgba(217,130,43,0.65)] transition">
-                    The BKR Imprint
-                  </span>
-                </h3>
+               <h3
+  class="text-2xl font-semibold tracking-tight
+         bg-gradient-to-r from-ember-400 via-ember-500 to-amber-600
+         bg-clip-text text-transparent
+         filter drop-shadow-[0_0_6px_rgba(217,130,43,0.35)]
+         hover:drop-shadow-[0_0_12px_rgba(217,130,43,0.65)]
+         transition">
+  The BKR Imprint
+</h3>
+
               </div>
 
               <p class="mt-4 text-bone-50/75">
@@ -98,3 +100,4 @@ class CustomFooter extends HTMLElement {
   }
 }
 customElements.define('custom-footer', CustomFooter);
+

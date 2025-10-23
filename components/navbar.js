@@ -21,6 +21,7 @@ class CustomNavbar extends HTMLElement {
               <a href="books.html" class="text-bone-50/80 hover:text-ember-400 transition">Books</a>
               <a href="about.html" class="text-bone-50/80 hover:text-ember-400 transition">About</a>
               <a href="blog.html" class="text-bone-50/80 hover:text-ember-400 transition">Blog</a>
+              <a href="publishing.html" class="text-bone-50/80 hover:text-ember-400 transition">Publishing</a>
               <a href="contact.html" class="text-bone-50/80 hover:text-ember-400 transition">Contact</a>
 
               <!-- cart icon -->
@@ -62,4 +63,5 @@ class CustomNavbar extends HTMLElement {
   }
 }
 customElements.define('custom-navbar', CustomNavbar);
+
 

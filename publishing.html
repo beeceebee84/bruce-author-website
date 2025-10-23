@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publishing Services | Ink & Ember</title>
+  <meta name="description" content="Professional publishing services for authors - editing, design, distribution and more. Let us handle the technical side so you can focus on writing." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
+            brass: { 500:'#C49A45' },
+            sand:  { 400:'#CAB79A' },
+            bone:  { 50:'#F5F3EF' }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in',
+            'float': 'float 6s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-ink-900 text-bone-50 transition-colors duration-300">
+  <!-- Navbar -->
+  <custom-navbar></custom-navbar>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-24 md:py-32">
+    <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(900px_360px_at_50%_45%,theme(colors.ember.500/0.22),transparent_80%)]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Publishing <span class="text-ember-500">Services</span></h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-bone-50/80">
+          We handle the technical side of publishing so you can focus on what matters most - your writing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-fade-in">
+          <h2 class="text-3xl font-bold mb-6">The <span class="text-ember-500">Ink & Ember</span> Story</h2>
+          <div class="text-bone-50/80 space-y-4">
+            <p>
+              Born from a frustration with traditional publishing models, Ink & Ember was created by authors, for authors. 
+              We understand the journey because we've lived it - the endless rejections, the confusing publishing jargon, 
+              the overwhelming technical requirements.
+            </p>
+            <p>
+              Our imprint BKR was founded on the belief that great stories deserve professional presentation without 
+              sacrificing creative control. We bridge the gap between traditional publishing and going it alone.
+            </p>
+            <p>
+              Every book we touch gets the same care and attention we'd give our own work. Because to us, 
+              publishing isn't just a service - it's a partnership.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="http://static.photos/office/1024x576/42" alt="Ink & Ember office" 
+               class="w-full rounded-xl shadow-lg border border-white/10 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-16 bg-ink-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Our <span class="text-ember-500">Services</span></h2>
+        <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">Comprehensive publishing support from manuscript to marketplace</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Editing Services -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="edit-3" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Editorial Services</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Developmental Editing (Story Structure)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Line Editing (Language & Flow)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Copy Editing (Grammar & Consistency)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Proofreading (Final Polish)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Design Services -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="image" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Design Services</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Custom Cover Design</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Interior Layout & Typesetting</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>eBook Formatting (EPUB, MOBI)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Print Book Formatting</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Publishing Services -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="book-open" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Publishing Services</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>ISBN Assignment</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Copyright Registration</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Distribution Setup (IngramSpark, Amazon, etc.)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Metadata Optimization</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Marketing Services -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="bar-chart-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Marketing Services</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Press Kit Creation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Advanced Reader Copy Distribution</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Book Launch Strategy</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Author Website Setup</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Audio Services -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="headphones" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Audiobook Services</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Audiobook Production Coordination</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Narrator Matching</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>ACX/Audible Distribution</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Audiobook Marketing</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Consultation -->
+        <div class="bg-ink-700 p-6 rounded-xl shadow-md border border-ember-500/20 hover:border-ember-500/40 transition-all">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-ember-500/10 text-ember-500">
+            <i data-feather="message-square" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Consultation</h3>
+          <ul class="space-y-2 text-bone-50/80">
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Publishing Path Strategy</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Manuscript Evaluation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Career Planning</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check" class="w-4 h-4 mt-1 mr-2 text-ember-400 flex-shrink-0"></i>
+              <span>Hybrid Publishing Guidance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Our <span class="text-ember-500">Process</span></h2>
+        <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">A clear roadmap from manuscript to published book</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="relative">
+          <div class="absolute -left-4 top-0 h-full w-0.5 bg-ember-500 md:h-0.5 md:w-full md:-top-4 md:left-0"></div>
+          <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-ink-800 border border-ember-500 text-ember-500 mb-4">
+            <span class="font-bold">1</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Discovery Call</h3>
+          <p class="text-bone-50/80">We discuss your project goals, timeline, and budget to create a customized plan.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative">
+          <div class="absolute -left-4 top-0 h-full w-0.5 bg-ember-500 md:h-0.5 md:w-full md:-top-4 md:left-0"></div>
+          <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-ink-800 border border-ember-500 text-ember-500 mb-4">
+            <span class="font-bold">2</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Manuscript Review</h3>
+          <p class="text-bone-50/80">Our editors evaluate your work and recommend the right level of editing needed.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative">
+          <div class="absolute -left-4 top-0 h-full w-0.5 bg-ember-500 md:h-0.5 md:w-full md:-top-4 md:left-0"></div>
+          <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-ink-800 border border-ember-500 text-ember-500 mb-4">
+            <span class="font-bold">3</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Production Phase</h3>
+          <p class="text-bone-50/80">Editing, design, and formatting happen simultaneously to keep your project moving.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative">
+          <div class="absolute -left-4 top-0 h-full w-0.5 bg-ember-500 md:h-0.5 md:w-full md:-top-4 md:left-0"></div>
+          <div class="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-ink-800 border border-ember-500 text-ember-500 mb-4">
+            <span class="font-bold">4</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Publication</h3>
+          <p class="text-bone-50/80">We handle distribution setup, metadata optimization, and launch strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-ember-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white">Ready to <span class="text-bone-50/80">Publish Your Book?</span></h2>
+      <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">
+        Schedule a free consultation to discuss your project and how we can help bring your book to life.
+      </p>
+      <div class="mt-8">
+        <a href="contact.html" class="inline-flex items-center px-6 py-3 bg-ink-900 hover:bg-ink-800 text-bone-50 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+          Get Started
+          <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <custom-footer></custom-footer>
+
+  <!-- Scripts -->
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+  <script>feather.replace();</script>
+</body>
+</html>

@@ -39,12 +39,22 @@
   <custom-navbar></custom-navbar>
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-primary-500 to-secondary-500 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white">My <span class="text-secondary-300">Books</span></h1>
-      <p class="mt-4 text-xl text-primary-100 max-w-3xl mx-auto">Browse my complete collection of published works. Click on any book to learn more.</p>
+  <header class="relative overflow-hidden">
+  <!-- Fire → Smoke -->
+  <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+  <!-- Subtle center glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(700px_300px_at_50%_45%,theme(colors.ember.500/0.25),transparent_80%)]"></div>
+
+  <div class="relative py-16 md:py-20 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-white">My <span class="text-ember-500">Books</span></h1>
+      <p class="mt-4 text-bone-50/80 max-w-3xl mx-auto">
+        Browse my complete collection of published works. Click on any book to learn more.
+      </p>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- Books Grid -->
   <section class="py-16">
@@ -318,5 +328,6 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 
 

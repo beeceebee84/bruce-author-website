@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,14 +27,17 @@
   <!-- Tailwind (utility classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind tokens aligned to your Obsidian Ember palette
+    // Fire → Smoke palette (same as other pages)
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#ec4899', 600: '#db2777' } // optional accent
+            ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
+            brass: { 500:'#C49A45' },
+            sand:  { 400:'#CAB79A' },
+            bone:  { 50:'#F5F3EF' }
           },
           borderRadius: { brand: '12px' },
           animation: {
@@ -57,22 +60,26 @@
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 
-<!-- IMPORTANT: use your brand variables for background + text -->
-<body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
+<!-- Base: unified dark + your CSS vars still work for sections using them -->
+<body class="bg-ink-900 text-bone-50 transition-colors duration-300">
 
   <!-- Navbar web component -->
   <custom-navbar></custom-navbar>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Fire → Smoke) -->
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-10"></div>
+    <!-- Fire to smoke vertical gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+    <!-- Subtle center ember glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(900px_360px_at_50%_45%,theme(colors.ember.500/0.22),transparent_80%)]"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6 animate-fade-in">
           <h1 class="text-5xl md:text-6xl font-bold">Stories from an unhinged traveler.</h1>
-          <p class="text-xl text-[var(--muted)]">
+          <p class="text-xl text-bone-50/80">
             I’m <strong>Bruce C Bee</strong>—author of <em>Burn Me Whole</em>, a visceral novel about unfastening the chains I mistook for armor and discovering what’s left when the bags are finally empty.
-Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.</strong></em>
+            Read a sample. Grab a copy. Come for the story... <strong><em>STAY FOR THE VIBES.</em></strong>
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#books" class="btn">Explore My Books</a>
@@ -80,14 +87,12 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
           </div>
         </div>
 
-        <!-- Replace the image src with your candid or cover image -->
+        <!-- Video / image -->
         <div class="animate-float">
-          <!-- Put your file at /images/bruce-hero.jpg (landscape ~1200x700) -->
           <video autoplay muted loop playsinline
-       class="w-full rounded-xl shadow-2xl border border-[var(--border)] object-cover object-center">
-		<source src="media/bruce-hero.mp4" type="video/mp4" />
-			</video>
-
+                 class="w-full rounded-xl shadow-2xl border border-white/10 object-cover object-center">
+            <source src="media/bruce-hero.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -97,38 +102,29 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
   <section id="books" class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Featured <span class="text-primary-500">Book</span></h2>
-        <p class="mt-4 text-[var(--muted)] max-w-2xl mx-auto">Start with the <strong>DEBUT</strong> novel readers are talking about.</p>
+        <h2 class="text-3xl font-bold">Featured <span class="text-ember-500">Book</span></h2>
+        <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">Start with the <strong>DEBUT</strong> novel readers are talking about.</p>
       </div>
 
       <div class="section">
         <div class="grid md:grid-cols-2 gap-8 items-center">
-          <!-- Replace with your real cover -->
           <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole cover"
-               class="w-full h-auto rounded-lg border border-[var(--border)] object-cover" />
+               class="w-full h-auto rounded-lg border border-white/10 object-cover" />
 
           <div>
             <h3 class="text-2xl md:text-3xl font-bold">Burn Me Whole</h3>
-            <p class="mt-3 text-[var(--muted)]">
-				
-              <p class="mb-6"> After doing everything “right,” Bruce walks away from the life that’s choking him.</p>
-				<p class="mb-6"> On the shores of Jamaica, he meets his own reflection—stripped of performance, full of hunger, and finally honest. </p>
-				<p class="mb-6"> A raw, immersive story about masculinity, intimacy, and the cost of becoming.</p>
-            </p>
+            <div class="mt-3 text-bone-50/80">
+              <p class="mb-6">After doing everything “right,” Bruce walks away from the life that’s choking him.</p>
+              <p class="mb-6">On the shores of Jamaica, he meets his own reflection—stripped of performance, full of hunger, and finally honest.</p>
+              <p class="mb-6">A raw, immersive story about masculinity, intimacy, and the cost of becoming.</p>
+            </div>
 
             <!-- Purchase Buttons (Payhip) -->
             <div class="mt-5 grid sm:grid-cols-2 gap-3">
-              <!-- Signed Paperback -->
               <a href="https://payhip.com/b/AQpDY" class="btn" data-payhip-button="true">Signed Paperback</a>
-
-              <!-- Optional: add more when ready -->
-              <!-- <a href="YOUR_Payhip_Paperback_Link" class="btn" data-payhip-button="true">Paperback</a> -->
-              <!-- <a href="YOUR_Payhip_eBook_Link" class="btn" data-payhip-button="true">eBook</a> -->
-              <!-- <a href="YOUR_Payhip_Preview_Link" class="px-6 py-3 border border-[var(--border)] rounded-[var(--radius)] font-medium">Free Preview</a> -->
             </div>
 
-            <!-- Optional: meta line -->
-            <p class="mt-4 text-sm text-[var(--muted)]">Fiction • Visceral prose • Jamaica • Black masculinity & vulnerability</p>
+            <p class="mt-4 text-sm text-bone-50/70">Fiction • Visceral prose • Jamaica • Black masculinity & vulnerability</p>
           </div>
         </div>
       </div>
@@ -141,18 +137,15 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="order-last md:order-first">
           <img src="images/bruce-glasses.jpg" alt="Bruce glasses"
-               class="w-full rounded-xl shadow-lg border border-[var(--border)] object-cover" />
+               class="w-full rounded-xl shadow-lg border border-white/10 object-cover" />
         </div>
         <div class="animate-fade-in">
-          <h2 class="text-3xl font-bold">About <span class="text-primary-500">Me</span></h2>
-          <p class="mt-4 text-[var(--muted)]">
-            <p class="mb-6"> I write voice-driven fiction that’s intimate, raw, and honest.</p>
-
-			<p class="mb-6"> To find the core of a genuine story, I embrace the unfiltered world. My work sits squarely between reality and fiction, inspired by unhinged travels that put me in the craziest places, meeting the most chaotic and inspiring people doing the wildest things. Every character, every extreme experience, every high-stakes moment on the page is rooted in a truth I had to live to find.</P>
-
-			<p class="mb-6"> Burn Me Whole is the story I didn't know I needed to write, but the world needed me to share.</p>
-          
-          
+          <h2 class="text-3xl font-bold">About <span class="text-ember-500">Me</span></h2>
+          <div class="mt-4 text-bone-50/80">
+            <p class="mb-6">I write voice-driven fiction that’s intimate, raw, and honest.</p>
+            <p class="mb-6">To find the core of a genuine story, I embrace the unfiltered world. My work sits squarely between reality and fiction, inspired by unhinged travels that put me in the craziest places, meeting the most chaotic and inspiring people doing the wildest things. Every character, every extreme experience, every high-stakes moment on the page is rooted in a truth I had to live to find.</p>
+            <p class="mb-6">Burn Me Whole is the story I didn't know I needed to write, but the world needed me to share.</p>
+          </div>
           <div class="mt-6">
             <a href="about.html" class="btn">Read Full Bio</a>
           </div>
@@ -165,25 +158,25 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Reader <span class="text-primary-500">Testimonials</span></h2>
-        <p class="mt-4 text-[var(--muted)] max-w-2xl mx-auto">What readers are saying about my work</p>
+        <h2 class="text-3xl font-bold">Reader <span class="text-ember-500">Testimonials</span></h2>
+        <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">What readers are saying about my work</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-[var(--surface)] p-6 rounded-xl shadow-md border border-[var(--border)]">
+        <div class="bg-[var(--surface)] p-6 rounded-xl shadow-md border border-white/10">
           <div class="flex items-center mb-4 text-yellow-400">
             <i data-feather="star" class="w-4 h-4"></i><i data-feather="star" class="w-4 h-4"></i>
             <i data-feather="star" class="w-4 h-4"></i><i data-feather="star" class="w-4 h-4"></i>
             <i data-feather="star" class="w-4 h-4"></i>
           </div>
-          <p class="italic text-[var(--muted)]">
+          <p class="italic text-bone-50/80">
             “Unflinching and honest. It felt like someone finally said the quiet parts out loud.”
           </p>
           <div class="mt-4 flex items-center">
-            <img src="images/reader-1.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-[var(--border)]">
+            <img src="images/reader-1.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-white/10">
             <div class="ml-3">
               <h4 class="text-sm font-medium">Sarah J.</h4>
-              <p class="text-xs text-[var(--muted)]">Book Blogger</p>
+              <p class="text-xs text-bone-50/60">Book Blogger</p>
             </div>
           </div>
         </div>
@@ -194,14 +187,14 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
             <i data-feather="star" class="w-4 h-4"></i><i data-feather="star" class="w-4 h-4"></i>
             <i data-feather="star" class="w-4 h-4"></i>
           </div>
-          <p class="italic text-[var(--muted)]">
+          <p class="italic text-bone-50/80">
             “A voice you don’t forget—vulnerable, sharp, and alive on the page.”
           </p>
           <div class="mt-4 flex items-center">
-            <img src="images/reader-2.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-[var(--border)]">
+            <img src="images/reader-2.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-white/10">
             <div class="ml-3">
               <h4 class="text-sm font-medium">Michael C.</h4>
-              <p class="text-xs text-[var(--muted)]">Literary Critic</p>
+              <p class="text-xs text-bone-50/60">Literary Critic</p>
             </div>
           </div>
         </div>
@@ -212,14 +205,14 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
             <i data-feather="star" class="w-4 h-4"></i><i data-feather="star" class="w-4 h-4"></i>
             <i data-feather="star" class="w-4 h-4"></i>
           </div>
-          <p class="italic text-[var(--muted)]">
+          <p class="italic text-bone-50/80">
             “Stayed with me long after I finished. It doesn’t blink. It breathes.”
           </p>
           <div class="mt-4 flex items-center">
-            <img src="images/reader-3.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-[var(--border)]">
+            <img src="images/reader-3.jpg" alt="Reader" class="w-10 h-10 rounded-full object-cover border border-white/10">
             <div class="ml-3">
               <h4 class="text-sm font-medium">Emma R.</h4>
-              <p class="text-xs text-[var(--muted)]">Avid Reader</p>
+              <p class="text-xs text-bone-50/60">Avid Reader</p>
             </div>
           </div>
         </div>
@@ -231,49 +224,49 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Latest <span class="text-primary-500">Updates</span></h2>
-        <p class="mt-4 text-[var(--muted)] max-w-2xl mx-auto">News, writing tips, and behind-the-scenes</p>
+        <h2 class="text-3xl font-bold">Latest <span class="text-ember-500">Updates</span></h2>
+        <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">News, writing tips, and behind-the-scenes</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="section hover:shadow-xl transition-shadow duration-300">
-          <img src="images/post-1.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-[var(--border)]">
+          <img src="images/post-1.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-white/10">
           <div class="p-0 mt-4">
-            <div class="flex items-center text-sm text-[var(--muted)] mb-2">
+            <div class="flex items-center text-sm text-bone-50/70 mb-2">
               <span>June 12, 2025</span><span class="mx-2">•</span><span>5 min read</span>
             </div>
             <h3 class="text-xl font-bold">The Art of Character Development</h3>
-            <p class="mt-2 text-[var(--muted)]">Techniques to create memorable, three-dimensional characters.</p>
-            <a href="blog.html" class="mt-4 inline-flex items-center text-primary-500 font-medium">Read More
-              <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+            <p class="mt-2 text-bone-50/80">Techniques to create memorable, three-dimensional characters.</p>
+            <a href="blog.html" class="mt-4 inline-flex items-center text-ember-500 font-medium">
+              Read More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
             </a>
           </div>
         </div>
 
         <div class="section hover:shadow-xl transition-shadow duration-300">
-          <img src="images/post-2.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-[var(--border)]">
+          <img src="images/post-2.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-white/10">
           <div class="p-0 mt-4">
-            <div class="flex items-center text-sm text-[var(--muted)] mb-2">
+            <div class="flex items-center text-sm text-bone-50/70 mb-2">
               <span>May 28, 2025</span><span class="mx-2">•</span><span>3 min read</span>
             </div>
             <h3 class="text-xl font-bold">My Writing Process Revealed</h3>
-            <p class="mt-2 text-[var(--muted)]">A day in the life and the rituals that keep me creative.</p>
-            <a href="blog.html" class="mt-4 inline-flex items-center text-primary-500 font-medium">Read More
-              <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+            <p class="mt-2 text-bone-50/80">A day in the life and the rituals that keep me creative.</p>
+            <a href="blog.html" class="mt-4 inline-flex items-center text-ember-500 font-medium">
+              Read More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
             </a>
           </div>
         </div>
 
         <div class="section hover:shadow-xl transition-shadow duration-300">
-          <img src="images/post-3.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-[var(--border)]">
+          <img src="images/post-3.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-lg border border-white/10">
           <div class="p-0 mt-4">
-            <div class="flex items-center text-sm text-[var(--muted)] mb-2">
+            <div class="flex items-center text-sm text-bone-50/70 mb-2">
               <span>May 15, 2025</span><span class="mx-2">•</span><span>8 min read</span>
             </div>
             <h3 class="text-xl font-bold">Announcing My New Novel</h3>
-            <p class="mt-2 text-[var(--muted)]">What readers can expect from the next story.</p>
-            <a href="blog.html" class="mt-4 inline-flex items-center text-primary-500 font-medium">Read More
-              <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
+            <p class="mt-2 text-bone-50/80">What readers can expect from the next story.</p>
+            <a href="blog.html" class="mt-4 inline-flex items-center text-ember-500 font-medium">
+              Read More <i data-feather="arrow-right" class="ml-1 w-4 h-4"></i>
             </a>
           </div>
         </div>
@@ -291,16 +284,16 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
   <!-- Newsletter -->
   <section class="py-16" style="background: linear-gradient(90deg, rgba(217,130,43,0.15), rgba(232,158,77,0.15));">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold">Join My <span class="text-primary-500">Reader's Circle</span></h2>
-      <p class="mt-4 text-[var(--muted)] max-w-2xl mx-auto">Get exclusive content, writing updates, and free sample chapters.</p>
+      <h2 class="text-3xl font-bold">Join My <span class="text-ember-500">Reader's Circle</span></h2>
+      <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">Get exclusive content, writing updates, and free sample chapters.</p>
 
       <form class="mt-8 max-w-md mx-auto">
         <div class="flex flex-col sm:flex-row gap-4">
           <input type="email" placeholder="Your email address"
-                 class="flex-grow px-4 py-3 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] focus:outline-none" />
+                 class="flex-grow px-4 py-3 rounded-[var(--radius)] border border-white/10 bg-[var(--surface)] focus:outline-none" />
           <button type="submit" class="btn">Subscribe</button>
         </div>
-        <p class="mt-3 text-sm text-[var(--muted)]">No spam, ever. Unsubscribe anytime.</p>
+        <p class="mt-3 text-sm text-bone-50/70">No spam, ever. Unsubscribe anytime.</p>
       </form>
     </div>
   </section>
@@ -312,15 +305,10 @@ Read a sample. Grab a copy. Come for the story...<strong><em>STAY FOR THE VIBES.
   <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
   <script>var PayhipConfig = { enableCart: true };</script>
 
-  <!-- App scripts (ensure these paths exist) -->
+  <!-- App scripts -->
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
   <script src="js/script.js"></script>
   <script>feather.replace();</script>
 </body>
 </html>
-
-
-
-
-

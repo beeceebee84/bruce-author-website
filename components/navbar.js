@@ -1,10 +1,10 @@
-<!-- /components/navbar.js -->
-<script>
+// components/navbar.js  (NO <script> tags in this file)
+
+// <custom-navbar></custom-navbar>
 class CustomNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <header class="sticky top-0 z-50">
-        <!-- dark glass bar -->
         <div class="backdrop-blur supports-[backdrop-filter]:bg-gray-900/70 bg-gray-900/95 border-b border-white/10">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Brand -->
@@ -33,7 +33,7 @@ class CustomNavbar extends HTMLElement {
             </nav>
 
             <!-- Mobile menu button -->
-            <button id="navToggle" class="md:hidden text-gray-300 hover:text-white">
+            <button id="navToggle" class="md:hidden text-gray-300 hover:text-white" aria-label="Toggle navigation">
               <i data-feather="menu" class="w-6 h-6"></i>
             </button>
           </div>
@@ -56,15 +56,15 @@ class CustomNavbar extends HTMLElement {
       </header>
     `;
 
-    // Toggle
+    // Toggle mobile menu
     const btn = this.querySelector('#navToggle');
     const menu = this.querySelector('#mobileMenu');
     btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // Activate feather icons
+    // Replace icons (safe if feather already loaded)
     if (window.feather) feather.replace();
 
-    // Mark current page active (underline)
+    // Mark current page active
     const links = this.querySelectorAll('a[href]');
     const here = location.pathname.split('/').pop() || 'index.html';
     links.forEach(a => {
@@ -76,5 +76,5 @@ class CustomNavbar extends HTMLElement {
     });
   }
 }
+
 customElements.define('custom-navbar', CustomNavbar);
-</script>

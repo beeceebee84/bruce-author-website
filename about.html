@@ -34,12 +34,22 @@
   <custom-navbar></custom-navbar>
 
   <!-- Hero Section -->
-  <header class="bg-gradient-to-r from-primary-500 to-secondary-500 py-24 text-center">
+  <header class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-[#111418] to-black"></div>
+  <!-- faint sweep of orange across the middle third -->
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent,theme(colors.primary.500/0.12),transparent)]"></div>
+  <div class="relative py-16 md:py-20 text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white">About <span class="text-secondary-300">Me</span></h1>
-        <p class="mt-4 text-xl text-primary-100">Bruce C. Bee — the storyteller living in the gray</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
+        About <span class="text-primary-500">Me</span>
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-white/70">
+        Bruce C. Bee — the storyteller living in the gray
+      </p>
     </div>
+  </div>
 </header>
+
 
 
   <!-- Author Bio -->
@@ -239,6 +249,7 @@
   </script>
 </body>
 </html>
+
 
 
 

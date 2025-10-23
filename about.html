@@ -1,101 +1,86 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Bruce C Bee </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | InkScribe Chronicles</title>
   <meta name="description" content="About Bruce C. Bee — the storyteller living in the gray. Biography, writing journey, process, and what fuels the work.">
 
-    <!-- Tailwind (utility classes) -->
+  <!-- Tailwind (utility classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Tailwind tokens aligned to your Obsidian Ember palette
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
             primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#ec4899', 600: '#db2777' } // optional accent
+            secondary: { 500: '#ec4899', 600: '#db2777', 300: '#f9a8d4' }
           },
-          borderRadius: { brand: '12px' },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in',
-            'float': 'float 6s ease-in-out infinite'
-          },
-          keyframes: {
-            fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-          }
+          borderRadius: { brand: '12px' }
         }
       }
     }
   </script>
 
-  <!-- Your custom theme (Obsidian Ember) -->
-  <link rel="stylesheet" href="css/style.css?v=4" />
-
-  <!-- Icons -->
+  <!-- Feather icons -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- Your site stylesheet (after Tailwind so your tweaks win) -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- IMPORTANT: use your brand variables for background + text -->
-<body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
-
-  <!-- Navbar web component -->
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
   <custom-navbar></custom-navbar>
 
   <!-- Hero Section -->
   <header class="bg-gradient-to-r from-primary-500 to-secondary-500 py-24 text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-white">About <span class="text-secondary-300">Bruce C Bee</span></h1>
-      <p class="mt-4 text-xl text-primary-100"> Bruce C. Bee </p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">About <span class="text-secondary-300">Me</span></h1>
+      <p class="mt-4 text-xl text-primary-100">Bruce C. Bee — the storyteller living in the gray</p>
     </div>
   </header>
 
   <!-- Author Bio -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-12 items-start">
-        <!-- Main column -->
+      <!-- IMPORTANT: both main + sidebar stay inside this grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+        <!-- Main content (spans 2 columns on desktop) -->
         <div class="md:col-span-2 space-y-8">
-         <h2 class="mt-8 text-3xl font-bold">My <span class="text-primary-500"> Story </span></h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+            My <span class="text-primary-500">Story</span>
+          </h2>
 
           <div class="prose dark:prose-invert max-w-none">
-            <h3><strong>Bruce C. Bee: The Storyteller Living in the Gray</strong></h3>
-            <p>I’m a storyteller from Richmond, Virginia, now based in Atlanta. After years of chasing a life I thought I was supposed to want—the corporate ladder, the safety of a plan—I realized I was performing someone else’s script. I built a life in CPG supply chain (PepsiCo), but the burnout was real. I walked away without a blueprint, but with the undeniable knowing that I was meant for something more.</p>
-            <p>That leap launched a journey of deliberate unhinging. I embraced the gray areas of life, the uncomfortable truths, and the freedom to explore. The cubicle silence was replaced by the vibrant chaos of the world. From back-alley conversations in cities often misunderstood to shared meals with people who didn't grow up like me—I found perspective, clarity, and truth in places we’re taught to avoid.</p>
+            <h3>Bruce C. Bee: The Storyteller Living in the Gray</h3>
+            <p class="mb-6">I’m a storyteller from Richmond, Virginia, now based in Atlanta. After years of chasing a life I thought I was supposed to want—the corporate ladder, the safety of a plan—I realized I was performing someone else’s script. I built a life in CPG supply chain (PepsiCo), but the burnout was real. I walked away without a blueprint, but with the undeniable knowing that I was meant for something more.</p>
 
-            
-            
+            <p class="mb-8">That leap launched a journey of deliberate unhinging. I embraced the gray areas of life, the uncomfortable truths, and the freedom to explore. The cubicle silence was replaced by the vibrant chaos of the world. From back-alley conversations in cities often misunderstood to shared meals with people who didn't grow up like me—I found perspective, clarity, and truth in places we’re taught to avoid.</p>
 
-       <div class="md:col-span-2 space-y-8">
-          <h2 class="mt-8 text-3xl font-bold">My <span class="text-primary-500"> From Corporate Purgatory to a Hollywood </span></h2>
+            <h3 class="mt-6">My Story: From Corporate Purgatory to a Hollywood Strip</h3>
+            <p class="mb-6">My pivot wasn't clean or linear. I tried consulting, but it wasn't it. After getting laid off from a supply chain software role, I decided to stop running back to "jobs" and bet entirely on myself. For years, I had been investing my energy in other people's ideas; this time, I poured it all into my own.</p>
 
-            
+            <p class="mb-6">I invested fully in the book I had been secretly writing, a story inspired by my own journey. I spent the summer in Cali, Colombia, drinking viche, listening to salsa, while I put all my energy into releasing it. In July 2024, I self-published it 100% on my own. This was the first time I had ever fully invested in my own vision.</p>
 
-         
-          
-           <p class="mb-3">My pivot wasn't clean or linear. I tried consulting, but it wasn't it. After getting laid off from a supply chain software role, I decided to stop running back to "jobs" and bet entirely on myself. For years, I had been investing my energy in other people's ideas; this time, I poured it all into my own.I invested fully in the book I had been secretly writing, a story inspired by my own journey. I spent the summer in Cali, Colombia, drinking viche, listening to salsa, while I put all my energy into releasing it. In July 2024, I self-published it 100% on my own. This was the first time I had ever fully invested in my own vision.</p>
-            <p class="mb-3">The catalyst for this entire writing career came one night in December 2023 in Los Angeles.</p>
-            <p class="mb-3">I was at Deja Vu on the Hollywood Strip. I stepped outside for some air, and a guy asked me for a light. We started chatting, and I shared a few of the stories I had accumulated over the years by simply being a free spirit and, frankly, unhinged. We talked for almost twenty minutes, and before he left, he looked me dead in the eye and told me, "You definitely need to be writing these stories."</p>
-            <p class="mb-3">My friends had been telling me the same thing for a decade—usually late at night, a little drunk, so I never took it seriously. But coming from a stranger, in that place, at that moment, it hit differently. The very next day, I started writing the short story, <em>The Night She Owned</em>, which would ultimately become the base for my debut novel, <em>Burn Me Whole</em>.</p>
+            <p class="mb-6">The catalyst for this entire writing career came one night in December 2023 in Los Angeles.</p>
 
-          <div class="md:col-span-2 space-y-8">
-            <h2 class="mt-8 text-3xl font-bold">My Story: <span class="text-primary-500"> My Fuel </span></h2>
-            </h2>
-            <p>My writing is a direct result of my unapologetic curiosity and freedom. My personal motto is to <strong>Live Freely and Explore Boldly</strong>, and I believe the best stories live off the beaten path. Whether it’s stumbling down a random dark alley in Puerto Rico that leads to the barrio of La Perla, or following a taxi driver in Havana that takes you to an underground casino where I played Baccarat like Chris Tucker in <em>Rush Hour 3</em> and they make the world's best mojitos—these are the moments that truly inspire me. I write about what it means to feel, to fumble, to confront what we instinctively try to tuck away.</p>
+            <p class="mb-8">I was at Deja Vu on the Hollywood Strip. I stepped outside for some air, and a guy asked me for a light. We started chatting, and I shared a few of the stories I had accumulated over the years by simply being a free spirit and, frankly, unhinged. We talked for almost twenty minutes, and before he left, he looked me dead in the eye and told me, "You definitely need to be writing these stories."</p>
 
-            <h2 class="mt-8 text-3xl font-bold">My Writing Process: <span class="text-primary-500"> Raw, Unfiltered and Unapologetic </span></h2>
-           
-            <p>My stories are raw and unfiltered, cinematic in rhythm, and layered with the quiet weight of things unsaid. They are grounded in cultural immersion and emotional honesty.</p>
-            <p>Each project begins with a deep, deliberate immersion. I spend time exploring the world of the story, allowing the setting and the characters' backstories to become as rich as the places I’ve visited.</p>
-            <p>The first draft is where I give myself permission to let it all hang out—it’s messy, it's a brain-dump, and it's essential. The magic happens in the revision. That is the stage where the rhythm and the truth of the story emerge. I write for the ones still figuring it out—and the ones who thought they already had.</p>
+            <p class="mb-8">My friends had been telling me the same thing for a decade—usually late at night, a little drunk, so I never took it seriously. But coming from a stranger, in that place, at that moment, it hit differently. The very next day, I started writing the short story, <em>The Night She Owned</em>, which would ultimately become the base for my debut novel, <em>Burn Me Whole</em>.</p>
 
-           
-            <h2 class="mt-8 text-3xl font-bold">My Story:<span class="text-primary-500"> Beyond the Page </span></h2>
-           
-            <p>When I’m not writing, you’ll find me seeking out the next authentic experience. My life outside of writing is all about exploration: whether that’s getting lost in a new city or just digging into a great meal. I'm proud of the path I’ve carved, and I'm always looking for the next corner to turn.</p>
+            <h3 class="mt-6">The Fuel</h3>
+            <p class="mb-8">My writing is a direct result of my unapologetic curiosity and freedom. My personal motto is to <strong>Live Freely and Explore Boldly</strong>, and I believe the best stories live off the beaten path. Whether it’s stumbling down a random dark alley in Puerto Rico that leads to the barrio of La Perla, or following a taxi driver in Havana that takes you to an underground casino where I played Baccarat like Chris Tucker in <em>Rush Hour 3</em> and they make the world's best mojitos—these are the moments that truly inspire me. I write about what it means to feel, to fumble, to confront what we instinctively try to tuck away.</p>
+
+            <h3 class="mt-6">My Writing Process: Raw and Unfiltered</h3>
+            <p class="mb-6">My stories are raw and unfiltered, cinematic in rhythm, and layered with the quiet weight of things unsaid. They are grounded in cultural immersion and emotional honesty.</p>
+
+            <p class="mb-6">Each project begins with a deep, deliberate immersion. I spend time exploring the world of the story, allowing the setting and the characters' backstories to become as rich as the places I’ve visited.</p>
+
+            <p class="mb-6">The first draft is where I give myself permission to let it all hang out—it’s messy, it's a brain-dump, and it's essential. The magic happens in the revision. That is the stage where the rhythm and the truth of the story emerge. I write for the ones still figuring it out—and the ones who thought they already had.</p>
+
+            <h3 class="mt-6">Beyond the Page</h3>
+            <p class="mb-2">When I’m not writing, you’ll find me seeking out the next authentic experience. My life outside of writing is all about exploration: whether that’s getting lost in a new city or just digging into a great meal. I'm proud of the path I’ve carved, and I'm always looking for the next corner to turn.</p>
 
             <div class="not-prose mt-6 flex gap-4">
               <a href="books.html"
@@ -111,47 +96,107 @@
             </div>
           </div>
         </div>
-<!-- Inside your grid (right-hand column) -->
-<div class="md:col-span-1 sticky top-6">
-  <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
-    <img src="http://static.photos/people/640x360/2"
-         alt="Author Photo"
-         class="w-full rounded-lg mb-6">
 
-    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Quick Facts</h3>
+        <!-- Right sidebar -->
+        <aside class="md:col-span-1 lg:sticky lg:top-6 self-start">
+          <div class="space-y-8">
+            <!-- Quick Facts card -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+              <img src="http://static.photos/people/640x360/2" alt="Author Photo" class="w-full rounded-lg mb-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Quick Facts</h3>
+              <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
+                <li><strong>Base:</strong> Atlanta</li>
+                <li><strong>Roots:</strong> Richmond, VA</li>
+                <li><strong>Motto:</strong> Live Freely • Explore Boldly</li>
+                <li><strong>Latest:</strong> <em>Burn Me Whole</em></li>
+              </ul>
+              <div class="mt-6">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Connect With Me</h4>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Twitter/X"><i data-feather="twitter"></i></a>
+                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Email"><i data-feather="mail"></i></a>
+                </div>
+              </div>
+            </div>
 
-    <ul class="mt-4 space-y-3 text-gray-600 dark:text-gray-300">
-      <li><strong>Base:</strong> Atlanta</li>
-      <li><strong>Roots:</strong> Richmond, VA</li>
-      <li><strong>Motto:</strong> Live Freely • Explore Boldly</li>
-      <li><strong>Latest:</strong> <em>Burn Me Whole</em></li>
-    </ul>
+            <!-- FAQ card (moved into sidebar) -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Frequently Asked <span class="text-primary-500">Questions</span>
+              </h3>
 
-    <div class="mt-6">
-      <h4 class="font-medium text-gray-900 dark:text-white mb-2">Connect With Me</h4>
-      <div class="flex space-x-4">
-        <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Instagram">
-          <i data-feather="instagram"></i>
-        </a>
-        <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Twitter/X">
-          <i data-feather="twitter"></i>
-        </a>
-        <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Email">
-          <i data-feather="mail"></i>
-        </a>
+              <div class="mt-6 space-y-4">
+                <!-- Item 1 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                    <span class="text-gray-900 dark:text-white">What inspires your writing?</span>
+                    <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
+                  </button>
+                  <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Inspiration comes from everywhere—historical events, overheard conversations, and places that demand honesty. I keep notebooks of fragments that often fuse into stories.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                    <span class="text-gray-900 dark:text-white">Any advice for aspiring authors?</span>
+                    <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
+                  </button>
+                  <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Read widely, write regularly, revise ruthlessly. Don’t rush to publish—craft first, then share.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                    <span class="text-gray-900 dark:text-white">Favorite book you’ve written?</span>
+                    <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
+                  </button>
+                  <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Each for different reasons—debut pride, craft breakthroughs, or themes that won’t let go.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                    <span class="text-gray-900 dark:text-white">Film/TV adaptations?</span>
+                    <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
+                  </button>
+                  <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Conversations happen; when it’s right and true to the work, you’ll hear it from me first.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                  <button class="w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                    <span class="text-gray-900 dark:text-white">Can I send a manuscript?</span>
+                    <i data-feather="chevron-down" class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"></i>
+                  </button>
+                  <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600 dark:text-gray-300">
+                      I can’t review unsolicited work; try a workshop or local critique group. I occasionally offer critiques via events.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-  <!-- Q&A Section (left as-is) -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center">Frequently Asked <span class="text-primary-500">Questions</span></h2>
-      <!-- (FAQ content unchanged) -->
-      <!-- ... your existing FAQ blocks ... -->
     </div>
   </section>
 
@@ -185,7 +230,6 @@
       button.addEventListener('click', () => {
         const content = button.nextElementSibling;
         const icon = button.querySelector('i');
-
         content.classList.toggle('hidden');
         icon.classList.toggle('rotate-180');
       });
@@ -193,29 +237,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

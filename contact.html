@@ -39,12 +39,17 @@
   <custom-navbar></custom-navbar>
 
   <!-- Hero -->
-  <header class="bg-gradient-to-r from-primary-500 to-secondary-500 py-24 text-center">
+  <header class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(680px_280px_at_50%_45%,theme(colors.ember.500/0.22),transparent_80%)]"></div>
+
+  <div class="relative py-16 md:py-20 text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-white">Get In <span class="text-secondary-300">Touch</span></h1>
-      <p class="mt-4 text-xl text-primary-100">I’d love to hear from you—readers, fellow writers, and collaborators.</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Get In <span class="text-ember-500">Touch</span></h1>
+      <p class="mt-4 text-bone-50/80">I’d love to hear from you—readers, fellow writers, or collaborators.</p>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Content -->
   <section class="py-16">
@@ -194,5 +199,6 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 
 

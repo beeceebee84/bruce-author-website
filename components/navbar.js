@@ -8,11 +8,11 @@ class CustomNavbar extends HTMLElement {
             <!-- LEFT: Brand -->
             <a href="index.html" class="flex items-center space-x-2">
               <!-- ember dot -->
-              <span class="w-2.5 h-2.5 rounded-full bg-ember-500"></span>
-              <!-- author name -->
+             <span class="w-2.5 h-2.5 rounded-full bg-ember-500 transition-shadow duration-300 hover:shadow-[0_0_8px_rgba(217,130,43,0.7)]"></span>
+  <!-- author name -->
               <span class="font-semibold text-bone-50 text-lg tracking-tight">Bruce&nbsp;C.&nbsp;Bee</span>
               <!-- subtle imprint -->
-              <span class="text-sm text-bone-50/60 italic ml-1 hidden sm:inline">InkScribe</span>
+              <span class="text-sm text-bone-50/60 italic ml-1 hidden sm:inline">The BKR Imprint</span>
             </a>
 
             <!-- RIGHT: Nav Links -->
@@ -62,3 +62,4 @@ class CustomNavbar extends HTMLElement {
   }
 }
 customElements.define('custom-navbar', CustomNavbar);
+

@@ -8,16 +8,19 @@
 
   <!-- Tailwind (utility classes) -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-<script>
+  <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-  primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-  secondary: { 500: '#2E2E2E', 600: '#1F1F1F', 300: '#3F3F3F' },
-  accent: { 500: '#F5F5F5', 400: '#E5E5E5' }
-},
+            /* Obsidian Ember palette */
+            ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
+            brass: { 500:'#C49A45' },
+            sand:  { 400:'#CAB79A' },
+            bone:  { 50:'#F5F3EF' }
+          },
           borderRadius: { brand: '12px' }
         }
       }
@@ -30,27 +33,25 @@
   <!-- Your site stylesheet (after Tailwind so your tweaks win) -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<body class="bg-ink-900 text-bone-50 transition-colors duration-300">
   <custom-navbar></custom-navbar>
 
   <!-- Hero Section -->
   <header class="relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-r from-black via-[#111418] to-black"></div>
-  <!-- faint sweep of orange across the middle third -->
-  <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent,theme(colors.primary.500/0.12),transparent)]"></div>
-  <div class="relative py-16 md:py-20 text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
-        About <span class="text-primary-500">Me</span>
-      </h1>
-      <p class="mt-4 text-base md:text-lg text-white/70">
-        Bruce C. Bee — the storyteller living in the gray
-      </p>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-800 to-ink-900"></div>
+    <!-- faint sweep of ember across the middle third -->
+    <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent,theme(colors.ember.500/0.12),transparent)]"></div>
+    <div class="relative py-16 md:py-20 text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          About <span class="text-ember-500">Me</span>
+        </h1>
+        <p class="mt-4 text-base md:text-lg text-white/70">
+          Bruce C. Bee — the storyteller living in the gray
+        </p>
+      </div>
     </div>
-  </div>
-</header>
-
-
+  </header>
 
   <!-- Author Bio -->
   <section class="py-16">
@@ -60,17 +61,17 @@
 
         <!-- Main content (spans 2 columns on desktop) -->
         <div class="md:col-span-2 space-y-8">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-            My <span class="text-primary-500">Story</span>
+          <h2 class="text-3xl font-bold text-white">
+            My <span class="text-ember-500">Story</span>
           </h2>
 
           <div class="prose dark:prose-invert max-w-none">
-            <h3>Bruce C. Bee:<span class="text-primary-500"> The Storyteller Living in the Gray</span></h3>
+            <h3>Bruce C. Bee:<span class="text-ember-500"> The Storyteller Living in the Gray</span></h3>
             <p class="mb-6">I’m a storyteller from Richmond, Virginia, now based in Atlanta. After years of chasing a life I thought I was supposed to want—the corporate ladder, the safety of a plan—I realized I was performing someone else’s script. I built a life in CPG supply chain (PepsiCo), but the burnout was real. I walked away without a blueprint, but with the undeniable knowing that I was meant for something more.</p>
 
             <p class="mb-8">That leap launched a journey of deliberate unhinging. I embraced the gray areas of life, the uncomfortable truths, and the freedom to explore. The cubicle silence was replaced by the vibrant chaos of the world. From back-alley conversations in cities often misunderstood to shared meals with people who didn't grow up like me—I found perspective, clarity, and truth in places we’re taught to avoid.</p>
 
-            <h3 class="mt-6">My Story: <span class="text-primary-500"> From Corporate Purgatory to a Hollywood Strip</span></h3>
+            <h3 class="mt-6">My Story: <span class="text-ember-500"> From Corporate Purgatory to a Hollywood Strip</span></h3>
             <p class="mb-6">My pivot wasn't clean or linear. I tried consulting, but it wasn't it. After getting laid off from a supply chain software role, I decided to stop running back to "jobs" and bet entirely on myself. For years, I had been investing my energy in other people's ideas; this time, I poured it all into my own.</p>
 
             <p class="mb-6">I invested fully in the book I had been secretly writing, a story inspired by my own journey. I spent the summer in Cali, Colombia, drinking viche, listening to salsa, while I put all my energy into releasing it. In July 2024, I self-published it 100% on my own. This was the first time I had ever fully invested in my own vision.</p>
@@ -81,22 +82,22 @@
 
             <p class="mb-8">My friends had been telling me the same thing for a decade—usually late at night, a little drunk, so I never took it seriously. But coming from a stranger, in that place, at that moment, it hit differently. The very next day, I started writing the short story, <em>The Night She Owned</em>, which would ultimately become the base for my debut novel, <em>Burn Me Whole</em>.</p>
 
-            <h3 class="mt-6">My Story: <span class="text-primary-500">The Fuel</span></h3>
+            <h3 class="mt-6">My Story: <span class="text-ember-500">The Fuel</span></h3>
             <p class="mb-8">My writing is a direct result of my unapologetic curiosity and freedom. My personal motto is to <strong>Live Freely and Explore Boldly</strong>, and I believe the best stories live off the beaten path. Whether it’s stumbling down a random dark alley in Puerto Rico that leads to the barrio of La Perla, or following a taxi driver in Havana that takes you to an underground casino where I played Baccarat like Chris Tucker in <em>Rush Hour 3</em> and they make the world's best mojitos—these are the moments that truly inspire me. I write about what it means to feel, to fumble, to confront what we instinctively try to tuck away.</p>
 
-            <h3 class="mt-6">My Writing Process:<span class="text-primary-500"> Raw,Unfiltered and Unapologetic</span></h3>
+            <h3 class="mt-6">My Writing Process:<span class="text-ember-500"> Raw,Unfiltered and Unapologetic</span></h3>
             <p class="mb-6">My stories are raw and unfiltered, cinematic in rhythm, and layered with the quiet weight of things unsaid. They are grounded in cultural immersion and emotional honesty.</p>
 
             <p class="mb-6">Each project begins with a deep, deliberate immersion. I spend time exploring the world of the story, allowing the setting and the characters' backstories to become as rich as the places I’ve visited.</p>
 
             <p class="mb-6">The first draft is where I give myself permission to let it all hang out—it’s messy, it's a brain-dump, and it's essential. The magic happens in the revision. That is the stage where the rhythm and the truth of the story emerge. I write for the ones still figuring it out—and the ones who thought they already had.</p>
 
-            <h3 class="mt-6">My Story: <span class="text-primary-500">Beyond the Page</span></h3>
+            <h3 class="mt-6">My Story: <span class="text-ember-500">Beyond the Page</span></h3>
             <p class="mb-2">When I’m not writing, you’ll find me seeking out the next authentic experience. My life outside of writing is all about exploration: whether that’s getting lost in a new city or just digging into a great meal. I'm proud of the path I’ve carved, and I'm always looking for the next corner to turn.</p>
 
             <div class="not-prose mt-6 flex gap-4">
               <a href="books.html"
-                 class="px-6 py-3 inline-flex items-center text-white bg-primary-500 hover:bg-primary-600 rounded-lg font-medium transition-colors">
+                 class="px-6 py-3 inline-flex items-center text-white bg-ember-500 hover:bg-ember-600 rounded-lg font-medium transition-colors">
                 Browse My Books
                 <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
               </a>
@@ -125,9 +126,9 @@
               <div class="mt-6">
                 <h4 class="font-medium text-gray-900 dark:text-white mb-2">Connect With Me</h4>
                 <div class="flex space-x-4">
-                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Instagram"><i data-feather="instagram"></i></a>
-                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Twitter/X"><i data-feather="twitter"></i></a>
-                  <a href="#" class="text-gray-500 hover:text-primary-500 transition-colors" aria-label="Email"><i data-feather="mail"></i></a>
+                  <a href="#" class="text-gray-500 hover:text-ember-500 transition-colors" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                  <a href="#" class="text-gray-500 hover:text-ember-500 transition-colors" aria-label="Twitter/X"><i data-feather="twitter"></i></a>
+                  <a href="#" class="text-gray-500 hover:text-ember-500 transition-colors" aria-label="Email"><i data-feather="mail"></i></a>
                 </div>
               </div>
             </div>
@@ -135,7 +136,7 @@
             <!-- FAQ card (moved into sidebar) -->
             <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
               <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                Frequently Asked <span class="text-primary-500">Questions</span>
+                Frequently Asked <span class="text-ember-500">Questions</span>
               </h3>
 
               <div class="mt-6 space-y-4">
@@ -213,17 +214,17 @@
   </section>
 
   <!-- Newsletter -->
-  <section class="py-16 bg-primary-500">
+  <section class="py-16 bg-ember-500">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold text-white">Join My <span class="text-secondary-300">Reader's Circle</span></h2>
-      <p class="mt-4 text-primary-100 max-w-2xl mx-auto">Get exclusive content, writing updates, and behind-the-scenes insights directly to your inbox.</p>
+      <h2 class="text-3xl font-bold text-white">Join My <span class="text-bone-50/80">Reader's Circle</span></h2>
+      <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">Get exclusive content, writing updates, and behind-the-scenes insights directly to your inbox.</p>
 
       <form class="mt-8 max-w-md mx-auto">
         <div class="flex flex-col sm:flex-row gap-4">
-          <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary-500">
-          <button type="submit" class="px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">Subscribe</button>
+          <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ink-900">
+          <button type="submit" class="px-6 py-3 bg-ink-900 hover:bg-ink-800 text-bone-50 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">Subscribe</button>
         </div>
-        <p class="mt-3 text-sm text-primary-200">No spam, ever. Unsubscribe anytime.</p>
+        <p class="mt-3 text-sm text-bone-50/70">No spam, ever. Unsubscribe anytime.</p>
       </form>
     </div>
   </section>
@@ -249,13 +250,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

@@ -13,17 +13,20 @@ class CustomNavbar extends HTMLElement {
           width: 100%;
           z-index: 50;
         }
+
         .nav-container {
           max-width: 1280px;
           margin: 0 auto;
           padding: 0 1rem;
         }
+
         .nav-inner {
           height: 4rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
+
         .brand {
           display: flex;
           align-items: center;
@@ -33,6 +36,7 @@ class CustomNavbar extends HTMLElement {
           font-size: 1.125rem;
           letter-spacing: -0.025em;
         }
+
         .brand-dot {
           width: 0.625rem;
           height: 0.625rem;
@@ -40,35 +44,69 @@ class CustomNavbar extends HTMLElement {
           background-color: #d9822b;
           transition: box-shadow 0.3s;
         }
+
         .brand-dot:hover {
           box-shadow: 0 0 8px rgba(217, 130, 43, 0.7);
         }
+
         .brand-imprint {
           font-size: 0.875rem;
           color: rgba(248, 249, 250, 0.6);
           font-style: italic;
           display: none;
         }
+
         .nav-links {
           display: none;
           align-items: center;
           gap: 1.5rem;
         }
+
         .nav-link {
           color: rgba(248, 249, 250, 0.8);
           transition: color 0.2s;
         }
+
         .nav-link:hover {
           color: #f59e0b;
         }
+
         .dropdown {
           position: relative;
         }
+
+        /* Original layout styling */
         .dropdown-btn {
           display: flex;
           align-items: center;
           gap: 0.25rem;
         }
+
+        /* ✅ Added: removes white box and matches your other links */
+        .dropdown-btn {
+          background: transparent;
+          border: none;
+          padding: 0;
+          color: rgba(248, 249, 250, 0.8);
+          font: inherit;
+          cursor: pointer;
+          -webkit-appearance: none;
+          appearance: none;
+        }
+
+        .dropdown-btn:hover {
+          color: #f59e0b;
+        }
+
+        .dropdown-btn:focus {
+          outline: none;
+        }
+
+        .dropdown-btn:focus-visible {
+          outline: 2px solid rgba(245, 158, 11, 0.6);
+          outline-offset: 2px;
+        }
+
         .dropdown-menu {
           position: absolute;
           top: 100%;
@@ -81,46 +119,57 @@ class CustomNavbar extends HTMLElement {
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
           opacity: 0;
           visibility: hidden;
-          transition: all 0.2s;
+          transform: translateY(-4px);
+          transition: all 0.25s ease;
           z-index: 10;
         }
+
         .dropdown:hover .dropdown-menu {
           opacity: 1;
           visibility: visible;
+          transform: translateY(0);
         }
+
         .dropdown-item {
           display: block;
           padding: 0.5rem 1rem;
           color: rgba(248, 249, 250, 0.8);
           transition: all 0.2s;
         }
+
         .dropdown-item:hover {
           color: #f59e0b;
           background: rgba(255,255,255,0.05);
         }
+
         .cart-icon {
           display: flex;
           align-items: center;
           gap: 0.25rem;
         }
+
         .menu-toggle {
           display: block;
           color: #f8f9fa;
         }
+
         .mobile-menu {
           background: #171717;
           border-top: 1px solid rgba(255,255,255,0.1);
           padding: 0.75rem 1rem;
           display: none;
         }
+
         .mobile-link {
           display: block;
           padding: 0.5rem 0;
           color: rgba(248, 249, 250, 0.8);
         }
+
         .mobile-link:hover {
           color: #f59e0b;
         }
+
         @media (min-width: 768px) {
           .nav-links {
             display: flex;
@@ -133,6 +182,7 @@ class CustomNavbar extends HTMLElement {
           }
         }
       </style>
+
       <nav>
         <div class="nav-container">
           <div class="nav-inner">
@@ -147,7 +197,7 @@ class CustomNavbar extends HTMLElement {
               <a href="about.html" class="nav-link">About</a>
               <a href="books.html" class="nav-link">Books</a>
               <a href="blog.html" class="nav-link">Blog</a>
-              
+
               <div class="dropdown">
                 <button class="nav-link dropdown-btn">
                   Services
@@ -156,10 +206,10 @@ class CustomNavbar extends HTMLElement {
                 <div class="dropdown-menu">
                   <a href="publishing.html" class="dropdown-item">Publishing</a>
                   <a href="imprint.html" class="dropdown-item">BKR Imprint</a>
-                  <a href="resume-writing.html" class="dropdown-item">Resume Writing</a>
+                  <a href="resume-writing.html" class="dropdown-item">Résumé Writing</a>
                 </div>
               </div>
-              
+
               <a href="contact.html" class="nav-link">Contact</a>
               <a href="#" class="nav-link cart-icon">
                 <i data-feather="shopping-cart" class="w-5 h-5"></i>
@@ -182,7 +232,7 @@ class CustomNavbar extends HTMLElement {
             <div class="text-bone-50/60 mb-1">Services</div>
             <a href="publishing.html" class="mobile-link block pl-4">Publishing</a>
             <a href="imprint.html" class="mobile-link block pl-4">BKR Imprint</a>
-            <a href="resume-writing.html" class="mobile-link block pl-4">Resume Writing</a>
+            <a href="resume-writing.html" class="mobile-link block pl-4">Résumé Writing</a>
           </div>
           <a href="contact.html" class="mobile-link">Contact</a>
           <a href="#" class="mobile-link flex items-center">
@@ -195,11 +245,12 @@ class CustomNavbar extends HTMLElement {
       <script>
         feather.replace();
         this.shadowRoot.getElementById('menu-toggle').addEventListener('click', () => {
-          this.shadowRoot.getElementById('mobile-menu').style.display = 
-            this.shadowRoot.getElementById('mobile-menu').style.display === 'block' ? 'none' : 'block';
+          const mobileMenu = this.shadowRoot.getElementById('mobile-menu');
+          mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
         });
       </script>
     `;
   }
 }
+
 customElements.define('custom-navbar', CustomNavbar);

@@ -65,25 +65,38 @@ class CustomNavbar extends HTMLElement {
         .nav-link {
           color: rgba(248, 249, 250, 0.8);
           transition: color 0.2s;
+          position: relative;
         }
 
         .nav-link:hover {
           color: #f59e0b;
         }
 
+        /* underline hover animation for all links */
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #f59e0b;
+          transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
         .dropdown {
           position: relative;
         }
 
-        /* Original layout styling */
+        /* Base dropdown layout */
         .dropdown-btn {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-        }
-
-        /* ✅ Added: removes white box and matches your other links */
-        .dropdown-btn {
           background: transparent;
           border: none;
           padding: 0;
@@ -92,6 +105,7 @@ class CustomNavbar extends HTMLElement {
           cursor: pointer;
           -webkit-appearance: none;
           appearance: none;
+          position: relative;
         }
 
         .dropdown-btn:hover {
@@ -105,6 +119,22 @@ class CustomNavbar extends HTMLElement {
         .dropdown-btn:focus-visible {
           outline: 2px solid rgba(245, 158, 11, 0.6);
           outline-offset: 2px;
+        }
+
+        /* ✅ Match underline hover effect for dropdown */
+        .dropdown-btn::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #f59e0b;
+          transition: width 0.3s ease;
+        }
+
+        .dropdown-btn:hover::after {
+          width: 100%;
         }
 
         .dropdown-menu {

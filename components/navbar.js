@@ -1,67 +1,205 @@
 class CustomNavbar extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-      <nav class="fixed top-0 left-0 w-full z-50 bg-ink-950/95 backdrop-blur-sm border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center h-16">
-
-            <!-- LEFT: Brand -->
-            <a href="index.html" class="flex items-center space-x-2">
-              <!-- ember dot -->
-             <span class="w-2.5 h-2.5 rounded-full bg-ember-500 transition-shadow duration-300 hover:shadow-[0_0_8px_rgba(217,130,43,0.7)]"></span>
-  <!-- author name -->
-              <span class="font-semibold text-bone-50 text-lg tracking-tight">Bruce&nbsp;C.&nbsp;Bee</span>
-              <!-- subtle imprint -->
-              <span class="text-sm text-bone-50/60 italic ml-1 hidden sm:inline">The BKR Imprint</span>
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+        nav {
+          background: rgba(23, 23, 23, 0.95);
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 50;
+        }
+        .nav-container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+        .nav-inner {
+          height: 4rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #f8f9fa;
+          font-weight: 600;
+          font-size: 1.125rem;
+          letter-spacing: -0.025em;
+        }
+        .brand-dot {
+          width: 0.625rem;
+          height: 0.625rem;
+          border-radius: 9999px;
+          background-color: #d9822b;
+          transition: box-shadow 0.3s;
+        }
+        .brand-dot:hover {
+          box-shadow: 0 0 8px rgba(217, 130, 43, 0.7);
+        }
+        .brand-imprint {
+          font-size: 0.875rem;
+          color: rgba(248, 249, 250, 0.6);
+          font-style: italic;
+          display: none;
+        }
+        .nav-links {
+          display: none;
+          align-items: center;
+          gap: 1.5rem;
+        }
+        .nav-link {
+          color: rgba(248, 249, 250, 0.8);
+          transition: color 0.2s;
+        }
+        .nav-link:hover {
+          color: #f59e0b;
+        }
+        .dropdown {
+          position: relative;
+        }
+        .dropdown-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: #1a1a1a;
+          border-radius: 0.375rem;
+          border: 1px solid rgba(255,255,255,0.1);
+          padding: 0.5rem 0;
+          min-width: 12rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s;
+          z-index: 10;
+        }
+        .dropdown:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+        }
+        .dropdown-item {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: rgba(248, 249, 250, 0.8);
+          transition: all 0.2s;
+        }
+        .dropdown-item:hover {
+          color: #f59e0b;
+          background: rgba(255,255,255,0.05);
+        }
+        .cart-icon {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .menu-toggle {
+          display: block;
+          color: #f8f9fa;
+        }
+        .mobile-menu {
+          background: #171717;
+          border-top: 1px solid rgba(255,255,255,0.1);
+          padding: 0.75rem 1rem;
+          display: none;
+        }
+        .mobile-link {
+          display: block;
+          padding: 0.5rem 0;
+          color: rgba(248, 249, 250, 0.8);
+        }
+        .mobile-link:hover {
+          color: #f59e0b;
+        }
+        @media (min-width: 768px) {
+          .nav-links {
+            display: flex;
+          }
+          .brand-imprint {
+            display: inline;
+          }
+          .menu-toggle {
+            display: none;
+          }
+        }
+      </style>
+      <nav>
+        <div class="nav-container">
+          <div class="nav-inner">
+            <a href="index.html" class="brand">
+              <span class="brand-dot"></span>
+              <span>Bruce&nbsp;C.&nbsp;Bee</span>
+              <span class="brand-imprint">The BKR Imprint</span>
             </a>
 
-            <!-- RIGHT: Nav Links -->
-            <div class="hidden md:flex items-center space-x-6">
-              <a href="index.html" class="text-bone-50/80 hover:text-ember-400 transition">Home</a>
-              <a href="books.html" class="text-bone-50/80 hover:text-ember-400 transition">Books</a>
-              <a href="about.html" class="text-bone-50/80 hover:text-ember-400 transition">About</a>
-              <a href="blog.html" class="text-bone-50/80 hover:text-ember-400 transition">Blog</a>
-              <a href="publishing.html" class="text-bone-50/80 hover:text-ember-400 transition">Publishing</a>
-              <a href="contact.html" class="text-bone-50/80 hover:text-ember-400 transition">Contact</a>
-
-              <!-- cart icon -->
-              <a href="#" class="relative text-bone-50/80 hover:text-ember-400 transition flex items-center">
+            <div class="nav-links">
+              <a href="index.html" class="nav-link">Home</a>
+              <a href="about.html" class="nav-link">About</a>
+              <a href="books.html" class="nav-link">Books</a>
+              <a href="blog.html" class="nav-link">Blog</a>
+              
+              <div class="dropdown">
+                <button class="nav-link dropdown-btn">
+                  Services
+                  <i data-feather="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="publishing.html" class="dropdown-item">Publishing</a>
+                  <a href="imprint.html" class="dropdown-item">BKR Imprint</a>
+                  <a href="resume-writing.html" class="dropdown-item">Resume Writing</a>
+                </div>
+              </div>
+              
+              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="#" class="nav-link cart-icon">
                 <i data-feather="shopping-cart" class="w-5 h-5"></i>
-                <span class="ml-1 text-sm">(0)</span>
+                <span>(0)</span>
               </a>
             </div>
 
-            <!-- MOBILE: Hamburger -->
-            <button id="menu-toggle" class="md:hidden text-bone-50 focus:outline-none">
+            <button class="menu-toggle" id="menu-toggle">
               <i data-feather="menu" class="w-6 h-6"></i>
             </button>
           </div>
         </div>
 
-        <!-- MOBILE MENU -->
-        <div id="mobile-menu" class="hidden md:hidden bg-ink-900 border-t border-white/10">
-          <div class="px-4 py-3 space-y-2">
-            <a href="index.html" class="block text-bone-50/80 hover:text-ember-400 transition">Home</a>
-            <a href="books.html" class="block text-bone-50/80 hover:text-ember-400 transition">Books</a>
-            <a href="about.html" class="block text-bone-50/80 hover:text-ember-400 transition">About</a>
-            <a href="blog.html" class="block text-bone-50/80 hover:text-ember-400 transition">Blog</a>
-            <a href="contact.html" class="block text-bone-50/80 hover:text-ember-400 transition">Contact</a>
-            <a href="#" class="block text-bone-50/80 hover:text-ember-400 transition flex items-center">
-              <i data-feather="shopping-cart" class="w-5 h-5 mr-1"></i>Cart (0)
-            </a>
+        <div class="mobile-menu" id="mobile-menu">
+          <a href="index.html" class="mobile-link">Home</a>
+          <a href="about.html" class="mobile-link">About</a>
+          <a href="books.html" class="mobile-link">Books</a>
+          <a href="blog.html" class="mobile-link">Blog</a>
+          <div class="pl-2 py-1">
+            <div class="text-bone-50/60 mb-1">Services</div>
+            <a href="publishing.html" class="mobile-link block pl-4">Publishing</a>
+            <a href="imprint.html" class="mobile-link block pl-4">BKR Imprint</a>
+            <a href="resume-writing.html" class="mobile-link block pl-4">Resume Writing</a>
           </div>
+          <a href="contact.html" class="mobile-link">Contact</a>
+          <a href="#" class="mobile-link flex items-center">
+            <i data-feather="shopping-cart" class="w-5 h-5 mr-1"></i>
+            Cart (0)
+          </a>
         </div>
       </nav>
 
       <script>
         feather.replace();
-        document.getElementById('menu-toggle').addEventListener('click', () => {
-          document.getElementById('mobile-menu').classList.toggle('hidden');
+        this.shadowRoot.getElementById('menu-toggle').addEventListener('click', () => {
+          this.shadowRoot.getElementById('mobile-menu').style.display = 
+            this.shadowRoot.getElementById('mobile-menu').style.display === 'block' ? 'none' : 'block';
         });
       </script>
     `;
   }
 }
 customElements.define('custom-navbar', CustomNavbar);
-
-

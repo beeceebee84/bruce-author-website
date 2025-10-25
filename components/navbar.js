@@ -151,7 +151,7 @@ class CustomNavbar extends HTMLElement {
                 </button>
                 <div class="dropdown-menu">
                   <a href="publishing.html" class="dropdown-item">Publishing</a>
-                  <a href="imprint.html" class="dropdown-item">BKR Imprint</a>
+                 
                   <a href="resume-writing.html" class="dropdown-item">Résumé Writing</a>
                 </div>
               </div>
@@ -204,3 +204,4 @@ class CustomNavbar extends HTMLElement {
 }
 
 customElements.define('custom-navbar', CustomNavbar);
+

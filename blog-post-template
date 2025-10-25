@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blazing Stories | Bruce C Bee</title>
+  
+  <!-- Tailwind with custom dark theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
+            brass: { 500:'#C49A45' },
+            sand:  { 400:'#CAB79A' },
+            bone:  { 50:'#F5F3EF' }
+          },
+          fontFamily: {
+            'display': ['"EB Garamond"', 'serif'],
+            'body': ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-ink-900 text-bone-50 font-body">
+  <!-- Navigation -->
+  <custom-navbar></custom-navbar>
+
+  <!-- Story Header -->
+  <header class="relative overflow-hidden">
+    <!-- Fire gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-ember-800 via-ember-600 to-ink-900"></div>
+    
+    <!-- Content container -->
+    <div class="max-w-4xl mx-auto px-6 py-24 md:py-32 relative z-10">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-ember-800/50 text-ember-300 mb-4">
+          SHORT STORY
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
+          The Night We Burned the Boats
+        </h1>
+        <p class="mt-6 text-xl text-bone-50/80 max-w-2xl mx-auto">
+          A story about irreversible decisions and the freedom found in having no way back.
+        </p>
+        <div class="mt-8 flex items-center justify-center space-x-4">
+          <span class="text-sm text-ember-400">Bruce C Bee</span>
+          <span class="text-sm text-bone-50/50">•</span>
+          <time datetime="2025-06-15" class="text-sm text-bone-50/60">June 15, 2025</time>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Story Content -->
+  <main class="max-w-2xl mx-auto px-6 py-16">
+    <!-- Featured image -->
+    <figure class="mb-12">
+      <img src="http://static.photos/travel/1024x576/42" 
+           alt="Boats on fire at dusk" 
+           class="w-full rounded-xl border border-white/10 shadow-lg">
+      <figcaption class="mt-2 text-sm text-center text-bone-50/60">The point of no return (Photo by Bruce C Bee)</figcaption>
+    </figure>
+
+    <!-- Story meta -->
+    <div class="mb-12 border-b border-ember-800/50 pb-6">
+      <div class="flex flex-wrap gap-4 justify-center">
+        <span class="px-3 py-1 text-xs font-medium rounded-full bg-ink-700 text-ember-400">
+          Fiction
+        </span>
+        <span class="px-3 py-1 text-xs font-medium rounded-full bg-ink-700 text-ember-400">
+          Adventure
+        </span>
+        <span class="px-3 py-1 text-xs font-medium rounded-full bg-ink-700 text-ember-400">
+          15 min read
+        </span>
+      </div>
+    </div>
+
+    <!-- Story body -->
+    <article class="prose prose-invert prose-lg max-w-none">
+      <p class="lead">The water was black that night, like liquid obsidian swallowing the reflection of our torches. Marcus stood knee-deep in the shallows, gasoline can in hand, his face flickering orange in the firelight. "Once we do this," he said, voice barely above a whisper, "there's no going back."</p>
+
+      <p>I remember laughing—the kind of laugh that starts deep in your belly and claws its way up your throat. The kind that feels more like an exorcism than amusement. "That's the whole fucking point," I told him.</p>
+
+      <p>We'd been planning this for months. Six leaky fishing boats stolen from the harbor, hauled up onto this deserted stretch of beach under the new moon. Enough supplies to last us two weeks if we rationed, which we wouldn't. The island wasn't going anywhere, but our resolve might.</p>
+
+      <p>Marcus splashed gasoline across the nearest hull. The acrid smell mixed with salt air made my eyes water—or maybe that was the weight of what we were about to do. Behind us, the others had already begun chanting, their voices rising with the flames as the first boat caught fire.</p>
+
+      <div class="my-8 p-6 border-l-4 border-ember-500 bg-ink-800 rounded-r-lg">
+        <p class="font-display text-xl italic text-ember-300">"There are moments when you can feel your life bifurcating—like time itself is a river forking around some immovable stone. This was one of those moments."</p>
+      </div>
+
+      <p>By dawn, all that remained were blackened ribs poking from the shallows like the bones of some sea monster. The tide would claim them soon enough. We stood there watching, the heat of the fires still warming our faces, until the sun rose over the island we could no longer escape.</p>
+
+      <p>Funny thing about burning boats—it's not the act itself that changes you. It's waking up the next morning with singed eyebrows and the absolute certainty that every decision from here forward matters more than the ones before.</p>
+
+      <h2 class="font-display text-3xl mt-12 mb-6 text-ember-400">The First Night</h2>
+
+      <p>No one slept that first night on the island. How could we? The adrenaline hadn't worn off, and every snapping twig sounded like retribution coming for us. Elena kept the fire going while the rest of us took turns standing watch, though what exactly we were watching for, none of us could say.</p>
+
+      <p>It was Javi who broke the silence around 3 AM. "You think they'll send search parties?"</p>
+
+      <p>Marcus snorted. "For stolen boats? In this economy?"</p>
+
+      <p>But we all knew that wasn't what Javi meant. The question hanging in the salty air was whether anyone would come looking for us.</p>
+    </article>
+
+    <!-- Author bio -->
+    <div class="mt-16 p-8 bg-ink-800 rounded-xl border border-white/10">
+      <div class="flex items-center">
+        <img src="http://static.photos/people/200x200/42" 
+             alt="Bruce C Bee" 
+             class="w-16 h-16 rounded-full border-2 border-ember-500">
+        <div class="ml-6">
+          <h3 class="text-xl font-bold">Bruce C Bee</h3>
+          <p class="mt-1 text-bone-50/80">Author of <em>Burn Me Whole</em> and other stories about the messy business of being human.</p>
+          <div class="mt-3 flex space-x-4">
+            <a href="#" class="text-ember-400 hover:text-ember-300">
+              <i data-feather="twitter"></i>
+            </a>
+            <a href="#" class="text-ember-400 hover:text-ember-300">
+              <i data-feather="instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="#" class="group p-6 bg-ink-800 hover:bg-ink-700 rounded-xl border border-white/10 transition-all">
+        <div class="flex items-center">
+          <div class="mr-6 text-ember-400 group-hover:text-ember-300 transition-colors">
+            <i data-feather="arrow-left" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-sm text-bone-50/60">Previous Story</span>
+            <h3 class="mt-1 text-lg font-medium group-hover:text-ember-300 transition-colors">Whiskey & Other Regrets</h3>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="group p-6 bg-ink-800 hover:bg-ink-700 rounded-xl border border-white/10 transition-all">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-sm text-bone-50/60">Next Story</span>
+            <h3 class="mt-1 text-lg font-medium group-hover:text-ember-300 transition-colors">How to Disappear Completely</h3>
+          </div>
+          <div class="ml-6 text-ember-400 group-hover:text-ember-300 transition-colors">
+            <i data-feather="arrow-right" class="w-6 h-6"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="py-16 bg-gradient-to-b from-ember-800 to-ember-900">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center justify-center bg-ember-700/50 rounded-full p-2 mb-6">
+        <i data-feather="mail" class="w-6 h-6 text-ember-300"></i>
+      </div>
+      <h2 class="text-3xl font-bold">Want More Stories?</h2>
+      <p class="mt-4 text-bone-50/80">Get new short stories delivered straight to your inbox.</p>
+      
+      <form class="mt-8">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input type="email" placeholder="Your email address" 
+                 class="flex-grow px-4 py-3 bg-ink-800 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-ember-500 text-bone-50">
+          <button type="submit" 
+                  class="px-6 py-3 bg-ember-600 hover:bg-ember-500 text-bone-50 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <custom-footer></custom-footer>
+
+  <!-- Components -->
+  <script src="components/navbar.js"></script>
+  <script src="components/footer.js"></script>
+  
+  <!-- Scripts -->
+  <script>
+    feather.replace();
+    
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

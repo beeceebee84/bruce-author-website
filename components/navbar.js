@@ -3,6 +3,8 @@ class CustomNavbar extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
       <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
         nav {
           background: rgba(23, 23, 23, 0.95);
           backdrop-filter: blur(8px);
@@ -14,53 +16,67 @@ class CustomNavbar extends HTMLElement {
           z-index: 50;
         }
 
-        .nav-container {
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 0 1rem;
-        }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+        .nav-inner { height: 4rem; display: flex; justify-content: space-between; align-items: center; }
 
-        .nav-inner {
-          height: 4rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
+        /* ---- Brand ---- */
         .brand {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #f8f9fa;
-          font-weight: 600;
-          font-size: 1.125rem;
-          letter-spacing: -0.025em;
+          text-decoration: none; /* avoid underlining the dot */
         }
 
         .brand-dot {
-          width: 0.625rem;
-          height: 0.625rem;
-          border-radius: 9999px;
+          width: 0.625rem; height: 0.625rem; border-radius: 9999px;
           background-color: #d9822b;
           transition: box-shadow 0.3s;
         }
-
-        .brand-dot:hover {
-          box-shadow: 0 0 8px rgba(217, 130, 43, 0.7);
+        .brand:hover .brand-dot {
+          box-shadow: 0 0 8px rgba(232,158,77,0.5);
         }
 
+        /* Gradient text helper (matches your footer vibe) */
+        .gradient-text {
+          background-image: linear-gradient(135deg, #D9822B 0%, #E89E4D 100%);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          transition: background-position .4s ease, filter .3s ease;
+        }
+        .brand:hover .gradient-text {
+          background-position: 100% 0;
+          filter: drop-shadow(0 0 8px rgba(232,158,77,0.35));
+        }
+
+        /* Bruce C. Bee (underlined like other links) */
+        .brand-name {
+          font-weight: 700;
+          letter-spacing: -0.015em;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          text-decoration-thickness: 1px;
+          text-decoration-color: #D9822B;
+        }
+        .brand:hover .brand-name { text-decoration-color: #E89E4D; }
+
+        /* The BKR Imprint — elegant, smaller */
         .brand-imprint {
-          font-size: 0.875rem;
-          color: rgba(248, 249, 250, 0.6);
+          font-family: 'Playfair Display', serif;
           font-style: italic;
-          display: none;
+          font-size: 0.95rem;
+          opacity: 0.95;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          text-decoration-thickness: 1px;
+          text-decoration-color: #D9822B;
+          display: none; /* shown on md+ below */
         }
+        .brand:hover .brand-imprint { text-decoration-color: #E89E4D; }
 
-        .nav-links {
-          display: none;
-          align-items: center;
-          gap: 1.5rem;
-        }
+        /* ---- Nav Links ---- */
+        .nav-links { display: none; align-items: center; gap: 1.5rem; }
 
         .nav-link {
           color: rgba(248, 249, 250, 0.8);
@@ -70,124 +86,51 @@ class CustomNavbar extends HTMLElement {
           text-decoration-thickness: 1px;
           text-decoration-color: rgba(248, 249, 250, 0.8);
         }
+        .nav-link:hover { color: #f59e0b; text-decoration-color: #f59e0b; }
 
-        .nav-link:hover {
-          color: #f59e0b;
-          text-decoration-color: #f59e0b;
-        }
+        /* ---- Dropdown ---- */
+        .dropdown { position: relative; }
 
-        .dropdown {
-          position: relative;
-        }
-
-        /* Dropdown Button */
         .dropdown-btn {
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
-          background: transparent;
-          border: none;
-          padding: 0;
+          display: flex; align-items: center; gap: 0.25rem;
+          background: transparent; border: none; padding: 0;
           color: rgba(248, 249, 250, 0.8);
-          font: inherit;
-          cursor: pointer;
-          -webkit-appearance: none;
-          appearance: none;
-
-          /* 👇 Matching underline style */
-          text-decoration: underline;
-          text-underline-offset: 2px;
-          text-decoration-thickness: 1px;
+          font: inherit; cursor: pointer; -webkit-appearance: none; appearance: none;
+          text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;
           text-decoration-color: rgba(248, 249, 250, 0.8);
         }
-
-        .dropdown-btn:hover {
-          color: #f59e0b;
-          text-decoration-color: #f59e0b;
-        }
-
-        .dropdown-btn:focus {
-          outline: none;
-        }
-
-        .dropdown-btn:focus-visible {
-          outline: 2px solid rgba(245, 158, 11, 0.6);
-          outline-offset: 2px;
-        }
+        .dropdown-btn:hover { color: #f59e0b; text-decoration-color: #f59e0b; }
+        .dropdown-btn:focus { outline: none; }
+        .dropdown-btn:focus-visible { outline: 2px solid rgba(245,158,11,0.6); outline-offset: 2px; }
 
         .dropdown-menu {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          background: #1a1a1a;
-          border-radius: 0.375rem;
+          position: absolute; top: 100%; right: 0;
+          background: #1a1a1a; border-radius: 0.375rem;
           border: 1px solid rgba(255,255,255,0.1);
-          padding: 0.5rem 0;
-          min-width: 12rem;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-4px);
-          transition: all 0.25s ease;
-          z-index: 10;
+          padding: 0.5rem 0; min-width: 12rem;
+          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+          opacity: 0; visibility: hidden; transform: translateY(-4px);
+          transition: all 0.25s ease; z-index: 10;
         }
-
-        .dropdown:hover .dropdown-menu {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
         .dropdown-item {
-          display: block;
-          padding: 0.5rem 1rem;
+          display: block; padding: 0.5rem 1rem;
           color: rgba(248, 249, 250, 0.8);
           transition: all 0.2s;
         }
+        .dropdown-item:hover { color: #f59e0b; background: rgba(255,255,255,0.05); }
 
-        .dropdown-item:hover {
-          color: #f59e0b;
-          background: rgba(255,255,255,0.05);
-        }
-
-        .cart-icon {
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
-        }
-
-        .menu-toggle {
-          display: block;
-          color: #f8f9fa;
-        }
-
-        .mobile-menu {
-          background: #171717;
-          border-top: 1px solid rgba(255,255,255,0.1);
-          padding: 0.75rem 1rem;
-          display: none;
-        }
-
-        .mobile-link {
-          display: block;
-          padding: 0.5rem 0;
-          color: rgba(248, 249, 250, 0.8);
-        }
-
-        .mobile-link:hover {
-          color: #f59e0b;
-        }
+        .cart-icon { display: flex; align-items: center; gap: 0.25rem; }
+        .menu-toggle { display: block; color: #f8f9fa; }
+        .mobile-menu { background: #171717; border-top: 1px solid rgba(255,255,255,0.1); padding: 0.75rem 1rem; display: none; }
+        .mobile-link { display: block; padding: 0.5rem 0; color: rgba(248, 249, 250, 0.8); }
+        .mobile-link:hover { color: #f59e0b; }
 
         @media (min-width: 768px) {
-          .nav-links {
-            display: flex;
-          }
-          .brand-imprint {
-            display: inline;
-          }
-          .menu-toggle {
-            display: none;
-          }
+          .nav-links { display: flex; }
+          .brand-imprint { display: inline; }
+          .menu-toggle { display: none; }
         }
       </style>
 
@@ -196,8 +139,8 @@ class CustomNavbar extends HTMLElement {
           <div class="nav-inner">
             <a href="index.html" class="brand">
               <span class="brand-dot"></span>
-              <span>Bruce&nbsp;C.&nbsp;Bee</span>
-              <span class="brand-imprint">The BKR Imprint</span>
+              <span class="brand-name gradient-text">Bruce&nbsp;C.&nbsp;Bee</span>
+              <span class="brand-imprint gradient-text">The BKR Imprint</span>
             </a>
 
             <div class="nav-links">

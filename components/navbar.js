@@ -144,12 +144,17 @@ class CustomNavbar extends HTMLElement {
               <a href="books.html" class="nav-link">Books</a>
               <a href="blog.html" class="nav-link">Blog</a>
 
-              <<div class="pl-2 py-1">
-  <div class="text-bone-50/60 mb-1">Services</div>
-  <a href="/bruce-author-website/publishing.html" class="mobile-link block pl-4" target="_self">Publishing</a>
-  <a href="/bruce-author-website/resumewriting.html" class="mobile-link block pl-4" target="_self">Résumé Writing</a>
-</div>
-
+              <div class="dropdown">
+                <button class="nav-link dropdown-btn">
+                  Services
+                  <i data-feather="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="publishing.html" class="dropdown-item">Publishing</a>
+                 
+                  <a href="resume-writing.html" class="dropdown-item">Résumé Writing</a>
+                </div>
+              </div>
 
               <a href="contact.html" class="nav-link">Contact</a>
               <a href="#" class="nav-link cart-icon">
@@ -172,7 +177,8 @@ class CustomNavbar extends HTMLElement {
           <div class="pl-2 py-1">
             <div class="text-bone-50/60 mb-1">Services</div>
             <a href="publishing.html" class="mobile-link block pl-4">Publishing</a>
-           <a href="resumewriting.html" class="mobile-link block pl-4">Résumé Writing</a>
+            <a href="imprint.html" class="mobile-link block pl-4">BKR Imprint</a>
+            <a href="resume-writing.html" class="mobile-link block pl-4">Résumé Writing</a>
           </div>
           <a href="contact.html" class="mobile-link">Contact</a>
           <a href="#" class="mobile-link flex items-center">
@@ -198,7 +204,3 @@ class CustomNavbar extends HTMLElement {
 }
 
 customElements.define('custom-navbar', CustomNavbar);
-
-
-
-

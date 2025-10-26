@@ -30,10 +30,9 @@ class CustomNavbar extends HTMLElement {
         }
         .brand:hover .brand-dot { box-shadow: 0 0 12px rgba(217,130,43,0.65); }
 
-        /* Base (safe) text style for brand */
         .brand-name,
         .brand-imprint {
-          color: #f8f9fa; /* fallback so text is always visible */
+          color: #f8f9fa;
           text-decoration: underline;
           text-underline-offset: 2px;
           text-decoration-thickness: 1px;
@@ -57,17 +56,16 @@ class CustomNavbar extends HTMLElement {
           font-style: italic;
           font-size: 0.95rem;
           opacity: 0.95;
-          display: none; /* shows on md+ below */
+          display: none;
         }
 
-        /* Only apply gradient-clip text if supported (prevents “invisible” text) */
         @supports (-webkit-background-clip: text) or (background-clip: text) {
           .brand-gradient {
             background-image: linear-gradient(to right, #D9822B, #E89E4D, #ffb347);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent;                /* now safe because of the @supports */
+            color: transparent;
             -webkit-text-fill-color: transparent;
             transition: background-position .4s ease;
           }
@@ -89,12 +87,11 @@ class CustomNavbar extends HTMLElement {
 
         /* DROPDOWN */
         .dropdown { position: relative; }
-
         .dropdown-btn {
           display: flex; align-items: center; gap: 0.25rem;
           background: transparent; border: none; padding: 0;
           color: rgba(248, 249, 250, 0.8);
-          font: inherit; cursor: pointer; -webkit-appearance: none; appearance: none;
+          font: inherit; cursor: pointer;
           text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px;
           text-decoration-color: rgba(248, 249, 250, 0.8);
         }
@@ -132,17 +129,17 @@ class CustomNavbar extends HTMLElement {
       <nav>
         <div class="nav-container">
           <div class="nav-inner">
-            <a href="index.html" class="brand">
+            <a href="/bruce-author-website/index.html" class="brand">
               <span class="brand-dot"></span>
               <span class="brand-name brand-gradient">Bruce C. Bee</span>
               <span class="brand-imprint brand-gradient">The BKR Imprint</span>
             </a>
 
             <div class="nav-links">
-              <a href="index.html" class="nav-link">Home</a>
-              <a href="about.html" class="nav-link">About</a>
-              <a href="books.html" class="nav-link">Books</a>
-              <a href="blog.html" class="nav-link">Blog</a>
+              <a href="/bruce-author-website/index.html" class="nav-link">Home</a>
+              <a href="/bruce-author-website/about.html" class="nav-link">About</a>
+              <a href="/bruce-author-website/books.html" class="nav-link">Books</a>
+              <a href="/bruce-author-website/blog.html" class="nav-link">Blog</a>
 
               <div class="dropdown">
                 <button class="nav-link dropdown-btn">
@@ -150,13 +147,12 @@ class CustomNavbar extends HTMLElement {
                   <i data-feather="chevron-down" class="w-4 h-4"></i>
                 </button>
                 <div class="dropdown-menu">
-                  <a href="publishing.html" class="dropdown-item">Publishing</a>
-                 
-                  <a href="resume-writing.html" class="dropdown-item">Résumé Writing</a>
+                  <a href="/bruce-author-website/publishing.html" class="dropdown-item">Publishing</a>
+                  <a href="/bruce-author-website/resume-writing.html" class="dropdown-item">Résumé Writing</a>
                 </div>
               </div>
 
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="/bruce-author-website/contact.html" class="nav-link">Contact</a>
               <a href="#" class="nav-link cart-icon">
                 <i data-feather="shopping-cart" class="w-5 h-5"></i>
                 <span>(0)</span>
@@ -170,17 +166,16 @@ class CustomNavbar extends HTMLElement {
         </div>
 
         <div class="mobile-menu" id="mobile-menu">
-          <a href="index.html" class="mobile-link">Home</a>
-          <a href="about.html" class="mobile-link">About</a>
-          <a href="books.html" class="mobile-link">Books</a>
-          <a href="blog.html" class="mobile-link">Blog</a>
+          <a href="/bruce-author-website/index.html" class="mobile-link">Home</a>
+          <a href="/bruce-author-website/about.html" class="mobile-link">About</a>
+          <a href="/bruce-author-website/books.html" class="mobile-link">Books</a>
+          <a href="/bruce-author-website/blog.html" class="mobile-link">Blog</a>
           <div class="pl-2 py-1">
             <div class="text-bone-50/60 mb-1">Services</div>
-            <a href="publishing.html" class="mobile-link block pl-4">Publishing</a>
-            <a href="imprint.html" class="mobile-link block pl-4">BKR Imprint</a>
-            <a href="resume-writing.html" class="mobile-link block pl-4">Résumé Writing</a>
+            <a href="/bruce-author-website/publishing.html" class="mobile-link block pl-4">Publishing</a>
+            <a href="/bruce-author-website/resume-writing.html" class="mobile-link block pl-4">Résumé Writing</a>
           </div>
-          <a href="contact.html" class="mobile-link">Contact</a>
+          <a href="/bruce-author-website/contact.html" class="mobile-link">Contact</a>
           <a href="#" class="mobile-link flex items-center">
             <i data-feather="shopping-cart" class="w-5 h-5 mr-1"></i>
             Cart (0)
@@ -189,10 +184,8 @@ class CustomNavbar extends HTMLElement {
       </nav>
 
       <script>
-        // Feather is optional; if not present, don't error out.
         try { if (window.feather) feather.replace(); } catch (e) {}
 
-        // Mobile toggle
         const btn = this.shadowRoot.getElementById('menu-toggle');
         const menu = this.shadowRoot.getElementById('mobile-menu');
         btn.addEventListener('click', () => {
@@ -204,4 +197,3 @@ class CustomNavbar extends HTMLElement {
 }
 
 customElements.define('custom-navbar', CustomNavbar);
-

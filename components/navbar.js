@@ -151,8 +151,7 @@ class CustomNavbar extends HTMLElement {
                 </button>
                 <div class="dropdown-menu">
                   <a href="publishing.html" class="dropdown-item">Publishing</a>
-                 
-                  <a href="resume-writing.html" class="dropdown-item">Résumé Writing</a>
+                  <a href="resumewriting.html" class="dropdown-item">Résumé Writing</a>
                 </div>
               </div>
 
@@ -177,7 +176,7 @@ class CustomNavbar extends HTMLElement {
           <div class="pl-2 py-1">
             <div class="text-bone-50/60 mb-1">Services</div>
             <a href="publishing.html" class="mobile-link block pl-4">Publishing</a>
-           <a href="resume-writing.html" class="mobile-link block pl-4">Résumé Writing</a>
+           <a href="resumewriting.html" class="mobile-link block pl-4">Résumé Writing</a>
           </div>
           <a href="contact.html" class="mobile-link">Contact</a>
           <a href="#" class="mobile-link flex items-center">
@@ -203,5 +202,6 @@ class CustomNavbar extends HTMLElement {
 }
 
 customElements.define('custom-navbar', CustomNavbar);
+
 
 

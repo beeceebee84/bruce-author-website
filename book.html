@@ -36,6 +36,40 @@
     }
   </script>
 
+  <style>
+  :root{
+    --ember-text: #F2EFEC;  /* light text */
+    --ember-muted:#C7C3BE;  /* secondary text */
+    --ember-brand:#D9822B;  /* your orange */
+  }
+
+  /* Force readable prose in dark mode */
+  .dark .prose,
+  .dark .prose p { color: var(--ember-text) !important; }
+
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3 { color: #ffffff !important; }
+
+  .dark .prose a { color: var(--ember-brand) !important; }
+
+  .dark .prose blockquote {
+    color: var(--ember-text) !important;
+    border-left-color: var(--ember-brand) !important;
+  }
+
+  .dark .prose strong,
+  .dark .prose b { color: #ffffff !important; }
+
+  .dark .prose li,
+  .dark .prose ul,
+  .dark .prose ol { color: var(--ember-text) !important; }
+
+  .dark .prose figcaption,
+  .dark .prose .caption { color: var(--ember-muted) !important; }
+</style>
+
+
   <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -420,6 +454,7 @@
   </script>
 </body>
 </html>
+
 
 
 

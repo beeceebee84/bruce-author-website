@@ -184,94 +184,107 @@ Burn Me Whole demands your full attention because it’s raw, unfiltered, and da
           </div>
         </div>
 
-        <div class="md:col-span-1">
-          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg sticky top-6">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Purchase Options</h3>
+ <div class="md:col-span-1">
+  <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg sticky top-6">
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Purchase Options</h3>
 
-            <div class="space-y-4">
-              <div>
-                <h4 class="font-medium text-gray-900 dark:text-white">Signed Paperback</h4>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
-                <p class="text-primary-500 font-bold mt-1">$25.00</p>
-                
-                <a
-    href="https://payhip.com/b/AQpDY"
-    class="payhip-add-to-cart px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold
-           flex items-center shadow-lg hover:shadow-xl transition-all border border-secondary-500/40"
-    data-product="AQpDY"
-  >
-                  Add to Cart
-                </button>
-              </div>
+    <div class="space-y-6">
+      <!-- Signed Paperback (Payhip) -->
+      <div>
+        <h4 class="font-medium text-gray-900 dark:text-white">Signed Paperback</h4>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
+        <p class="text-primary-500 font-bold mt-1">$25.00</p>
 
-              <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-                <h4 class="font-medium text-gray-900 dark:text-white">Paperback</h4>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
-                <p class="text-primary-500 font-bold mt-1">$14.99</p>
-                <button
-                  onclick="addToCart('whispers-pb', 'Whispers of the Forgotten (Paperback)', 14.99)"
-                  class="mt-2 w-full px-4 py-2 bg-primary-500 hover:bg-primary-600 text-black rounded-lg text-sm font-semibold transition-colors">
-                  Add to Cart
-                </button>
-              </div>
+        <a
+          href="https://payhip.com/b/AQpDY"
+          class="payhip-add-to-cart mt-2 w-full px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold flex items-center justify-center shadow-lg hover:shadow-xl transition-all border border-secondary-500/40"
+          data-product="AQpDY"
+        >
+          Add to Cart
+        </a>
+      </div>
 
-              <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-                <h4 class="font-medium text-gray-900 dark:text-white">eBook</h4>
-                <p class="text-gray-600 dark:text-gray-300 text-sm">Available in multiple formats</p>
-                <p class="text-primary-500 font-bold mt-1">$9.99</p>
+      <!-- Paperback (IngramSpark) -->
+      <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+        <h4 class="font-medium text-gray-900 dark:text-white">
+          Paperback <span class="text-gray-500 dark:text-gray-400 text-sm">(IngramSpark)</span>
+        </h4>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Available now</p>
+        <p class="text-primary-500 font-bold mt-1">$14.99</p>
 
-                <div class="grid grid-cols-2 gap-2 mt-2">
-                  <button onclick="addToCart('whispers-epub', 'Whispers of the Forgotten (EPUB)', 9.99)"
-                          class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
-                    EPUB
-                  </button>
-                  <button onclick="addToCart('whispers-kindle', 'Whispers of the Forgotten (Kindle)', 9.99)"
-                          class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
-                    Kindle
-                  </button>
-                  <button onclick="addToCart('whispers-pdf', 'Whispers of the Forgotten (PDF)', 9.99)"
-                          class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
-                    PDF
-                  </button>
-                  <button onclick="addToCart('whispers-audio', 'Whispers of the Forgotten (Audio)', 14.99)"
-                          class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors">
-                    Audio
-                  </button>
-                </div>
-              </div>
+        <!-- If you want to keep your local cart, leave this button.
+             If you prefer to push to a retailer page, replace with links (shown below). -->
+        <button
+          onclick="addToCart('whispers-pb', 'Whispers of the Forgotten (Paperback)', 14.99)"
+          class="mt-2 w-full px-4 py-2 bg-primary-500 hover:bg-primary-600 text-black rounded-lg text-sm font-semibold transition-colors"
+        >
+          Add to Cart
+        </button>
 
-              <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-                <h4 class="font-medium text-gray-900 dark:text-white">Also Available At</h4>
-                <div class="flex flex-wrap gap-2 mt-2">
-                  <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                    text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-                    <i data-feather="book" class="w-3 h-3 mr-1"></i>
-                    Amazon
-                  </a>
-                  <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                    text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-                    <i data-feather="book" class="w-3 h-3 mr-1"></i>
-                    Barnes & Noble
-                  </a>
-                  <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                    text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-                    <i data-feather="book" class="w-3 h-3 mr-1"></i>
-                    Bookshop.org
-                  </a>
-                  <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600
-                                    text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-                    <i data-feather="book" class="w-3 h-3 mr-1"></i>
-                    IndieBound
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /sidebar -->
+        <!-- Retailer buttons (optional): uncomment if you want to route to retailer listings instead)
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href='https://www.amazon.com/dp/XXXXXXXX' class="px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded text-xs font-medium text-center transition-colors">Amazon</a>
+          <a href='https://www.barnesandnoble.com/w/XXXXXXXX' class="px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded text-xs font-medium text-center transition-colors">Barnes &amp; Noble</a>
+        </div>
+        -->
+      </div>
+
+      <!-- eBook -->
+      <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+        <h4 class="font-medium text-gray-900 dark:text-white">eBook</h4>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Available in multiple formats</p>
+        <p class="text-primary-500 font-bold mt-1">$9.99</p>
+
+        <div class="grid grid-cols-2 gap-2 mt-2">
+          <button
+            onclick="addToCart('whispers-epub', 'Whispers of the Forgotten (EPUB)', 9.99)"
+            class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors"
+          >
+            EPUB
+          </button>
+          <button
+            onclick="addToCart('whispers-kindle', 'Whispers of the Forgotten (Kindle)', 9.99)"
+            class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors"
+          >
+            Kindle
+          </button>
+          <button
+            onclick="addToCart('whispers-pdf', 'Whispers of the Forgotten (PDF)', 9.99)"
+            class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors"
+          >
+            PDF
+          </button>
+          <button
+            onclick="addToCart('whispers-audio', 'Whispers of the Forgotten (Audio)', 14.99)"
+            class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors"
+          >
+            Audio
+          </button>
+        </div>
+      </div>
+
+      <!-- Also Available At -->
+      <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+        <h4 class="font-medium text-gray-900 dark:text-white">Also Available At</h4>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+            <i data-feather="book" class="w-3 h-3 mr-1"></i> Amazon
+          </a>
+          <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+            <i data-feather="book" class="w-3 h-3 mr-1"></i> Barnes &amp; Noble
+          </a>
+          <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+            <i data-feather="book" class="w-3 h-3 mr-1"></i> Bookshop.org
+          </a>
+          <a href="#" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+            <i data-feather="book" class="w-3 h-3 mr-1"></i> IndieBound
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+->
       </div>
     </div>
   </section>
@@ -470,6 +483,7 @@ Burn Me Whole demands your full attention because it’s raw, unfiltered, and da
   </script>
 </body>
 </html>
+
 
 
 

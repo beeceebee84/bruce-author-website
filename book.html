@@ -9,28 +9,24 @@
   <!-- Base CSS (your Obsidian Ember CSS) -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  
 
-  <!-- Tailwind: map brand colors to classes -->
+  <!-- Tailwind + Typography plugin -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT: '#D9822B', 500: '#D9822B', 600: '#E89E4D' },
-            secondary: { 500: '#E89E4D', 600: '#F2B873' }
+            /* Obsidian Ember palette */
+            ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
+            brass: { 500:'#C49A45' },
+            sand:  { 400:'#CAB79A' },
+            bone:  { 50:'#F5F3EF' }
           },
-          borderRadius: { brand: '12px' },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in',
-            'float': 'float 6s ease-in-out infinite'
-          },
-          keyframes: {
-            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-          }
+          borderRadius: { brand: '12px' }
         }
       }
     }
@@ -493,6 +489,7 @@ Burn Me Whole demands your full attention because it’s raw, unfiltered, and da
   </script>
 </body>
 </html>
+
 
 
 

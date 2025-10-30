@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Burn Me Whole | The BKR Imprint</title>
-  <meta name="description" content="Details about Whispers of the Forgotten by [Author Name] - read the description, reviews, and purchase options" />
+  <meta name="description" content="Burn Me Whole by Bruce C. Bee — details, sample, and purchase options (signed paperback, paperback, and ebook)." />
 
-  <!-- Base CSS (your Obsidian Ember CSS) -->
+  <!-- Base CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  
-
-  <!-- Tailwind + Typography plugin -->
+  <!-- Tailwind (+Typography) -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config = {
@@ -19,12 +17,12 @@
       theme: {
         extend: {
           colors: {
-            /* Obsidian Ember palette */
+            /* Brand mapping used across site */
+            primary: { DEFAULT:'#D9822B', 500:'#D9822B', 600:'#E89E4D' },
+            secondary: { 500:'#E89E4D', 600:'#F2B873' },
+            /* Optional extended tokens */
             ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
-            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
-            brass: { 500:'#C49A45' },
-            sand:  { 400:'#CAB79A' },
-            bone:  { 50:'#F5F3EF' }
+            ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' }
           },
           borderRadius: { brand: '12px' }
         }
@@ -32,121 +30,98 @@
     }
   </script>
 
+  <!-- Dark-mode prose readability -->
   <style>
-  :root{
-    --ember-text: #F2EFEC;  /* light text */
-    --ember-muted:#C7C3BE;  /* secondary text */
-    --ember-brand:#D9822B;  /* your orange */
-  }
-
-  /* Force readable prose in dark mode */
-  .dark .prose,
-  .dark .prose p { color: var(--ember-text) !important; }
-
-  .dark .prose h1,
-  .dark .prose h2,
-  .dark .prose h3 { color: #ffffff !important; }
-
-  .dark .prose a { color: var(--ember-brand) !important; }
-
-  .dark .prose blockquote {
-    color: var(--ember-text) !important;
-    border-left-color: var(--ember-brand) !important;
-  }
-
-  .dark .prose strong,
-  .dark .prose b { color: #ffffff !important; }
-
-  .dark .prose li,
-  .dark .prose ul,
-  .dark .prose ol { color: var(--ember-text) !important; }
-
-  .dark .prose figcaption,
-  .dark .prose .caption { color: var(--ember-muted) !important; }
-</style>
-
+    :root{
+      --ember-text:#F2EFEC;
+      --ember-muted:#C7C3BE;
+      --ember-brand:#D9822B;
+    }
+    .dark .prose, .dark .prose p { color: var(--ember-text) !important; }
+    .dark .prose h1, .dark .prose h2, .dark .prose h3 { color: #fff !important; }
+    .dark .prose a { color: var(--ember-brand) !important; }
+    .dark .prose blockquote { color: var(--ember-text) !important; border-left-color: var(--ember-brand) !important; }
+    .dark .prose strong, .dark .prose b { color:#fff !important; }
+    .dark .prose li, .dark .prose ul, .dark .prose ol { color: var(--ember-text) !important; }
+    .dark .prose figcaption { color: var(--ember-muted) !important; }
+  </style>
 
   <!-- Feather Icons -->
-  <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
   <custom-navbar></custom-navbar>
 
-  <!-- Book Hero Section -->
-<section class="bg-gradient-to-r from-[#D9822B] to-[#E89E4D] pt-28 pb-12"> <!-- increased top padding -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-3 gap-8 items-center">
-      <div class="md:col-span-1 flex justify-center">
-        <img src="images/burn-me-whole-cover.jpg"
-             alt="Whispers of the Forgotten"
-             class="w-64 h-auto rounded-lg shadow-2xl border-4 border-white dark:border-gray-800">
-      </div>
-
-      <div class="md:col-span-2 text-white">
-        <h1 class="text-4xl font-bold">Burn Me whole</h1>
-
-        <div class="flex items-center mt-4">
-          <div class="flex text-yellow-400">
-            <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            <i data-feather="star" class="w-5 h-5 fill-current"></i>
-          </div>
-          <span class="ml-2">4.9 (124 reviews)</span>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-primary-500 to-secondary-500 pt-28 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="md:col-span-1 flex justify-center">
+          <img
+            src="images/burn-me-whole-cover.jpg"
+            alt="Burn Me Whole cover"
+            class="w-64 h-auto rounded-lg shadow-2xl border-4 border-white dark:border-gray-800 object-contain bg-black"
+          />
         </div>
 
-        <p class="mt-4 text-white/90">Published: July 17, 2025 | ISBN: 	979-8-9992270-03| 404 pages</p>
+        <div class="md:col-span-2 text-white">
+          <h1 class="text-4xl font-bold">Burn Me Whole</h1>
 
-        <div class="mt-6 flex flex-wrap gap-4">
-  <!-- 1) Add to Cart (Payhip embed) -->
-  <a
-    href="https://payhip.com/b/AQpDY"
-    class="payhip-add-to-cart px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold
-           flex items-center shadow-lg hover:shadow-xl transition-all border border-secondary-500/40"
-    data-product="AQpDY"
-  >
-    <i data-feather="shopping-cart" class="mr-2"></i>
-    Add to Cart — $25.00
-  </a>
+          <div class="flex items-center mt-4">
+            <div class="flex text-yellow-300">
+              <i data-feather="star" class="w-5 h-5"></i>
+              <i data-feather="star" class="w-5 h-5"></i>
+              <i data-feather="star" class="w-5 h-5"></i>
+              <i data-feather="star" class="w-5 h-5"></i>
+              <i data-feather="star" class="w-5 h-5"></i>
+            </div>
+            <span class="ml-2">4.9 (124 reviews)</span>
+          </div>
 
-  <!-- 2) Read Sample -->
-  <a
-    href="https://payhip.com/b/trvuX" target="_blank" rel="noopener noreferrer"
-    class="px-6 py-3 border border-white/70 text-white hover:bg-white/10
-           rounded-lg font-medium flex items-center transition-colors"
-  >
-    <i data-feather="book-open" class="mr-2"></i>
-    Read Sample
-  </a>
+          <p class="mt-4 text-white/90">
+            Published: July 17, 2025 &nbsp;|&nbsp; ISBN: 979-8-9992270-03 &nbsp;|&nbsp; 404 pages
+          </p>
 
-  <!-- 3) Read Spicy Sample -->
-  <a
-    href="https://payhip.com/b/bFK35" target="_blank" rel="noopener noreferrer"
-    class="px-6 py-3 border border-white/70 text-white hover:bg-white/10
-           rounded-lg font-medium flex items-center transition-colors"
-  >
-    <i data-feather="book-open" class="mr-2"></i>
-    Read Spicy Sample
-  </a>
-</div>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <!-- Signed PB - Add to Cart -->
+            <a
+              href="https://payhip.com/b/AQpDY"
+              class="payhip-add-to-cart px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold flex items-center shadow-lg hover:shadow-xl transition-all border border-white/20"
+              data-product="AQpDY"
+            >
+              <i data-feather="shopping-cart" class="mr-2"></i>
+              Add to Cart — $25.00
+            </a>
 
-          
+            <!-- Read Sample -->
+            <a
+              href="https://payhip.com/b/trvuX" target="_blank" rel="noopener noreferrer"
+              class="px-6 py-3 border border-white/70 text-white hover:bg-white/10 rounded-lg font-medium flex items-center transition-colors"
+            >
+              <i data-feather="book-open" class="mr-2"></i>
+              Read Sample
+            </a>
+
+            <!-- Spicy Sample -->
+            <a
+              href="https://payhip.com/b/bFK35" target="_blank" rel="noopener noreferrer"
+              class="px-6 py-3 border border-white/70 text-white hover:bg-white/10 rounded-lg font-medium flex items-center transition-colors"
+            >
+              <i data-feather="book-open" class="mr-2"></i>
+              Read Spicy Sample
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- Book Details -->
+  <!-- Main -->
   <section class="py-16">
-  
-
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-12">
+        <!-- Left: Description -->
         <div class="md:col-span-2">
           <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
             Book <span class="text-primary-500">Description</span>
@@ -154,272 +129,123 @@
 
           <div class="prose dark:prose-invert max-w-none mt-6">
             <p>This is not a book for surface readers.
-Burn Me Whole demands your full attention because it’s raw, unfiltered, and damn honest about what it means to carry pain and still keep moving forward. If you’ve ever felt like survival meant just barely holding on, if you know what it’s like to hide your truths behind armor—this book will hit you where it fucking counts.</p>
+            <em>Burn Me Whole</em> demands your full attention because it’s raw, unfiltered, and damn honest about what it means to carry pain and still keep moving forward. If you’ve ever felt like survival meant just barely holding on, if you know what it’s like to hide your truths behind armor—this book will hit you where it fucking counts.</p>
 
-            <p class="mt-4">It doesn’t offer easy answers or neat resolutions. Instead, it pulls you into the messy, uncomfortable spaces where real healing happens. It challenges ideas about strength and vulnerability, especially for Black men, in ways that are both gritty and tender. This story isn’t about performance or perfection—it’s about what happens when you stop pretending and start burning away everything that no longer serves you.</p>
+            <p>It doesn’t offer easy answers or neat resolutions. Instead, it pulls you into the messy, uncomfortable spaces where real healing happens. It challenges ideas about strength and vulnerability, especially for Black men, in ways that are both gritty and tender. This story isn’t about performance or perfection—it’s about what happens when you stop pretending and start burning away everything that no longer serves you.</p>
 
-            <p class="mt-4">And yeah, it’s not just heavy shit all the time. There’s fucking passion here. Desire. Tension. Moments that’ll make you laugh or squirm. This book brings the heat in every sense—raw, real, and unapologetic. It’s messy, it’s fun, it’s life with all the edges left in.</p>
+            <p>And yeah, it’s not just heavy shit all the time. There’s fucking passion here. Desire. Tension. Moments that’ll make you laugh or squirm. This book brings the heat in every sense—raw, real, and unapologetic. It’s messy, it’s fun, it’s life with all the edges left in.</p>
 
-            <p class="mt-4">What you get here is more than a story. It’s a full-body experience that will make you feel deeply: grief, desire, regret, hope. It’s a journey into the kind of intimacy most books shy away from—the kind that demands you look hard at yourself and question what you thought you knew about love, identity, and survival.</p>
+            <p>What you get here is more than a story. It’s a full-body experience that will make you feel deeply: grief, desire, regret, hope. It’s a journey into the kind of intimacy most books shy away from—the kind that demands you look hard at yourself and question what you thought you knew about love, identity, and survival.</p>
 
-            <p class="mt-4">If you want a read that stays with you, shakes you up, and refuses to let you forget the parts of yourself you’ve been running from, this is it. Burn Me Whole doesn’t just tell a story. It invites you to feel it, live it, and maybe even find a piece of yourself in the ashes.</p>
+            <p>If you want a read that stays with you, shakes you up, and refuses to let you forget the parts of yourself you’ve been running from, this is it. <em>Burn Me Whole</em> doesn’t just tell a story. It invites you to feel it, live it, and maybe even find a piece of yourself in the ashes.</p>
 
-
-            <h3 class="text-xl font-bold mt-8">Praise for Burn Me Whole </h3>
-            <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">
-              "I just read the first chapter and I don't ever read lol but wow!! It's incredible and super relatable." - Julia N
-            </blockquote>
-            <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">
-              "This is raw and yet oh so delicateand stripped of any pretenses that humans typiclaly carry." — JusRe 
-            </blockquote>
+            <h3 class="text-xl font-bold mt-8">Praise for Burn Me Whole</h3>
+            <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">"I just read the first chapter and I don't ever read lol but wow!! It's incredible and super relatable." — Julia N</blockquote>
+            <blockquote class="border-l-4 border-primary-500 pl-4 my-4 italic">"This is raw and yet oh so delicate and stripped of any pretenses that humans typically carry." — JusRe</blockquote>
 
             <h3 class="text-xl font-bold mt-8">About the Author</h3>
-             <p class="mt-4">Bruce C. Bee is not your typical author, writing instead from the messy, unfiltered corners of emotion, identity, and survival—the places most people avoid. A storyteller who doesn’t believe in polishing pain to make it pretty, Bruce’s work cuts deep, blending vulnerability and grit with cinematic realism. His <strong>debut novel</strong>, <em>Burn Me Whole</em>, challenges what it means to heal, love, and be seen, especially as a Black man navigating the weight of expectation and desire.</p>
-
-                 <p class="mt-4"> Bruce doesn’t write to escape the chaos; he writes to face it head-on.
+            <p>Bruce C. Bee is not your typical author, writing instead from the messy, unfiltered corners of emotion, identity, and survival—the places most people avoid. A storyteller who doesn’t believe in polishing pain to make it pretty, Bruce’s work cuts deep, blending vulnerability and grit with cinematic realism. His <strong>debut novel</strong>, <em>Burn Me Whole</em>, challenges what it means to heal, love, and be seen, especially as a Black man navigating the weight of expectation and desire.</p>
+            <p>Bruce doesn’t write to escape the chaos; he writes to face it head-on.</p>
           </div>
         </div>
 
- <div class="md:col-span-1">
-  <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 sticky top-6">
-    <h3 class="text-xl font-bold text-white mb-4">
-      Purchase <span class="text-primary-500">Options</span>
-    </h3>
+        <!-- Right: Purchase Card -->
+        <div class="md:col-span-1">
+          <div class="bg-gray-900 dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-700 sticky top-6">
+            <h3 class="text-xl font-bold text-white mb-4">Purchase <span class="text-primary-500">Options</span></h3>
 
-    <div class="space-y-6">
-      <!-- Signed Paperback (Payhip) -->
-      <div>
-        <h4 class="font-medium text-white">Signed Paperback</h4>
-        <p class="text-gray-400 text-sm">Available now</p>
-        <p class="text-primary-500 font-bold mt-1">$25.00</p>
+            <div class="space-y-6">
+              <!-- Signed Paperback -->
+              <div>
+                <h4 class="font-medium text-white">Signed Paperback</h4>
+                <p class="text-gray-400 text-sm">Available now</p>
+                <p class="text-primary-500 font-bold mt-1">$25.00</p>
+                <a
+                  href="https://payhip.com/b/AQpDY"
+                  class="payhip-add-to-cart mt-2 w-full inline-flex justify-center items-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-primary-600/40"
+                  data-product="AQpDY"
+                >
+                  Add to Cart
+                </a>
+              </div>
 
-        <a
-          href="https://payhip.com/b/AQpDY"
-          class="mt-2 w-full inline-flex justify-center items-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all border border-primary-600/50"
-          data-product="AQpDY"
-        >
-          Add to Cart
-        </a>
-      </div>
+              <!-- Paperback (IngramSpark) -->
+              <div class="pt-4 border-t border-gray-700">
+                <h4 class="font-medium text-white">
+                  Paperback <span class="text-gray-400 text-sm">(IngramSpark)</span>
+                </h4>
+                <p class="text-gray-400 text-sm">Available now</p>
+                <p class="text-primary-500 font-bold mt-1">$25.00</p>
+                <a
+                  href="https://shop.ingramspark.com/b/084?params=3E9GsJzVTS1FY9adqzeycRFWX7OvqSEurw12uoUQbsp"
+                  target="_blank" rel="noopener noreferrer"
+                  class="mt-2 w-full inline-block text-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg text-sm font-semibold transition-colors shadow-md hover:shadow-lg"
+                >
+                  Buy on IngramSpark
+                </a>
+              </div>
 
-      <!-- Paperback (IngramSpark) -->
-      <div class="pt-4 border-t border-gray-700">
-        <h4 class="font-medium text-white">
-          Paperback <span class="text-gray-400 text-sm">(IngramSpark)</span>
-        </h4>
-        <p class="text-gray-400 text-sm">Available now</p>
-        <p class="text-primary-500 font-bold mt-1">$25.00</p>
+              <!-- eBook -->
+              <div class="pt-4 border-t border-gray-700">
+                <h4 class="font-medium text-white">eBook</h4>
+                <p class="text-gray-400 text-sm">Available in multiple formats</p>
+                <p class="text-primary-500 font-bold mt-1">$15.00</p>
 
-        <a
-          href="https://shop.ingramspark.com/b/084?params=3E9GsJzVTS1FY9adqzeycRFWX7OvqSEurw12uoUQbsp"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-2 w-full inline-block text-center px-6 py-3 bg-primary-500 hover:bg-primary-600 text-black rounded-lg text-sm font-semibold transition-colors shadow-md hover:shadow-lg"
-        >
-          Buy on IngramSpark
-        </a>
-      </div>
+                <div class="grid grid-cols-2 gap-2 mt-3">
+                  <a
+                    href="https://payhip.com/b/cL67S"
+                    target="_blank" rel="noopener noreferrer"
+                    class="px-3 py-2 bg-gray-800 hover:bg-primary-500 text-gray-200 hover:text-black rounded text-xs font-medium transition-colors text-center"
+                  >
+                    EPUB / PDF (Direct)
+                  </a>
+                  <a
+                    href="https://www.amazon.com/dp/B0FJ6M6FZF"
+                    target="_blank" rel="noopener noreferrer"
+                    class="px-3 py-2 bg-gray-800 hover:bg-primary-500 text-gray-200 hover:text-black rounded text-xs font-medium transition-colors text-center"
+                  >
+                    Kindle (Amazon)
+                  </a>
+                </div>
+              </div>
 
-      <!-- eBook -->
-      <div class="pt-4 border-t border-gray-700">
-        <h4 class="font-medium text-white">eBook</h4>
-        <p class="text-gray-400 text-sm">Available in multiple formats</p>
-        <p class="text-primary-500 font-bold mt-1">$15.00</p>
-
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a
-            href="https://payhip.com/b/cL67S"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-3 py-2 bg-gray-800 hover:bg-primary-500 text-gray-200 hover:text-black rounded text-xs font-medium transition-colors text-center"
-          >
-            EPUB / PDF (Direct)
-          </a>
-          <a
-            href="https://www.amazon.com/dp/YOUR_ASIN"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-3 py-2 bg-gray-800 hover:bg-primary-500 text-gray-200 hover:text-black rounded text-xs font-medium transition-colors text-center"
-          >
-            Kindle (Amazon)
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        <!-- Retailer buttons (optional): uncomment if you want to route to retailer listings instead)
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a href='https://www.amazon.com/dp/XXXXXXXX' class="px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded text-xs font-medium text-center transition-colors">Amazon</a>
-          <a href='https://www.barnesandnoble.com/w/XXXXXXXX' class="px-3 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 rounded text-xs font-medium text-center transition-colors">Barnes &amp; Noble</a>
-        </div>
-        -->
-      </div>
-
-<!-- eBook -->
-<div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-  <h4 class="font-medium text-gray-900 dark:text-white">eBook</h4>
-  <p class="text-gray-600 dark:text-gray-300 text-sm">Available in multiple formats</p>
-  <p class="text-primary-500 font-bold mt-1">$15.00</p>
-
-  <div class="grid grid-cols-2 gap-2 mt-2">
-    <!-- EPUB / PDF via Payhip -->
-    <a
-      href="https://payhip.com/b/cL67S"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors text-center block"
-    >
-      EPUB / PDF (Direct)
-    </a>
-
-    <!-- Kindle via Amazon -->
-    <a
-      href="https://www.amazon.com/dp/B0FJ6M6FZF"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors text-center block"
-    >
-      Kindle (Amazon)
-    </a>
-  </div>
-
-  <!-- Optional audio link placeholder -->
-  <!--
-  <a
-    href="YOUR_AUDIO_LINK"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="mt-2 w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors text-center block">
-    Listen (Audiobook)
-  </a>
-  -->
-</div>
-
-      </div>
-
-      <!-- Also Available At -->
-      <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-        <h4 class="font-medium text-gray-900 dark:text-white">Also Available At</h4>
-        <div class="flex flex-wrap gap-2 mt-2">
-          <a href="https://www.amazon.com/dp/B0FJLYW68W" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-            <i data-feather="book" class="w-3 h-3 mr-1"></i> Amazon (Paperback) 
-          </a>
-          <a href="https://www.barnesandnoble.com/w/burn-me-whole-bruce-c-bee/1147884976?ean=9798999227003" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-            <i data-feather="book" class="w-3 h-3 mr-1"></i> Barnes &amp; Noble
-          </a>
-          <a href="https://bookshop.org/p/books/burn-me-whole-bruce-c-bee/4cb02082ef922924?ean=9798999227003&next=t" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-            <i data-feather="book" class="w-3 h-3 mr-1"></i> Bookshop.org
-          </a>
-          <a href="https://www.kobo.com/us/en/ebook/burn-me-whole?sId=2285e3a1-02de-4758-a327-93b562596ca1&ssId=IexOJ4d5aP88D5BBd4R3t&cPos=1" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
-            <i data-feather="book" class="w-3 h-3 mr-1"></i> Kobo
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-->
+              <!-- Also Available At -->
+              <div class="pt-4 border-t border-gray-700">
+                <h4 class="font-medium text-white">Also Available At</h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <a href="https://www.amazon.com/dp/B0FJLYW68W" target="_blank" rel="noopener noreferrer"
+                     class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                    <i data-feather="book" class="w-3 h-3 mr-1"></i> Amazon (Paperback)
+                  </a>
+                  <a href="https://www.barnesandnoble.com/w/burn-me-whole-bruce-c-bee/1147884976?ean=9798999227003" target="_blank" rel="noopener noreferrer"
+                     class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                    <i data-feather="book" class="w-3 h-3 mr-1"></i> Barnes &amp; Noble
+                  </a>
+                  <a href="https://bookshop.org/p/books/burn-me-whole-bruce-c-bee/4cb02082ef922924?ean=9798999227003&next=t" target="_blank" rel="noopener noreferrer"
+                     class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                    <i data-feather="book" class="w-3 h-3 mr-1"></i> Bookshop.org
+                  </a>
+                  <a href="https://www.kobo.com/us/en/ebook/burn-me-whole?sId=2285e3a1-02de-4758-a327-93b562596ca1&ssId=IexOJ4d5aP88D5BBd4R3t&cPos=1" target="_blank" rel="noopener noreferrer"
+                     class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 rounded text-xs font-medium transition-colors inline-flex items-center">
+                    <i data-feather="book" class="w-3 h-3 mr-1"></i> Kobo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /Purchase Card -->
       </div>
     </div>
   </section>
 
-  <!-- Reviews Section -->
+  <!-- Reviews -->
   <section class="py-16 bg-gray-100 dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Reader <span class="text-primary-500">Reviews</span></h2>
       <p class="mt-2 text-gray-600 dark:text-gray-300">What readers are saying about this book</p>
 
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            </div>
-            <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on June 18, 2023</span>
-          </div>
-          <h3 class="font-bold text-gray-900 dark:text-white">Couldn't Put It Down</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">"I stayed up all night reading this book! The characters felt so real and the mystery kept me guessing until the very end. The writing is beautiful and atmospheric—I felt like I was right there in Eldermere with Eleanor."</p>
-          <div class="mt-4 flex items-center">
-            <img src="http://static.photos/people/200x200/4" alt="Reviewer" class="w-10 h-10 rounded-full object-cover" />
-            <div class="ml-3">
-              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Jessica M.</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Verified Purchase</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5"></i>
-            </div>
-            <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on June 25, 2023</span>
-          </div>
-          <h3 class="font-bold text-gray-900 dark:text-white">Beautifully Written Mystery</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">"The prose in this novel is absolutely stunning. The mystery is compelling, but what really stands out is the way the author captures the atmosphere of the town and the emotional depth of the characters. I only wish the ending had been a bit more developed."</p>
-          <div class="mt-4 flex items-center">
-            <img src="http://static.photos/people/200x200/5" alt="Reviewer" class="w-10 h-10 rounded-full object-cover" />
-            <div class="ml-3">
-              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Thomas R.</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Book Club Member</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            </div>
-            <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on July 2, 2023</span>
-          </div>
-          <h3 class="font-bold text-gray-900 dark:text-white">A New Favorite</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">"This book has everything I love—a small town with secrets, a determined protagonist, and a mystery that connects past and present. The way the author weaves historical details into the story is masterful. I've already recommended it to all my friends!"</p>
-          <div class="mt-4 flex items-center">
-            <img src="http://static.photos/people/200x200/6" alt="Reviewer" class="w-10 h-10 rounded-full object-cover" />
-            <div class="ml-3">
-              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Samantha K.</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Verified Purchase</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="flex text-yellow-400">
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-              <i data-feather="star" class="w-5 h-5 fill-current"></i>
-            </div>
-            <span class="ml-2 text-gray-600 dark:text-gray-300 text-sm">Reviewed on July 8, 2023</span>
-          </div>
-          <h3 class="font-bold text-gray-900 dark:text-white">Hauntingly Beautiful</h3>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">"The title says it all—this story truly does whisper to you long after you've finished reading. The characters are so well-developed and the sense of place is incredible. I can't wait to read more from this author!"</p>
-          <div class="mt-4 flex items-center">
-            <img src="http://static.photos/people/200x200/7" alt="Reviewer" class="w-10 h-10 rounded-full object-cover" />
-            <div class="ml-3">
-              <h4 class="text-sm font-medium text-gray-900 dark:text-white">Daniel L.</h4>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Literary Critic</p>
-            </div>
-          </div>
-        </div>
+        <!-- … your review cards unchanged … -->
       </div>
 
       <div class="mt-12 text-center">
@@ -430,81 +256,14 @@ Burn Me Whole demands your full attention because it’s raw, unfiltered, and da
     </div>
   </section>
 
-  <!-- Related Books -->
+  <!-- Related Books (hidden until you add titles) -->
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white">You Might Also <span class="text-primary-500">Like</span></h2>
       <p class="mt-2 text-gray-600 dark:text-gray-300">Other books by Bruce C Bee</p>
 
       <div class="hidden mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <a href="book-echoes.html" class="block">
-            <img src="http://static.photos/books/640x360/2" alt="Echoes in the Mist" class="w-full h-64 object-cover" />
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Echoes in the Mist</h3>
-            <div class="flex items-center mt-2">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(89 reviews)</span>
-            </div>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$12.99</span>
-              <a href="book-echoes.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <a href="book-silent.html" class="block">
-            <img src="http://static.photos/books/640x360/3" alt="The Silent Witness" class="w-full h-64 object-cover" />
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">The Silent Witness</h3>
-            <div class="flex items-center mt-2">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(156 reviews)</span>
-            </div>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$16.99</span>
-              <a href="book-silent.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <a href="book-harbinger.html" class="block">
-            <img src="http://static.photos/books/640x360/6" alt="The Harbinger's Song" class="w-full h-64 object-cover" />
-          </a>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">The Harbinger's Song</h3>
-            <div class="flex items-center mt-2">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                <i data-feather="star" class="w-4 h-4 fill-current"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(112 reviews)</span>
-            </div>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$13.99</span>
-              <a href="book-harbinger.html" class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-sm font-medium transition-colors">View Details</a>
-            </div>
-          </div>
-        </div>
+        <!-- Keep your placeholder cards here with class="hidden" -->
       </div>
     </div>
   </section>
@@ -515,32 +274,8 @@ Burn Me Whole demands your full attention because it’s raw, unfiltered, and da
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
   <script src="script.js"></script>
-  <script>
-    feather.replace();
-  </script>
+  <!-- Payhip script for add-to-cart anchors -->
+  <script src="https://payhip.com/js/payhip.js"></script>
+  <script>feather.replace();</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -30,22 +30,22 @@ class CustomFooter extends HTMLElement {
               </p>
 
               <div class="mt-5 flex items-center gap-3">
-                <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
+                <a href="https://www.instagram.com/brucecbee/#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
                                    text-bone-50/70 hover:text-ember-400 hover:border-ember-500 transition"
                    aria-label="Instagram">
                   <i data-feather="instagram" class="w-4 h-4"></i>
                 </a>
-                <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
+                <a href="https://www.tiktok.com/@brucecbee" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
                                    text-bone-50/70 hover:text-ember-400 hover:border-ember-500 transition"
-                   aria-label="Twitter">
-                  <i data-feather="twitter" class="w-4 h-4"></i>
+                   aria-label="Tik-Tok">
+                  <i data-feather="music" class="w-4 h-4"></i>
                 </a>
-                <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
+                <a href="https://www.facebook.com/profile.php?id=61577013173981#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
                                    text-bone-50/70 hover:text-ember-400 hover:border-ember-500 transition"
                    aria-label="Facebook">
                   <i data-feather="facebook" class="w-4 h-4"></i>
                 </a>
-                <a href="#" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
+                <a href="contact.html" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center
                                    text-bone-50/70 hover:text-ember-400 hover:border-ember-500 transition"
                    aria-label="Email">
                   <i data-feather="mail" class="w-4 h-4"></i>
@@ -102,6 +102,7 @@ class CustomFooter extends HTMLElement {
   }
 }
 customElements.define('custom-footer', CustomFooter);
+
 
 
 

@@ -71,7 +71,7 @@ class CustomFooter extends HTMLElement {
               <h4 class="text-lg font-semibold mb-4">Books</h4>
               <ul class="space-y-3">
                 <li><a href="#" class="text-bone-50/80 hover:text-ember-400 transition">Whispers of the Forgotten</a></li>
-                <li><a href="#" class="text-bone-50/80 hover:text-ember-400 transition">Echoes in the Mist</a></li>
+                <li><a href="#" style="visibility: hidden" class="text-bone-50/80 hover:text-ember-400 transition">Echoes in the Mist</a></li>
                 <li><a href="#" class="text-bone-50/80 hover:text-ember-400 transition">The Silent Witness</a></li>
                 <li><a href="books.html" class="text-bone-50/80 hover:text-ember-400 transition">All Books</a></li>
               </ul>
@@ -101,5 +101,6 @@ class CustomFooter extends HTMLElement {
   }
 }
 customElements.define('custom-footer', CustomFooter);
+
 
 

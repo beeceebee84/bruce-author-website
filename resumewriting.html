@@ -254,5 +254,22 @@
                 <p class="text-sm text-bone-50/60">Supply Chain Manager</p>
               </div>
             </div>
+
+              <!-- Component scripts: make sure these paths are correct -->
+  <script type="module" src="components/navbar.js"></script>
+  <script type="module" src="components/footer.js"></script>
+
+  <!-- If your component files aren’t modules, remove type="module" above -->
+
+  <!-- Any page JS -->
+  <script src="script.js"></script>
+
+  <!-- Feather icons AFTER components are upgraded -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.feather) feather.replace();
+    });
+  </script>
+
 </body>
 </html>

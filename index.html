@@ -278,8 +278,198 @@
     </div>
   </section>
 
+  <!-- ===================== -->
+  <!-- JAMAICA RELIEF POPUP  -->
+  <!-- ===================== -->
+  <div
+    id="jovel-relief-backdrop"
+    class="fixed inset-0 z-[9998] hidden opacity-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ease-out"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    id="jovel-relief-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="jovel-relief-title"
+    aria-describedby="jovel-relief-desc"
+    class="fixed inset-0 z-[9999] hidden items-center justify-center p-4"
+  >
+    <div
+      id="jovel-relief-card"
+      class="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400
+             opacity-0 translate-y-4 transition-all duration-300 ease-out"
+      style="background: linear-gradient(145deg, #009B3A 0%, #FFD100 60%, #000000 100%);"
+    >
+      <div class="bg-black/60 p-6 text-white">
+        <div class="flex items-center justify-between">
+          <h2 id="jovel-relief-title" class="text-lg font-bold uppercase tracking-wide text-yellow-400">
+            Help Jovel Rebuild 🇯🇲
+          </h2>
+          <button
+            id="jovel-relief-close"
+            type="button"
+            class="rounded-full p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            aria-label="Close popup"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <p id="jovel-relief-desc" class="mt-3 text-sm leading-relaxed text-gray-100">
+          Hurricane Melissa left parts of Jamaica devastated — including the home of
+          the real woman who inspired <em>Jovel</em> in <strong>Burn Me Whole</strong>.
+          <br><br>
+          I’m sending <span class="font-semibold text-yellow-400">100% of proceeds</span> from book sales and collecting donations
+          to help her rebuild and recover.
+        </p>
+
+        <div class="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <a
+            href="https://YOUR-BOOK-LINK.example"
+            class="inline-flex items-center justify-center rounded-xl border border-yellow-400 bg-yellow-400 px-4 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition-colors"
+          >
+            Buy the Book
+          </a>
+          <a
+            href="https://YOUR-GOFUNDME-LINK.example"
+            class="inline-flex items-center justify-center rounded-xl border border-green-500 bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-700 transition-colors"
+          >
+            GoFundMe
+          </a>
+        </div>
+
+        <p class="mt-3 text-xs text-gray-300">
+          Transparent updates will be posted as funds are sent. One love. 🖤💛💚
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer web component -->
   <custom-footer></custom-footer>
+
+  <!-- ===== Popup Script (smooth animation + snooze) ===== -->
+  <script>
+    (function () {
+      const MODAL_ID = "jovel-relief-modal";
+      const BACKDROP_ID = "jovel-relief-backdrop";
+      const CARD_ID = "jovel-relief-card";
+      const CLOSE_ID = "jovel-relief-close";
+      const STORAGE_KEY = "jovelReliefDismissedAt";
+      const SNOOZE_DAYS = 7;
+
+      const modal = document.getElementById(MODAL_ID);
+      const backdrop = document.getElementById(BACKDROP_ID);
+      const card = document.getElementById(CARD_ID);
+      const closeBtn = document.getElementById(CLOSE_ID);
+
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function getFocusable(container) {
+        return Array.from(
+          container.querySelectorAll(
+            'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => !el.hasAttribute("disabled"));
+      }
+
+      function openModal() {
+        backdrop.classList.remove("hidden");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.documentElement.style.overflow = "hidden";
+
+        const focusables = getFocusable(modal);
+        modal._trap = { first: focusables[0], last: focusables[focusables.length - 1] };
+
+        if (prefersReduced) {
+          backdrop.classList.add("opacity-100");
+          card.classList.remove("opacity-0", "translate-y-4");
+          card.classList.add("opacity-100", "translate-y-0");
+          if (modal._trap.first) modal._trap.first.focus();
+          return;
+        }
+
+        requestAnimationFrame(() => {
+          backdrop.classList.add("opacity-100");
+          card.classList.remove("opacity-0", "translate-y-4");
+          card.classList.add("opacity-100", "translate-y-0");
+          if (modal._trap.first) modal._trap.first.focus();
+        });
+      }
+
+      function closeModal() {
+        if (prefersReduced) {
+          backdrop.classList.remove("opacity-100");
+          card.classList.remove("opacity-100", "translate-y-0");
+          card.classList.add("opacity-0", "translate-y-4");
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          backdrop.classList.add("hidden");
+          document.documentElement.style.overflow = "";
+        } else {
+          backdrop.classList.remove("opacity-100");
+          card.classList.remove("opacity-100", "translate-y-0");
+          card.classList.add("opacity-0", "translate-y-4");
+
+          const done = () => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            backdrop.classList.add("hidden");
+            document.removeEventListener("transitionend", done, true);
+            document.documentElement.style.overflow = "";
+          };
+          document.addEventListener("transitionend", done, true);
+        }
+
+        localStorage.setItem(STORAGE_KEY, String(Date.now()));
+      }
+
+      closeBtn.addEventListener("click", closeModal);
+      backdrop.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", (e) => {
+        if (modal.classList.contains("hidden")) return;
+        if (e.key === "Escape") {
+          e.preventDefault();
+          closeModal();
+        } else if (e.key === "Tab") {
+          const { first, last } = modal._trap || {};
+          if (!first || !last) return;
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      function shouldOpen() {
+        try {
+          const ts = parseInt(localStorage.getItem(STORAGE_KEY) || "0", 10);
+          if (!ts) return true;
+          const diffDays = (Date.now() - ts) / 86400000;
+          return diffDays >= SNOOZE_DAYS;
+        } catch {
+          return true;
+        }
+      }
+
+      window.addEventListener("load", () => {
+        if (shouldOpen()) openModal();
+      });
+
+      // Optional: manual opener for links like <a href="#" onclick="openJovelReliefModal();return false;">Hurricane Relief</a>
+      window.openJovelReliefModal = openModal;
+    })();
+  </script>
 
   <!-- Payhip (enable once per page if you use payhip buttons) -->
   <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
@@ -292,9 +482,3 @@
   <script>feather.replace();</script>
 </body>
 </html>
-
-
-
-
-
-

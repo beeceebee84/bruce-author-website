@@ -2,9 +2,9 @@
 <html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bruce C Bee | Author & Career Storyteller</title>
-  <meta name="description" content="Official site of Bruce C Bee — author of Burn Me Whole and professional resume storyteller.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publishing Services | Bruce C Bee</title>
+  <meta name="description" content="Publishing services by Bruce C Bee — manuscript critique, editing, and publishing prep with free consultations." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,12 +19,12 @@
             bone:  { 50:'#F5F3EF' }
           },
           animation: {
-            'fade-in': 'fadeIn 0.5s ease-in',
-            'float': 'float 6s ease-in-out infinite',
+            'fade-in':'fadeIn 0.5s ease-in',
+            'float':'float 6s ease-in-out infinite',
           },
           keyframes: {
-            fadeIn: { '0%': {opacity:'0'}, '100%': {opacity:'1'} },
-            float: { '0%, 100%': {transform:'translateY(0)'}, '50%': {transform:'translateY(-10px)'} }
+            fadeIn: { '0%':{opacity:'0'}, '100%':{opacity:'1'} },
+            float:  { '0%,100%':{transform:'translateY(0)'}, '50%':{transform:'translateY(-10px)'} }
           }
         }
       }
@@ -36,14 +36,15 @@
 </head>
 
 <body class="bg-ink-900 text-bone-50">
-  <!-- Custom Navbar Component -->
+  <!-- Site-wide navbar -->
   <custom-navbar></custom-navbar>
   <noscript>
     <nav class="bg-ink-800 border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" class="font-bold">Bruce C Bee</a>
         <div class="flex gap-6 text-bone-50/80 text-sm">
-          <a href="#services" class="hover:text-bone-50">Services</a>
+          <a href="/index.html#services" class="hover:text-bone-50">Resume Services</a>
+          <a href="#publishing" class="hover:text-bone-50">Publishing Services</a>
           <a href="#contact" class="hover:text-bone-50">Contact</a>
         </div>
       </div>
@@ -51,299 +52,225 @@
   </noscript>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="relative overflow-hidden py-24 md:py-32">
       <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
       <div class="absolute inset-0 bg-[radial-gradient(900px_360px_at_50%_45%,theme(colors.ember.500/0.22),transparent_80%)]"></div>
-      <div class="absolute inset-0 opacity-10" style="background-image: url('https://static.photos/abstract/1200x630/5'); background-size: cover;"></div>
+      <div class="absolute inset-0 opacity-10" style="background-image:url('https://static.photos/abstract/1200x630/7');background-size:cover;"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center">
-          <div class="inline-block mb-8 animate-float">
-            <div class="relative">
-              <div class="absolute -inset-2 bg-ember-500/30 blur-lg rounded-full"></div>
-              <div class="relative bg-ink-800/80 backdrop-blur-sm border border-ember-500/30 rounded-full p-6">
-                <i data-feather="book-open" class="w-12 h-12 text-ember-400"></i>
-              </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-block mb-8 animate-float">
+          <div class="relative">
+            <div class="absolute -inset-2 bg-ember-500/30 blur-lg rounded-full"></div>
+            <div class="relative bg-ink-800/80 backdrop-blur-sm border border-ember-500/30 rounded-full p-6">
+              <i data-feather="book-open" class="w-12 h-12 text-ember-400"></i>
             </div>
           </div>
-          <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Your Career <span class="text-ember-500">Story</span> Matters
-          </h1>
-          <p class="text-xl text-bone-50/80 max-w-3xl mx-auto mb-8">
-            As an author who crafts compelling narratives, I now help professionals tell their career stories through resumes that get noticed.
-          </p>
-          <div class="flex justify-center gap-4">
-            <a href="#services" class="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700 shadow-lg shadow-ember-500/20">
-              Explore Services
-            </a>
-            <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">
-              Get Started
-            </a>
-          </div>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+          Bring Your <span class="text-ember-500">Manuscript</span> to Life
+        </h1>
+        <p class="text-xl text-bone-50/80 max-w-3xl mx-auto mb-8">
+          From first draft to polished release — thoughtful critique, precise editing, and publishing prep with a storyteller’s eye.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="#publishing" class="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700 shadow-lg shadow-ember-500/20">
+            Explore Services
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">
+            Get Started
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16">
+    <!-- Publishing Services -->
+    <section id="publishing" class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold">Resume <span class="text-ember-500">Services</span></h2>
+          <h2 class="text-3xl font-bold">Publishing <span class="text-ember-500">Services</span></h2>
           <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">
-            Packages designed for every level of need — specializing in Supply Chain &amp; Operations (open to all industries).
+            Indie or traditional — select the level of support you need. Consultations are always free.
           </p>
           <p class="mt-2 text-bone-50/70">
-            Consultation calls are always free. You can order directly here or safely through Fiverr — whichever feels right for you.
+            Order directly or choose Fiverr for added buyer protection — your choice.
           </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Tier 1: Resume Refresh -->
-          <div class="group bg-ink-800 rounded-xl p-8 border border-ember-500/20 hover:border-ember-500/50 transition-all hover:shadow-lg hover:shadow-ember-500/10">
+          <!-- Tier 1: Manuscript Critique -->
+          <article class="group bg-ink-800 rounded-xl p-8 border border-ember-500/20 hover:border-ember-500/50 transition-all hover:shadow-lg hover:shadow-ember-500/10">
             <div class="text-ember-500 mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center group-hover:bg-ember-500/10 transition-colors">
-                <i data-feather="file-text" class="w-6 h-6"></i>
+                <i data-feather="file" class="w-6 h-6"></i>
               </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Resume Refresh</h3>
+            <h3 class="text-2xl font-bold mb-3">Manuscript Critique</h3>
             <p class="text-bone-50/80 mb-6">
-              Quick polish for an existing resume: sharper language, modern layout, and ATS-friendly formatting.
+              Big-picture feedback on structure, pacing, character, and voice with clear next steps.
             </p>
             <ul class="space-y-3 mb-8 text-bone-50/80">
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Format cleanup &amp; modern layout</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>ATS keyword optimization</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>1 round of revisions</span>
-              </li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Editorial letter (3–5 pages)</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Theme, stakes & character notes</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>30-min follow-up call</span></li>
             </ul>
-            <p class="text-2xl font-bold mb-4">$75</p>
+            <p class="text-2xl font-bold mb-4">From $<span class="align-bottom">___</span></p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="<!-- PAYHIP_LINK_REFRESH -->" aria-label="Order directly (Payhip)" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Order Directly</a>
-              <a href="<!-- FIVERR_LINK_REFRESH -->" aria-label="Order on Fiverr" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
+              <a href="<!-- PAYHIP_LINK_CRITIQUE -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Order Directly</a>
+              <a href="<!-- FIVERR_LINK_CRITIQUE -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Tier 2: Resume Rewrite -->
-          <div class="group bg-ink-800 rounded-xl p-8 border border-ember-500/50 hover:border-ember-500 transition-all transform hover:-translate-y-1 shadow-lg shadow-ember-500/10 relative overflow-hidden">
+          <!-- Tier 2: Line & Copy Edit -->
+          <article class="group bg-ink-800 rounded-xl p-8 border border-ember-500/50 hover:border-ember-500 transition-all transform hover:-translate-y-1 shadow-lg shadow-ember-500/10 relative overflow-hidden">
             <div class="absolute top-4 right-4">
               <span class="inline-block px-3 py-1 text-xs font-semibold bg-ember-500/20 text-ember-400 rounded-full">Most Popular</span>
             </div>
             <div class="text-ember-500 mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center group-hover:bg-ember-500/10 transition-colors">
-                <i data-feather="award" class="w-6 h-6"></i>
+                <i data-feather="edit-3" class="w-6 h-6"></i>
               </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Resume Rewrite</h3>
+            <h3 class="text-2xl font-bold mb-3">Line &amp; Copy Edit</h3>
             <p class="text-bone-50/80 mb-6">
-              A complete overhaul and strategic rewrite to position you for your next role.
+              Sentence-level clarity, tone, and rhythm — plus grammar, punctuation, and consistency.
             </p>
             <ul class="space-y-3 mb-8 text-bone-50/80">
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Full content rewrite &amp; structure</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Role-targeted keywords (ATS)</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>2 rounds of revisions</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Optional cover letter (+$25)</span>
-              </li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Tracked changes document</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Voice & style consistency pass</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Style guide snapshot</span></li>
             </ul>
-            <p class="text-2xl font-bold mb-4">$125</p>
+            <p class="text-2xl font-bold mb-4">From $<span class="align-bottom">___</span></p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="<!-- CALENDLY_LINK -->" aria-label="Book a free consultation" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Free Consult</a>
-              <a href="<!-- FIVERR_LINK_REWRITE -->" aria-label="Order on Fiverr" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
+              <a href="<!-- CALENDLY_LINK -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Free Consult</a>
+              <a href="<!-- FIVERR_LINK_LINECOPY -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Tier 3: Complete Career Revamp -->
-          <div class="group bg-ink-800 rounded-xl p-8 border border-ember-500/20 hover:border-ember-500/50 transition-all hover:shadow-lg hover:shadow-ember-500/10">
+          <!-- Tier 3: Publishing Prep Bundle -->
+          <article class="group bg-ink-800 rounded-xl p-8 border border-ember-500/20 hover:border-ember-500/50 transition-all hover:shadow-lg hover:shadow-ember-500/10">
             <div class="text-ember-500 mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center group-hover:bg-ember-500/10 transition-colors">
-                <i data-feather="star" class="w-6 h-6"></i>
+                <i data-feather="package" class="w-6 h-6"></i>
               </div>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Complete Career Revamp</h3>
+            <h3 class="text-2xl font-bold mb-3">Publishing Prep Bundle</h3>
             <p class="text-bone-50/80 mb-6">
-              An end-to-end personal brand transformation across resume, cover letter, and LinkedIn.
+              Editing, formatting, and submission/launch essentials — everything ready for shelves.
             </p>
             <ul class="space-y-3 mb-8 text-bone-50/80">
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Full resume rewrite + formatting</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>Custom cover letter</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>LinkedIn profile revamp</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>30-min strategy call</span>
-              </li>
-              <li class="flex items-start">
-                <i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i>
-                <span>3 rounds of revisions</span>
-              </li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Copy edit + proofread pass</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>KDP/ePub interior formatting</span></li>
+              <li class="flex items-start"><i data-feather="check" class="w-5 h-5 text-ember-500 mr-2 mt-0.5"></i><span>Query letter or back-cover blurb</span></li>
             </ul>
-            <p class="text-2xl font-bold mb-4">$175</p>
+            <p class="text-2xl font-bold mb-4">From $<span class="align-bottom">___</span></p>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="<!-- CALENDLY_LINK -->" aria-label="Book a free consultation" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Free Consult</a>
-              <a href="<!-- FIVERR_LINK_REVAMP -->" aria-label="Order on Fiverr" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
+              <a href="<!-- CALENDLY_LINK -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700">Free Consult</a>
+              <a href="<!-- FIVERR_LINK_PREP -->" class="flex-1 inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">Fiverr Option</a>
             </div>
-          </div>
+          </article>
+        </div>
+
+        <!-- Add-ons (optional but useful for upsell) -->
+        <div class="mt-10 rounded-2xl border border-white/10 bg-ink-800/60 p-6">
+          <h4 class="text-lg font-semibold mb-3">Popular Add-Ons</h4>
+          <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 text-sm text-bone-50/85">
+            <li class="flex justify-between border border-white/10 rounded-lg px-3 py-2"><span>Query Letter Coaching</span><span class="font-semibold">From $___</span></li>
+            <li class="flex justify-between border border-white/10 rounded-lg px-3 py-2"><span>Back-Cover Blurb</span><span class="font-semibold">From $___</span></li>
+            <li class="flex justify-between border border-white/10 rounded-lg px-3 py-2"><span>Author Bio &amp; Website Copy</span><span class="font-semibold">From $___</span></li>
+            <li class="flex justify-between border border-white/10 rounded-lg px-3 py-2"><span>Beta-Reader Report</span><span class="font-semibold">From $___</span></li>
+          </ul>
+          <p class="mt-3 text-xs text-bone-50/60">
+            Rates vary by word count and complexity. Ask during your free consult for a custom quote.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Author Section -->
-    <section class="py-16 bg-ink-800/50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/3">
-            <div class="relative group">
-              <div class="absolute -inset-2 bg-ember-500/30 blur-lg rounded-xl"></div>
-              <img src="https://static.photos/people/640x360/42" alt="Bruce C Bee" class="relative rounded-xl border border-ember-500/30 w-full h-auto">
-            </div>
-          </div>
-          <div class="md:w-2/3">
-            <h2 class="text-3xl font-bold mb-6">About <span class="text-ember-500">Bruce C Bee</span></h2>
-           <p class="text-bone-50/80 mb-6 font-semibold text-lg">
-    Every career has a story — moments of <span class="text-brass-500">growth, grit, and transformation</span>.
-</p>
-<p class="text-bone-50/80 mb-8 text-lg">
-    As an author and storyteller, I help professionals shape those moments into resumes that don’t just check boxes, they <span class="text-brass-500 font-bold">ignite opportunity</span>.
-</p>
-            </p>
-            <div class="flex flex-wrap gap-4">
-              <a href="<!-- PUBLICATIONS_LINK -->" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold border border-ember-500/60 hover:border-ember-500 hover:bg-ember-500/10">
-                <i data-feather="book"></i> View Publications
-              </a>
-              <a href="<!-- CALENDLY_LINK -->" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold bg-gradient-to-r from-ember-500 to-ember-600 hover:from-ember-600 hover:to-ember-700 shadow-lg shadow-ember-500/20">
-                <i data-feather="calendar"></i> Schedule Call
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
+    <!-- Testimonials -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold">Client <span class="text-ember-500">Success</span></h2>
-          <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">
-            Don't just take our word for it — here's what clients say.
-          </p>
+          <h2 class="text-3xl font-bold">Author <span class="text-ember-500">Praise</span></h2>
+          <p class="mt-4 text-bone-50/80 max-w-2xl mx-auto">Writers on working together from draft to launch.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
           <div class="bg-ink-800 rounded-xl p-6 border border-ember-500/20 hover:border-ember-500/50 transition-all">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center mr-4">
-                <i data-feather="user" class="w-6 h-6 text-ember-400"></i>
+                <i data-feather="feather" class="w-6 h-6 text-ember-400"></i>
               </div>
               <div>
-                <h4 class="font-bold">Sarah K.</h4>
-                <p class="text-sm text-bone-50/60">Supply Chain Manager</p>
+                <h4 class="font-bold">Maya L.</h4>
+                <p class="text-sm text-bone-50/60">Fiction Author</p>
               </div>
             </div>
             <p class="italic text-bone-50/80">
-              "Bruce streamlined my resume and tightened my impact statements. I had two interviews within a week."
+              “The critique clarified my story’s spine. The follow-up call gave me a revision plan I could actually execute.”
             </p>
           </div>
 
-          <!-- Testimonial 2 -->
           <div class="bg-ink-800 rounded-xl p-6 border border-ember-500/20 hover:border-ember-500/50 transition-all">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center mr-4">
-                <i data-feather="user-check" class="w-6 h-6 text-ember-400"></i>
+                <i data-feather="scissors" class="w-6 h-6 text-ember-400"></i>
               </div>
               <div>
-                <h4 class="font-bold">Alex M.</h4>
-                <p class="text-sm text-bone-50/60">Operations Lead</p>
+                <h4 class="font-bold">Eric D.</h4>
+                <p class="text-sm text-bone-50/60">Nonfiction Writer</p>
               </div>
             </div>
             <p class="italic text-bone-50/80">
-              "He didn't just edit — he told my story. The rewrite made my achievements clear and compelling."
+              “Line edits were razor-sharp but kept my voice intact. My chapters finally read like me — just cleaner.”
             </p>
           </div>
 
-          <!-- Testimonial 3 -->
           <div class="bg-ink-800 rounded-xl p-6 border border-ember-500/20 hover:border-ember-500/50 transition-all">
             <div class="flex items-center mb-4">
               <div class="w-12 h-12 rounded-full bg-ink-700 flex items-center justify-center mr-4">
-                <i data-feather="user-plus" class="w-6 h-6 text-ember-400"></i>
+                <i data-feather="send" class="w-6 h-6 text-ember-400"></i>
               </div>
               <div>
-                <h4 class="font-bold">Jamie R.</h4>
-                <p class="text-sm text-bone-50/60">Tech Entrepreneur</p>
+                <h4 class="font-bold">Anita R.</h4>
+                <p class="text-sm text-bone-50/60">Indie Author</p>
               </div>
             </div>
             <p class="italic text-bone-50/80">
-              "The LinkedIn revamp + resume package was worth it. Clear, confident, and on-brand."
+              “Formatting + blurb support made my launch painless. Everything looked professional and read beautifully.”
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact / CTA Section -->
+    <!-- CTA -->
     <section id="contact" class="py-16 bg-ember-500">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Ready to Transform Your <span class="text-bone-50/90">Career Story?</span></h2>
+        <h2 class="text-3xl font-bold text-white mb-6">
+          Ready to Elevate Your <span class="text-bone-50/90">Manuscript</span>?
+        </h2>
         <p class="text-lg text-bone-50/90 mb-8 max-w-2xl mx-auto">
-          Book a free consultation or order directly — whatever feels right for you. I’ll reply within 24 hours.
+          Book a free consultation or order directly — whatever fits your process. I’ll reply within 24 hours.
         </p>
-        <form class="max-w-md mx-auto">
-          <div class="grid gap-4">
-            <input type="text" placeholder="Your Name" class="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ink-900 bg-white/90 text-ink-900">
-            <input type="email" placeholder="Your Email" class="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ink-900 bg-white/90 text-ink-900">
-            <select class="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ink-900 bg-white/90 text-ink-900">
-              <option value="">Select a Service</option>
-              <option value="refresh">Resume Refresh ($75) — direct order or Fiverr</option>
-              <option value="rewrite">Resume Rewrite ($125) — free consult recommended</option>
-              <option value="revamp">Complete Career Revamp ($175) — free consult recommended</option>
-            </select>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a href="<!-- CALENDLY_LINK -->" class="flex-1 inline-flex items-center justify-center px-4 py-3 rounded-lg font-semibold bg-ink-900 hover:bg-ink-800 text-bone-50">Book Free Consult</a>
-              <a href="<!-- FIVERR_PROFILE_LINK -->" class="flex-1 inline-flex items-center justify-center px-4 py-3 rounded-lg font-semibold bg-white/90 hover:bg-white text-ink-900">View Fiverr Profile</a>
-            </div>
-          </div>
-        </form>
+        <div class="max-w-md mx-auto grid gap-3 sm:grid-cols-2">
+          <a href="<!-- CALENDLY_LINK -->" class="inline-flex items-center justify-center px-4 py-3 rounded-lg font-semibold bg-ink-900 hover:bg-ink-800 text-bone-50">Book Free Consult</a>
+          <a href="<!-- FIVERR_PROFILE_LINK -->" class="inline-flex items-center justify-center px-4 py-3 rounded-lg font-semibold bg-white/90 hover:bg-white text-ink-900">View Fiverr Profile</a>
+        </div>
         <p class="mt-4 text-sm text-bone-50/90">Consultation calls are always free. Choose direct or Fiverr — your call.</p>
       </div>
     </section>
   </main>
 
-  <!-- Custom Footer Component -->
+  <!-- Site-wide footer -->
   <custom-footer></custom-footer>
 
-  <!-- Component scripts (ensure these paths are correct in your repo) -->
+  <!-- Component scripts -->
   <script type="module" src="components/navbar.js"></script>
   <script type="module" src="components/footer.js"></script>
   <!-- Page JS -->
   <script src="script.js"></script>
-  <!-- Feather icons AFTER components are defined -->
+  <!-- Feather icons after components -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       if (window.feather) feather.replace();

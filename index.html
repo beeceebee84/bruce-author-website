@@ -107,7 +107,8 @@
       </div>
 
       <div class="section">
-        <div class="flex justify-center">
+        <!-- Portrait cover frame: fixes white bars + keeps layout stable -->
+<div class="relative w-full aspect-[2/3] overflow-hidden rounded-lg border border-white/10 bg-ink-900">
   <video
     autoplay
     muted
@@ -115,13 +116,12 @@
     playsinline
     preload="metadata"
     poster="images/burn-me-whole-cover.jpg"
-    class="max-h-[500px] w-auto rounded-lg border border-white/10 object-cover object-center"
+    class="absolute inset-0 h-full w-full object-cover object-center"
   >
     <source src="media/burn-me-whole-animated.mp4" type="video/mp4" />
-    <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole cover"
-         class="max-h-[500px] w-auto rounded-lg border border-white/10 object-cover object-center" />
   </video>
 </div>
+
 
 
 
@@ -524,6 +524,7 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 
 
 

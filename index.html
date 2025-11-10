@@ -107,20 +107,23 @@
       </div>
 
       <div class="section">
-        <!-- Portrait cover frame: fixes white bars + keeps layout stable -->
-<div class="relative w-full aspect-[2/3] overflow-hidden rounded-lg border border-white/10 bg-ink-900">
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="images/burn-me-whole-cover.jpg"
-    class="absolute inset-0 h-full w-full object-cover object-center"
-  >
-    <source src="media/burn-me-whole-animated.mp4" type="video/mp4" />
-  </video>
+        <!-- Balanced, responsive book cover (no white bars, proper size) -->
+<div class="flex justify-center">
+  <div class="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px] aspect-[2/3] overflow-hidden rounded-lg border border-white/10 bg-ink-900">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="images/burn-me-whole-cover.jpg"
+      class="absolute inset-0 h-full w-full object-cover object-center"
+    >
+      <source src="media/burn-me-whole-animated.mp4" type="video/mp4" />
+    </video>
+  </div>
 </div>
+
 
 
 
@@ -524,6 +527,7 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 
 
 

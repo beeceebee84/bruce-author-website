@@ -107,21 +107,22 @@
       </div>
 
       <div class="section">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <video
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="metadata"
-  poster="media/burn-me-whole-animated.mp4"
-  class="w-full h-auto rounded-lg border border-white/10 object-cover object-center"
->
-  <source src="media/burn-me-whole-animated.mp4" type="video/mp4" />
-  <!-- Fallback if video can't play -->
-  <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole cover"
-       class="w-full h-auto rounded-lg border border-white/10 object-cover object-center" />
-</video>
+        <div class="flex justify-center">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="images/burn-me-whole-cover.jpg"
+    class="max-h-[500px] w-auto rounded-lg border border-white/10 object-cover object-center"
+  >
+    <source src="media/burn-me-whole-animated.mp4" type="video/mp4" />
+    <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole cover"
+         class="max-h-[500px] w-auto rounded-lg border border-white/10 object-cover object-center" />
+  </video>
+</div>
+
 
 
           <div>
@@ -523,6 +524,7 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 
 
 

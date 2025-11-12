@@ -2,12 +2,12 @@
 <html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Bruce C Bee</title>
-  <meta name="description" content="Get in touch with Bruce C. Bee — book inquiries, speaking engagements, and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Substack Embed Test | Bruce C Bee</title>
+  <meta name="description" content="Testing Substack embed for Bruce C Bee." />
 
-  <!-- Tailwind + Typography -->
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -16,222 +16,119 @@
           colors: {
             ink:   { 950:'#0A0B0D', 900:'#0F1318', 800:'#151B22', 700:'#1C2430' },
             ember: { 900:'#6E3A13', 800:'#8B4A17', 700:'#A75B1C', 600:'#C26C21', 500:'#D9822B', 400:'#E89E4D', 300:'#F0B06F' },
-            brass: { 500:'#C49A45' },
-            sand:  { 400:'#CAB79A' },
             bone:  { 50:'#F5F3EF' }
-          },
-          borderRadius: { brand: '12px' }
+          }
         }
       }
     }
   </script>
 
-  <link rel="stylesheet" href="css/style.css?v=4" />
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    body { background-color: #0F1318; color: #F5F3EF; font-family: system-ui, sans-serif; }
+  </style>
 </head>
 
-<body class="bg-ink-900 text-bone-50 transition-colors duration-300">
+<body class="flex items-center justify-center min-h-screen p-6">
 
-  <custom-navbar></custom-navbar>
+  <button id="openModal" class="px-6 py-3 bg-ember-600 hover:bg-ember-500 rounded-lg font-semibold text-white shadow-lg">
+    Open Substack Modal
+  </button>
 
-  <!-- Hero -->
-  <header class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
-    <!-- CDN-safe ember glow -->
-    <div class="absolute inset-0 bg-[radial-gradient(680px_280px_at_50%_45%,rgba(217,130,43,0.22),transparent_80%)]"></div>
-
-    <div class="relative py-16 md:py-20 text-center">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-bold text-white">Get In <span class="text-ember-500">Touch</span></h1>
-        <p class="mt-4 text-bone-50/80">I’d love to hear from you—readers, fellow writers, or collaborators.</p>
+  <!-- Modal -->
+  <div id="substack-modal"
+       class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="relative w-full max-w-lg rounded-2xl border border-white/10 bg-ink-800 text-bone-50 shadow-2xl">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Join Bruce’s Substack</h3>
+        <button id="closeModal" type="button" class="p-2 rounded hover:bg-white/5">✕</button>
       </div>
-    </div>
-  </header>
 
-  <!-- Content -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="px-5 pt-4 pb-5 space-y-3">
+        <p class="text-bone-50/80 text-sm">
+          Enter your email below and confirm inside the box to finish subscribing.
+        </p>
 
-        <!-- Form -->
-        <div>
-          <h2 class="text-3xl font-bold text-white">Contact <span class="text-ember-500">Form</span></h2>
-          <p class="mt-2 text-bone-50/80">Fill out the form below. I try to respond within 5–7 business days.</p>
-
-          <form
-            id="contact-form"
-            action="https://formspree.io/f/xzzybokl"
-            method="POST"
-            class="mt-8 space-y-6"
-            novalidate
-          >
-            <!-- Name -->
-            <div>
-              <label for="name" class="block text-sm font-medium text-bone-50/80 mb-1">Your Name</label>
-              <input id="name" name="name" type="text" required
-                     class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 placeholder:text-bone-50/50 focus:outline-none focus:ring-2 focus:ring-ember-400">
-            </div>
-
-            <!-- Email -->
-            <div>
-              <label for="email" class="block text-sm font-medium text-bone-50/80 mb-1">Email Address</label>
-              <input id="email" name="_replyto" type="email" required
-                     class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 placeholder:text-bone-50/50 focus:outline-none focus:ring-2 focus:ring-ember-400"
-                     placeholder="you@example.com">
-            </div>
-
-            <!-- Reason -->
-            <div>
-              <label for="reason" class="block text-sm font-medium text-bone-50/80 mb-1">Reason for Contact</label>
-              <select id="reason" name="reason"
-                      class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 focus:outline-none focus:ring-2 focus:ring-ember-400">
-                <option>General Message</option>
-                <option>Book/Press Inquiry</option>
-                <option>Speaking Engagement</option>
-                <option>Collaboration</option>
-                <option>Rights & Licensing</option>
-              </select>
-            </div>
-
-            <!-- Subject -->
-            <div>
-              <label for="subject" class="block text-sm font-medium text-bone-50/80 mb-1">Subject</label>
-              <input id="subject" name="subject" type="text" required
-                     class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 placeholder:text-bone-50/50 focus:outline-none focus:ring-2 focus:ring-ember-400"
-                     placeholder="Quick question about…">
-            </div>
-
-            <!-- Message -->
-            <div>
-              <label for="message" class="block text-sm font-medium text-bone-50/80 mb-1">Message</label>
-              <textarea id="message" name="message" rows="6" required
-                        class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 placeholder:text-bone-50/50 focus:outline-none focus:ring-2 focus:ring-ember-400"
-                        placeholder="Write your message here…"></textarea>
-            </div>
-
-            <!-- Buttons -->
-            <div class="flex flex-wrap gap-3">
-              <button id="contact-submit" type="submit"
-                      class="px-6 py-3 bg-ember-600 hover:bg-ember-500 text-white rounded-lg font-medium transition-colors">
-                Send Message
-              </button>
-              <button type="reset"
-                      class="px-6 py-3 border border-white/10 text-bone-50/80 rounded-lg hover:bg-white/5 transition-colors">
-                Reset
-              </button>
-            </div>
-
-            <!-- Status banner -->
-            <div id="contact-status"
-                 class="hidden mt-4 px-4 py-3 rounded-lg text-sm border"
-                 role="status" aria-live="polite"></div>
-          </form>
+        <!-- Primary: official iframe embed -->
+        <div class="rounded-lg overflow-hidden border border-white/10">
+          <iframe
+            id="substack-iframe"
+            src="https://brucecbee.substack.com/embed"
+            width="100%"
+            height="360"
+            style="background:transparent;"
+            frameborder="0"
+            scrolling="no"
+            loading="lazy"
+          ></iframe>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="space-y-8 md:sticky md:top-6 self-start">
-          <div class="bg-[var(--surface,#151B22)] rounded-xl p-6 shadow-lg border border-white/10">
-            <h3 class="text-xl font-bold">Contact Details</h3>
-            <p class="mt-2 text-bone-50/80">Prefer email? Reach me directly or connect on socials.</p>
+        <!-- Fallback script embed -->
+        <div id="substack-script-fallback"
+             class="hidden rounded-lg overflow-hidden border border-white/10 min-h-[320px]"></div>
 
-            <ul class="mt-4 space-y-3">
-              <li class="flex items-center gap-3">
-                <i data-feather="mail" class="w-5 h-5 text-ember-400"></i>
-                <a href="mailto:connect@brucecbee.com" class="hover:text-ember-300">connect@brucecbee.com</a>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-feather="instagram" class="w-5 h-5 text-ember-400"></i>
-                <a href="https://www.instagram.com/brucecbee" class="hover:text-ember-300">@brucecbee</a>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-feather="facebook" class="w-5 h-5 text-ember-400"></i>
-                <a href="https://www.facebook.com/profile.php?id=61577013173981#" class="hover:text-ember-300">Bruce C. Bee</a>
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-feather="video" class="w-5 h-5 text-ember-400"></i>
-                <a href="https://www.tiktok.com/@brucecbee" class="hover:text-ember-300">@brucecbee (TikTok)</a>
-              </li>
-            </ul>
-          </div>
-        </aside>
+        <!-- Final fallback -->
+        <div id="substack-link-fallback" class="hidden text-center">
+          <a
+            href="https://brucecbee.substack.com/subscribe"
+            target="_blank" rel="noopener"
+            class="inline-flex items-center px-4 py-3 rounded-lg bg-ember-600 hover:bg-ember-500 text-white font-semibold transition-colors"
+          >
+            Open subscribe form
+          </a>
+          <p class="mt-2 text-xs text-bone-50/60">
+            If your browser blocks embeds, use the button above to subscribe in a new tab.
+          </p>
+        </div>
 
+        <p class="text-xs text-bone-50/60">
+          You’ll get new posts and updates from Bruce C Bee via Substack.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <custom-footer></custom-footer>
-
-  <!-- Scripts -->
-  <script src="components/navbar.js"></script>
-  <script src="components/footer.js"></script>
-  <script src="script.js"></script>
-  <script>feather.replace();</script>
-
-  <!-- Updated Formspree handler -->
+  <!-- JS -->
   <script>
+    // Modal open/close
+    const modal = document.getElementById('substack-modal');
+    document.getElementById('openModal').onclick = () => modal.classList.replace('hidden', 'flex');
+    document.getElementById('closeModal').onclick = () => modal.classList.replace('flex', 'hidden');
+
+    // Embed fallback logic
     (function () {
-      const form = document.getElementById('contact-form');
-      const status = document.getElementById('contact-status');
-      const btn = document.getElementById('contact-submit');
+      const iframe = document.getElementById('substack-iframe');
+      const scriptBox = document.getElementById('substack-script-fallback');
+      const linkBox = document.getElementById('substack-link-fallback');
 
-      function show(type, text) {
-        status.textContent = text;
-        status.classList.remove('hidden');
-        status.className = 'mt-4 px-4 py-3 rounded-lg text-sm border transition-opacity duration-300';
+      let loaded = false;
+      iframe.addEventListener('load', () => { loaded = true; });
 
-        if (type === 'sending') {
-          status.style.backgroundColor = 'rgba(255,255,255,0.04)';
-          status.style.color = 'rgba(245,243,239,0.9)';
-          status.style.borderColor = 'rgba(255,255,255,0.12)';
-        } else if (type === 'ok') {
-          status.style.backgroundColor = 'rgba(217,130,43,0.10)';
-          status.style.color = '#E89E4D';
-          status.style.borderColor = 'rgba(217,130,43,0.40)';
-          setTimeout(() => {
-            status.style.opacity = '0';
-            setTimeout(() => { status.classList.add('hidden'); status.style.opacity=''; }, 250);
-          }, 6000);
-        } else {
-          status.style.backgroundColor = 'rgba(239,68,68,0.12)';
-          status.style.color = 'rgba(252,165,165,1)';
-          status.style.borderColor = 'rgba(239,68,68,0.4)';
-        }
-      }
+      // After 1.5s, if iframe didn't load, try the JS embed
+      setTimeout(() => {
+        if (loaded) return;
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.classList.add('opacity-60', 'cursor-not-allowed');
-        show('sending', 'Sending…');
+        iframe.parentElement.classList.add('hidden');
+        scriptBox.classList.remove('hidden');
 
-        try {
-          const res = await fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-            headers: { Accept: 'application/json' }
-          });
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://brucecbee.substack.com/embed.js';
+        s.onerror = () => {
+          scriptBox.classList.add('hidden');
+          linkBox.classList.remove('hidden');
+        };
+        scriptBox.appendChild(s);
 
-          if (res.ok) {
-            form.reset();
-            show('ok', 'Thanks! Your message has been sent.');
-            return;
+        // If still empty after 2s, show plain link
+        setTimeout(() => {
+          if (scriptBox.innerHTML.trim() === '') {
+            scriptBox.classList.add('hidden');
+            linkBox.classList.remove('hidden');
           }
-
-          let msg = 'Oops! There was a problem submitting your form.';
-          try {
-            const data = await res.json();
-            if (data?.error) msg = data.error;
-            if (data?.errors?.length) msg = data.errors.map(e => e.message || e).join(' ');
-          } catch {}
-          show('error', msg);
-        } catch {
-          show('error', 'Network error — please try again.');
-        } finally {
-          btn.disabled = false;
-          btn.classList.remove('opacity-60', 'cursor-not-allowed');
-        }
-      });
+        }, 2000);
+      }, 1500);
     })();
   </script>
+
 </body>
 </html>

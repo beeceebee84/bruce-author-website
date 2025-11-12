@@ -40,22 +40,22 @@
 
   <!-- Header -->
   <header class="relative overflow-hidden">
-  <!-- Fire → Smoke -->
-  <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
-  <!-- Subtle center glow -->
-  <div class="absolute inset-0 bg-[radial-gradient(700px_300px_at_50%_45%,theme(colors.ember.500/0.25),transparent_80%)]"></div>
+    <!-- Fire → Smoke -->
+    <div class="absolute inset-0 bg-gradient-to-b from-ember-600 via-ink-800 to-ink-950"></div>
+    <!-- Subtle center glow (RGBA fallback for CDN) -->
+    <div class="absolute inset-0 bg-[radial-gradient(700px_300px_at_50%_45%,rgba(217,130,43,0.25),transparent_80%)]"></div>
 
-  <div class="relative py-16 md:py-20 text-center">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold text-white">My <span class="text-ember-500">Books</span></h1>
-      <p class="mt-4 text-bone-50/80 max-w-3xl mx-auto">
-        Browse my complete collection of published works. Click on any book to learn more.
-      </p>
+    <div class="relative py-16 md:py-20 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">My <span class="text-ember-500">Books</span></h1>
+        <p class="mt-4 text-bone-50/80 max-w-3xl mx-auto">
+          Browse my complete collection of published works. Click on any book to learn more.
+        </p>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-   <!-- Featured Book Section -->
+  <!-- Featured Book Section -->
   <section class="py-12 bg-ink-800/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
@@ -76,47 +76,41 @@
           <div class="inline-block bg-ember-600/20 text-ember-400 px-3 py-1 rounded-full text-sm font-medium mb-4">
             <i data-feather="award" class="inline mr-1 w-4 h-4"></i> Featured Book
           </div>
-          <h2 class="text-3xl font-bold text-bone-50">Burn Me Whole </h2>
-          <div class="flex items-center mt-2">
-          
-            
-          </div>
+          <h2 class="text-3xl font-bold text-bone-50">Burn Me Whole</h2>
+
           <div class="prose prose-invert max-w-none mt-6">
-    <p class="text-bone-50/90">
-        Bruce did everything <em>right</em>. He survived. But after years of just trying to hold on, he’s left staring at wreckage—an ended marriage, a vanished career, and a man in the mirror he doesn't <strong><em>fucking know</em></strong>. With nothing but a heavy heart, he leaves for Jamaica, not for a vacation, but for a desperate, brutal reckonin. On the island, every silence he swallowed and every armor he wore rises to the surface, demanding he confront the man he’s been and decide who the hell he’s still going to become.
-    </p>
-    <p class="mt-3 text-bone-50/90">
-        <em>Burn Me Whole</em> is a work of <strong>Black Literary Fiction</strong> that is <em>raw, unfiltered, and damn honest</em> about the nonlinear journey toward wholeness.This is not a book for surface readers. If you know what it’s like to hide your truths behind armor, this story will <em>hit you where it fucking counts</em>. It doesn't offer easy answers. Instead, it brings the heat—<strong>fucking passion</strong>, desire, tension—pulling you into the uncomfortable spaces where real healing happens.
-    </p>
-</div>
+            <p class="text-bone-50/90">
+              Bruce did everything <em>right</em>. He survived. But after years of just trying to hold on, he’s left staring at wreckage—an ended marriage, a vanished career, and a man in the mirror he doesn't <strong><em>fucking know</em></strong>. With nothing but a heavy heart, he leaves for Jamaica, not for a vacation, but for a desperate, brutal reckonin. On the island, every silence he swallowed and every armor he wore rises to the surface, demanding he confront the man he’s been and decide who the hell he’s still going to become.
+            </p>
+            <p class="mt-3 text-bone-50/90">
+              <em>Burn Me Whole</em> is a work of <strong>Black Literary Fiction</strong> that is <em>raw, unfiltered, and damn honest</em> about the nonlinear journey toward wholeness. This is not a book for surface readers. If you know what it’s like to hide your truths behind armor, this story will <em>hit you where it fucking counts</em>. It doesn't offer easy answers. Instead, it brings the heat—<strong>fucking passion</strong>, desire, tension—pulling you into the uncomfortable spaces where real healing happens.
+            </p>
+          </div>
           
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="book.html" class="px-6 py-3 bg-ember-600 hover:bg-ember-500 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl flex items-center">
               <i data-feather="book-open" class="mr-2 w-5 h-5"></i> Read More
             </a>
+
             <a href="https://payhip.com/b/AQpDY"
-   class="payhip-add-to-cart px-6 py-3 bg-ink-700 hover:bg-ink-600 text-bone-50 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl flex items-center"
-   data-product="AQpDY">
-  <i data-feather="shopping-cart" class="mr-2 w-5 h-5"></i>
-  Puchase Signed Copy
-</a>
+               class="payhip-add-to-cart px-6 py-3 bg-ink-700 hover:bg-ink-600 text-bone-50 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl flex items-center"
+               data-product="AQpDY">
+              <i data-feather="shopping-cart" class="mr-2 w-5 h-5"></i>
+              Purchase Signed Copy
+            </a>
 
-            </button>
-           <a href="https://payhip.com/b/trvuX" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   class="px-6 py-3 border border-ember-500/30 hover:border-ember-400/50 text-ember-400 hover:text-ember-300 rounded-lg font-medium transition-colors flex items-center">
-  <i data-feather="play" class="mr-2 w-5 h-5"></i>
-  Preview
-</a>
-
-            </button>
+            <a href="https://payhip.com/b/trvuX" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="px-6 py-3 border border-ember-500/30 hover:border-ember-400/50 text-ember-400 hover:text-ember-300 rounded-lg font-medium transition-colors flex items-center">
+              <i data-feather="play" class="mr-2 w-5 h-5"></i>
+              Preview
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Books Grid -->
   <section class="py-16">
@@ -140,9 +134,8 @@
         <!-- Book 1 -->
         <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
           <a href="book.html" class="block">
-           <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole Cover" 
-     class="w-full h-auto max-h-72 object-contain bg-black rounded-t-xl">
-
+            <img src="images/burn-me-whole-cover.jpg" alt="Burn Me Whole Cover" 
+                 class="w-full h-auto max-h-72 object-contain bg-black rounded-t-xl">
           </a>
           <div class="p-6">
             <div class="flex justify-between items-start">
@@ -152,296 +145,125 @@
               </div>
               <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-primary-500/10 dark:bg-primary-500/20 text-primary-600 dark:text-primary-400">New</span>
             </div>
-            <div class="flex items-center mt-3">
-              
-              
-            </div>
             <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A raw journey through the fire it takes to become whole.</p>
             <div class="mt-4 flex justify-between items-center">
               <span class="text-lg font-bold text-primary-500">$25.00</span>
               <div class="flex gap-2">
                 <a href="https://payhip.com/b/trvuX" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
                   <i data-feather="eye"></i>
-                </button>
+                </a>
                 <a href="https://payhip.com/b/AQpDY" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
                   <i data-feather="shopping-cart"></i>
-                </button>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Book 2 -->
-        <div class= "hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-          <a href="book-echoes.html" class="block">
-            <img src="http://static.photos/books/640x360/2" alt="Echoes in the Mist" class="w-full h-64 object-cover">
-          </a>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <a href="book-echoes.html" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-500">Echoes in the Mist</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Published: March 2022</p>
-              </div>
-            </div>
-            <div class="flex items-center mt-3">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(89)</span>
-            </div>
-            <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A hauntingly beautiful story of love and loss set against the backdrop of the Scottish Highlands.</p>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$12.99</span>
-              <div class="flex gap-2">
-                <button onclick="showBookPreview('echoes')" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
-                  <i data-feather="eye"></i>
-                </button>
-                <button onclick="addToCart('echoes', 'Echoes in the Mist', 12.99)" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
-                  <i data-feather="shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book 3 -->
-        <div class= "hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-          <a href="book-silent.html" class="block">
-            <img src="http://static.photos/books/640x360/3" alt="The Silent Witness" class="w-full h-64 object-cover">
-          </a>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <a href="book-silent.html" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-500">The Silent Witness</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Published: September 2021</p>
-              </div>
-              <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-yellow-500/10 dark:bg-yellow-400/10 text-yellow-700 dark:text-yellow-300">Bestseller</span>
-            </div>
-            <div class="flex items-center mt-3">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(156)</span>
-            </div>
-            <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A psychological thriller that explores the darkest corners of human nature and justice.</p>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$16.99</span>
-              <div class="flex gap-2">
-                <button onclick="showBookPreview('silent')" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
-                  <i data-feather="eye"></i>
-                </button>
-                <button onclick="addToCart('silent', 'The Silent Witness', 16.99)" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
-                  <i data-feather="shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book 4 -->
-        <div class= "hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-          <a href="book-shadows.html" class="block">
-            <img src="http://static.photos/books/640x360/4" alt="Shadows of Yesterday" class="w-full h-64 object-cover">
-          </a>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <a href="book-shadows.html" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-500">Shadows of Yesterday</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Published: February 2020</p>
-              </div>
-            </div>
-            <div class="flex items-center mt-3">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(97)</span>
-            </div>
-            <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A time-bending historical fiction that weaves together past and present in unexpected ways.</p>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$11.99</span>
-              <div class="flex gap-2">
-                <button onclick="showBookPreview('shadows')" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
-                  <i data-feather="eye"></i>
-                </button>
-                <button onclick="addToCart('shadows', 'Shadows of Yesterday', 11.99)" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
-                  <i data-feather="shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book 5 -->
-        <div class= "hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-          <a href="book-tides.html" class="block">
-            <img src="http://static.photos/books/640x360/5" alt="The Turning Tides" class="w-full h-64 object-cover">
-          </a>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <a href="book-tides.html" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-500">The Turning Tides</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Published: August 2019</p>
-              </div>
-            </div>
-            <div class="flex items-center mt-3">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(73)</span>
-            </div>
-            <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A coastal drama about family secrets, forgiveness, and the power of second chances.</p>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$10.99</span>
-              <div class="flex gap-2">
-                <button onclick="showBookPreview('tides')" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
-                  <i data-feather="eye"></i>
-                </button>
-                <button onclick="addToCart('tides', 'The Turning Tides', 10.99)" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
-                  <i data-feather="shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Book 6 -->
-        <div class= "hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-          <a href="book-harbinger.html" class="block">
-            <img src="http://static.photos/books/640x360/6" alt="The Harbinger's Song" class="w-full h-64 object-cover">
-          </a>
-          <div class="p-6">
-            <div class="flex justify-between items-start">
-              <div>
-                <a href="book-harbinger.html" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary-500">The Harbinger&#39;s Song</a>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Published: May 2018</p>
-              </div>
-            </div>
-            <div class="flex items-center mt-3">
-              <div class="flex text-yellow-400">
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-                <i data-feather="star" class="w-4 h-4"></i>
-              </div>
-              <span class="text-gray-500 dark:text-gray-400 text-sm ml-2">(112)</span>
-            </div>
-            <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm">A dystopian fantasy about a world where dreams manifest into reality, for better or worse.</p>
-            <div class="mt-4 flex justify-between items-center">
-              <span class="text-lg font-bold text-primary-500">$13.99</span>
-              <div class="flex gap-2">
-                <button onclick="showBookPreview('harbinger')" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Preview">
-                  <i data-feather="eye"></i>
-                </button>
-                <button onclick="addToCart('harbinger', 'The Harbinger&#39;s Song', 13.99)" class="p-2 text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors" title="Add to Cart">
-                  <i data-feather="shopping-cart"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Placeholder hidden cards kept for layout parity -->
+        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"></div>
+        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"></div>
+        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"></div>
+        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"></div>
+        <div class="hidden bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"></div>
 
       </div>
     </div>
   </section>
 
   <!-- Newsletter -->
-<section class="py-16 bg-gradient-to-b from-ember-800 to-ember-900">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center">
-      <div class="inline-flex items-center justify-center bg-ember-700/40 rounded-full p-2 mb-6 ring-1 ring-white/10">
-        <i data-feather="mail" class="w-6 h-6 text-ember-300"></i>
+  <section class="py-16 bg-gradient-to-b from-ember-800 to-ember-900">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center bg-ember-700/40 rounded-full p-2 mb-6 ring-1 ring-white/10">
+          <i data-feather="mail" class="w-6 h-6 text-ember-300"></i>
+        </div>
+
+        <h2 class="text-3xl font-bold">
+          Subscribe to My <span class="text-yellow-400">Substack</span>
+        </h2>
+        <p class="mt-4 text-bone-50/80">
+          Get new short stories, exclusive posts, and updates on <em>Burn Me Whole</em> delivered straight to your inbox.
+        </p>
       </div>
 
-      <h2 class="text-3xl font-bold">
-        Subscribe to My <span class="text-yellow-400">Substack</span>
-      </h2>
-      <p class="mt-4 text-bone-50/80">
-        Get new short stories, exclusive posts, and updates on <em>Burn Me Whole</em> delivered straight to your inbox.
-      </p>
+      <!-- Custom-styled Substack subscribe (opens branded modal with official embed) -->
+      <form class="mt-8" data-substack-form novalidate>
+        <div class="flex flex-col sm:flex-row items-stretch gap-4">
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            required
+            class="w-full sm:flex-1 px-4 py-3 rounded-lg bg-ink-800/70 text-bone-50 placeholder:text-bone-50/50
+                   border border-white/10 focus:outline-none focus:ring-2 focus:ring-ember-400 focus:border-transparent"
+          />
+
+          <button
+            type="submit"
+            class="shrink-0 px-6 py-3 rounded-lg bg-ember-600 hover:bg-ember-500 text-bone-50 font-semibold
+                   transition-colors shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ember-400"
+          >
+            Subscribe Now
+          </button>
+        </div>
+
+        <p class="mt-3 text-center text-sm text-bone-50/60">No spam. Unsubscribe anytime.</p>
+      </form>
     </div>
+  </section>
 
-    <!-- Form -->
-    <form class="mt-8" method="POST" action="[YOUR_SUBSTACK_EMBED_URL]" novalidate>
-      <div class="flex flex-col sm:flex-row items-stretch gap-4">
-        <label for="newsletter-email" class="sr-only">Email address</label>
-        <input
-          id="newsletter-email"
-          type="email"
-          name="email"
-          placeholder="Your email address"
-          required
-          class="w-full sm:flex-1 px-4 py-3 rounded-lg bg-ink-800/70 text-bone-50 placeholder:text-bone-50/50
-                 border border-white/10 focus:outline-none focus:ring-2 focus:ring-ember-400 focus:border-transparent"
-        />
+  <!-- Substack Modal (official embed inside a branded shell) -->
+  <div id="substack-modal"
+       class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+       aria-hidden="true">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/70"></div>
 
-        <button
-          type="submit"
-          class="shrink-0 px-6 py-3 rounded-lg bg-ember-600 hover:bg-ember-500 text-bone-50 font-semibold
-                 transition-colors shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ember-400"
-        >
-          Subscribe Now
+    <!-- Dialog -->
+    <div class="relative w-full max-w-lg rounded-2xl border border-white/10
+                bg-ink-800 text-bone-50 shadow-2xl">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+        <h3 class="text-lg font-semibold">Join Bruce’s Substack</h3>
+        <button type="button" class="p-2 rounded hover:bg-white/5" data-substack-close aria-label="Close">
+          ✕
         </button>
       </div>
 
-      <!-- Optional trust line -->
-      <p class="mt-3 text-center text-sm text-bone-50/60">No spam. Unsubscribe anytime.</p>
+      <div class="px-5 pt-4 pb-5 space-y-3">
+        <p class="text-bone-50/80 text-sm">
+          Enter your email below and confirm inside the box to finish subscribing.
+        </p>
 
-      <!-- Optional hidden redirect for Substack -->
-      <!-- <input type="hidden" name="redirect" value="https://YOUR-SITE/thanks.html"> -->
-    </form>
+        <!-- Official embed (reliable + handles compliance) -->
+        <div class="rounded-lg overflow-hidden border border-white/10">
+          <iframe
+            src="https://brucecbee.substack.com/embed"
+            width="100%"
+            height="320"
+            style="background:transparent;"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+
+        <p class="text-xs text-bone-50/60">
+          You’ll get new posts and updates from Bruce C Bee via Substack.
+        </p>
+      </div>
+    </div>
   </div>
-</section>
-
 
   <custom-footer></custom-footer>
 
   <!-- Scripts -->
   <script src="components/navbar.js"></script>
   <script src="components/footer.js"></script>
-  <script src="script.js"></script>
+  <!-- Use the same global JS path you used on index/about -->
+  <script src="js/script.js"></script>
   <script>feather.replace();</script>
   <script src="https://payhip.com/payhip.js"></script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

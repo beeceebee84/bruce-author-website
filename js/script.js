@@ -159,3 +159,58 @@ function showToast(message) {
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
+
+<script>
+// Wire every form that has data-substack-form
+(function () {
+  function wireSubstackForms() {
+    document.querySelectorAll('form[data-substack-form]').forEach(form => {
+      if (form.__wired) return; // avoid double binding
+      form.__wired = true;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = form.querySelector('input[type="email"]');
+        const status = form.querySelector('[data-substack-status]');
+        const email = (emailInput?.value || '').trim();
+
+        // simple validation
+        if (!email || !/.+@.+\..+/.test(email)) {
+          if (status) {
+            status.textContent = 'Please enter a valid email.';
+            status.classList.remove('hidden');
+          } else {
+            alert('Please enter a valid email.');
+          }
+          return;
+        }
+
+        // Build Substack subscribe URL
+        const url = new URL('https://brucecbee.substack.com/subscribe');
+        url.searchParams.set('email', email);
+
+        // Open Substack confirm page in a new tab
+        const win = window.open(url.toString(), '_blank', 'noopener');
+
+        // UI feedback
+        if (status) {
+          status.textContent = 'Almost done! Confirm your subscription in the new tab.';
+          status.classList.remove('hidden');
+        } else {
+          alert('Almost done! Confirm your subscription in the new tab.');
+        }
+
+        // If popups are blocked, fall back to navigating current tab
+        if (!win) {
+          window.location.href = url.toString();
+        }
+      });
+    });
+  }
+
+  // run now and on future DOM changes (in case components render later)
+  wireSubstackForms();
+  new MutationObserver(wireSubstackForms).observe(document.documentElement, { childList: true, subtree: true });
+})();
+</script>
+

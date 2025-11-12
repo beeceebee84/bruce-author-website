@@ -159,7 +159,7 @@ class CustomNavbar extends HTMLElement {
               <a href="contact.html" class="nav-link">Contact</a>
               <a href="#" class="nav-link cart-icon">
                 <i data-feather="shopping-cart" class="w-5 h-5"></i>
-                <span>(0)</span>
+                <span></span>
               </a>
             </div>
 
@@ -204,4 +204,5 @@ class CustomNavbar extends HTMLElement {
 }
 
 customElements.define('custom-navbar', CustomNavbar);
+
 

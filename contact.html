@@ -65,9 +65,6 @@
             class="mt-8 space-y-6"
             novalidate
           >
-            <!-- Honeypot (spam trap) -->
-            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
-
             <!-- Name -->
             <div>
               <label for="name" class="block text-sm font-medium text-bone-50/80 mb-1">Your Name</label>
@@ -78,7 +75,7 @@
             <!-- Email -->
             <div>
               <label for="email" class="block text-sm font-medium text-bone-50/80 mb-1">Email Address</label>
-              <input id="email" name="email" type="email" required
+              <input id="email" name="_replyto" type="email" required
                      class="w-full px-4 py-3 rounded-lg border border-white/10 bg-ink-800 text-bone-50 placeholder:text-bone-50/50 focus:outline-none focus:ring-2 focus:ring-ember-400"
                      placeholder="you@example.com">
             </div>
@@ -124,14 +121,14 @@
               </button>
             </div>
 
-            <!-- Status banner (in-page feedback) -->
+            <!-- Status banner -->
             <div id="contact-status"
                  class="hidden mt-4 px-4 py-3 rounded-lg text-sm border"
                  role="status" aria-live="polite"></div>
           </form>
         </div>
 
-        <!-- Side card -->
+        <!-- Sidebar -->
         <aside class="space-y-8 md:sticky md:top-6 self-start">
           <div class="bg-[var(--surface,#151B22)] rounded-xl p-6 shadow-lg border border-white/10">
             <h3 class="text-xl font-bold">Contact Details</h3>
@@ -155,12 +152,6 @@
                 <a href="https://www.tiktok.com/@brucecbee" class="hover:text-ember-300">@brucecbee (TikTok)</a>
               </li>
             </ul>
-
-            <div class="mt-6 p-4 rounded-lg bg-ink-800/60 border border-white/10">
-              <p class="text-sm text-bone-50/80">
-                For <strong>media &amp; press</strong> inquiries, please include outlet, timeline, and topic.
-              </p>
-            </div>
           </div>
         </aside>
 
@@ -176,18 +167,16 @@
   <script src="script.js"></script>
   <script>feather.replace();</script>
 
-  <!-- In-page status handler for Formspree -->
+  <!-- Updated Formspree handler -->
   <script>
     (function () {
       const form = document.getElementById('contact-form');
       const status = document.getElementById('contact-status');
-      const submitBtn = document.getElementById('contact-submit');
+      const btn = document.getElementById('contact-submit');
 
-      function setStatus(type, text) {
+      function show(type, text) {
         status.textContent = text;
         status.classList.remove('hidden');
-
-        // reset base classes
         status.className = 'mt-4 px-4 py-3 rounded-lg text-sm border transition-opacity duration-300';
 
         if (type === 'sending') {
@@ -195,51 +184,51 @@
           status.style.color = 'rgba(245,243,239,0.9)';
           status.style.borderColor = 'rgba(255,255,255,0.12)';
         } else if (type === 'ok') {
-          status.style.backgroundColor = 'rgba(217,130,43,0.10)';   // ember glow
+          status.style.backgroundColor = 'rgba(217,130,43,0.10)';
           status.style.color = '#E89E4D';
           status.style.borderColor = 'rgba(217,130,43,0.40)';
-        } else {
-          status.style.backgroundColor = 'rgba(239,68,68,0.12)';   // red
-          status.style.color = 'rgba(252,165,165,1)';
-          status.style.borderColor = 'rgba(239,68,68,0.4)';
-        }
-
-        // auto fade for success
-        if (type === 'ok') {
           setTimeout(() => {
             status.style.opacity = '0';
-            setTimeout(() => {
-              status.classList.add('hidden');
-              status.style.opacity = '';
-            }, 250);
+            setTimeout(() => { status.classList.add('hidden'); status.style.opacity=''; }, 250);
           }, 6000);
+        } else {
+          status.style.backgroundColor = 'rgba(239,68,68,0.12)';
+          status.style.color = 'rgba(252,165,165,1)';
+          status.style.borderColor = 'rgba(239,68,68,0.4)';
         }
       }
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-60','cursor-not-allowed');
-        setStatus('sending', 'Sending…');
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
+        show('sending', 'Sending…');
 
         try {
           const res = await fetch(form.action, {
             method: form.method,
             body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+            headers: { Accept: 'application/json' }
           });
 
           if (res.ok) {
             form.reset();
-            setStatus('ok', 'Thanks! Your message has been sent.');
-          } else {
-            setStatus('error', 'Oops! There was a problem submitting your form.');
+            show('ok', 'Thanks! Your message has been sent.');
+            return;
           }
+
+          let msg = 'Oops! There was a problem submitting your form.';
+          try {
+            const data = await res.json();
+            if (data?.error) msg = data.error;
+            if (data?.errors?.length) msg = data.errors.map(e => e.message || e).join(' ');
+          } catch {}
+          show('error', msg);
         } catch {
-          setStatus('error', 'Network error — please try again.');
+          show('error', 'Network error — please try again.');
         } finally {
-          submitBtn.disabled = false;
-          submitBtn.classList.remove('opacity-60','cursor-not-allowed');
+          btn.disabled = false;
+          btn.classList.remove('opacity-60', 'cursor-not-allowed');
         }
       });
     })();

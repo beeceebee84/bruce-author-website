@@ -503,46 +503,50 @@
   <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
   <script>var PayhipConfig = { enableCart: true };</script>
 
-  <!-- Substack Modal (official embed inside a branded shell) -->
-  <div id="substack-modal"
-       class="fixed inset-0 z-50 hidden items-center justify-center p-4"
-       aria-hidden="true">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/70"></div>
+ <!-- Substack Modal (iframe-free) -->
+<div id="substack-modal"
+     class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+  <!-- Backdrop -->
+  <div data-backdrop class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
-    <!-- Dialog -->
-    <div class="relative w-full max-w-lg rounded-2xl border border-white/10
-                bg-ink-800 text-bone-50 shadow-2xl">
-      <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
-        <h3 class="text-lg font-semibold">Join Bruce’s Substack</h3>
-        <button type="button" class="p-2 rounded hover:bg-white/5" data-substack-close aria-label="Close">
-          ✕
+  <!-- Dialog -->
+  <div class="relative w-full max-w-lg rounded-2xl border border-white/10
+              bg-ink-800 text-bone-50 shadow-2xl">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+      <h3 class="text-lg font-semibold">Join Bruce’s Substack</h3>
+      <button type="button" data-close class="p-2 rounded hover:bg-white/5" aria-label="Close">✕</button>
+    </div>
+
+    <div class="px-5 pt-4 pb-5 space-y-4">
+      <p class="text-bone-50/80 text-sm">
+        Enter your email below, then confirm in the new tab to finish subscribing.
+      </p>
+
+      <form id="substack-modal-form" class="space-y-3">
+        <input
+          id="substack-modal-email"
+          type="email"
+          required
+          placeholder="Your email address"
+          class="w-full px-4 py-3 rounded-lg bg-ink-800/70 text-bone-50 placeholder:text-bone-50/50
+                 border border-white/10 focus:outline-none focus:ring-2 focus:ring-ember-400 focus:border-transparent"
+        />
+        <button
+          type="submit"
+          class="w-full px-6 py-3 rounded-lg bg-ember-600 hover:bg-ember-500 text-bone-50 font-semibold transition-colors"
+        >
+          Subscribe
         </button>
-      </div>
+        <p id="substack-modal-status" class="text-center text-sm text-ember-300 hidden"></p>
+      </form>
 
-      <div class="px-5 pt-4 pb-5 space-y-3">
-        <p class="text-bone-50/80 text-sm">
-          Enter your email below and confirm inside the box to finish subscribing.
-        </p>
-
-        <!-- Official embed (reliable + handles compliance) -->
-        <div class="rounded-lg overflow-hidden border border-white/10">
-          <iframe
-            src="https://brucecbee.substack.com/embed"
-            width="100%"
-            height="320"
-            style="background:transparent;"
-            frameborder="0"
-            scrolling="no"
-          ></iframe>
-        </div>
-
-        <p class="text-xs text-bone-50/60">
-          You’ll get new posts and updates from Bruce C Bee via Substack.
-        </p>
-      </div>
+      <p class="text-xs text-bone-50/60">
+        You’ll get new posts and updates from Bruce C Bee via Substack.
+      </p>
     </div>
   </div>
+</div>
+
 
   <!-- App scripts -->
   <script src="components/navbar.js"></script>
@@ -596,4 +600,5 @@
   <script>feather.replace();</script>
 </body>
 </html>
+
 

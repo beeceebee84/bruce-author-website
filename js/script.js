@@ -214,3 +214,80 @@ function showToast(message) {
 })();
 </script>
 
+// your existing script.js stuff
+updateCartCount();
+
+// === ADD THIS NEW BLOCK AT THE VERY END ===
+(function () {
+  const modal = document.getElementById('substack-modal');
+  if (!modal) return;
+
+  const backdrop = modal.querySelector('[data-backdrop]');
+  const closeBtns = modal.querySelectorAll('[data-close]');
+  const form = modal.querySelector('#substack-modal-form');
+  const emailInput = modal.querySelector('#substack-modal-email');
+  const status = modal.querySelector('#substack-modal-status');
+
+  function openModal(prefill = '') {
+    emailInput.value = prefill || '';
+    status.classList.add('hidden');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+    setTimeout(() => emailInput.focus(), 50);
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+
+  // Close interactions
+  closeBtns.forEach(b => b.addEventListener('click', closeModal));
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  // Open via any trigger element
+  document.querySelectorAll('[data-open-substack-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = document.querySelector('form[data-substack-form] input[type="email"]');
+      openModal(src ? src.value.trim() : '');
+    });
+  });
+
+  // Intercept page forms with data-substack-form to open the modal instead
+  document.querySelectorAll('form[data-substack-form]').forEach(f => {
+    if (f.__wired) return; f.__wired = true;
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = (f.querySelector('input[type="email"]')?.value || '').trim();
+      openModal(val);
+    });
+  });
+
+  // Modal submit → open Substack subscribe in new tab
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    if (!/.+@.+\..+/.test(email)) {
+      status.textContent = 'Please enter a valid email.';
+      status.classList.remove('hidden');
+      return;
+    }
+    const url = new URL('https://brucecbee.substack.com/subscribe');
+    url.searchParams.set('email', email);
+
+    status.textContent = 'Almost done! Confirm your subscription in the new tab.';
+    status.classList.remove('hidden');
+
+    const win = window.open(url.toString(), '_blank', 'noopener');
+    if (!win) window.location.href = url.toString(); // popup blocked
+  });
+})();
+
+
+
